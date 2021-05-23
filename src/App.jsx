@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Switch, Route, Link, useHistory }
 import { withContext, useNamedContext, Style, If, Else }
   from 'react-easier';
 import mongoosy from 'mongoosy/frontend';
-import CameraPage from './pages/CameraPage';
-import UploadPhotoPage from './UploadPhotoPage';
+import Camera from './pages/Camera';
+import UploadPhotoPage from './pages/UploadPhotoPage';
 
 
 let photos = [], messages = [];
@@ -31,7 +31,7 @@ export default withContext('global', {
           <UploadPhotoPage />
         </Route>
         <Route path="/camera">
-          <CameraPage />
+          <Camera />
         </Route>
       </Switch>
     </Router>

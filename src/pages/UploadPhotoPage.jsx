@@ -3,33 +3,22 @@ import { Style, useStates, useNamedContext } from 'react-easier';
 import mongoosy from 'mongoosy/frontend';
 const { User, Photo } = mongoosy;
 
-export default function UploadPhotoPage() {
-  // LOGIC
-
+const UploadPhotoPage=()=>{
   const g = useNamedContext('global');
-
   const s = useStates({
     users: [],
     chatMessage: '',
     toWhom: '',
     imageData: '',
-    display: null
   });
-
   const getUsers = async () => {
     s.users = await User.find();
     s.display = true;
   }
-
-  // when the StartPage mounts
   useEffect(() => getUsers(), []);
-
-  // show a preview when a photo is chosen
   const photoChosen = () => {
     let file = document.forms.photoUpload.file.files[0];
     if (!file) { return; }
-    // convert the file data to a base64-encoded url
-    // used for preview and also for saving the photo later
     const reader = new FileReader();
     reader.addEventListener("load", () => {
       s.imageData = reader.result;
@@ -37,14 +26,10 @@ export default function UploadPhotoPage() {
     reader.readAsDataURL(file);
   }
 
-  // upload photo
   const uploadPhoto = async e => {
     e.preventDefault();
-    // If no photo chosen do nothing
     if (!s.imageData) { return; }
-    // Create a new Photo
     let photo = new Photo({
-      // (we are not using tag and description fields yet)
       author: g.user._id,
       url: s.imageData
     });
@@ -52,9 +37,8 @@ export default function UploadPhotoPage() {
     console.log('hello from upload')
     g.photos=[...g.photos,photo]
   }
-
-  // TEMPLATE
-  const render = () => s.display && <Style css={css()}>
+return (
+  <>
     <h2>Chat</h2>
     <form name="writeInChat">
       <label>To whom:&nbsp;
@@ -80,29 +64,12 @@ export default function UploadPhotoPage() {
 
     <h2>All photos</h2>
     {g.photos.map(photo => <div key={photo.url}>
-      <img src={'/uploads/' + photo.url} />
+      <img src={'/uploads/' + photo.url} style={{width:'320px', height:'250px'}}/>
       <p>By: {photo.author.name}</p>
     </div>)}
 
-
-  </Style>;
-
-  // STYLE
-  const css = () => /*css*/`
-    label {
-      display: block;
-      margin-bottom: 20px;
-    }
-    
-    select {
-      width: 200px;
-    }
-
-    img {
-      width: 300px;
-      padding: 10px;
-    }
-  `;
-
-  return render();
+  </>
+ )
 }
+
+export default UploadPhotoPage;

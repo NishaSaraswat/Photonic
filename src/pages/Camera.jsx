@@ -13,7 +13,7 @@ const videoConstraints = {
   facingMode: "user"
 };
 
-const WebcamCapture = () => {
+const Camera = () => {
         const webcamRef = React.useRef(null);
         const [src,setSrc]=useState('');
         const g = useNamedContext('global');
@@ -40,20 +40,10 @@ const WebcamCapture = () => {
           
         )
 
-        /*
-        let savedPhotosSrc=[]; 
-        const uploadPhoto = e => {
-          e.preventDefault();
-          savedPhotosSrc=[...savedPhotosSrc, src.slice(5)]
-          console.log(savedPhotosSrc)
-        }*/
         const uploadPhoto = async e => {
           e.preventDefault();
-          // If no photo chosen do nothing
           if (!src) { return; }
-          // Create a new Photo
           let photo = new Photo({
-            // (we are not using tag and description fields yet)
             author: g.user._id,
             url: src
           });
@@ -102,7 +92,7 @@ const WebcamCapture = () => {
         <h2>Posted photos</h2>
         <div>
         {g.photos.map(photo => <div key={photo.url}>
-          <img src={'/uploads/' + photo.url} />
+          <img src={'/uploads/' + photo.url} style={{width:'320px', height:'250px'}}/>
           <p>By: {photo.author.name}</p>
         </div>)}
         </div>
@@ -110,4 +100,4 @@ const WebcamCapture = () => {
     </div>)
 }
 
-export default WebcamCapture
+export default Camera;
