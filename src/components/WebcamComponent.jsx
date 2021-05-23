@@ -18,10 +18,13 @@ const WebcamCapture = () => {
         const [src,setSrc]=useState('');
         const g = useNamedContext('global');
         const s = useStates({
+          users: [],
+          chatMessage: '',
+          toWhom: '',
           imageData: '',
-          display: ''
+          display: null
         });
-        let savedPhotosSrc=[];
+      
 
 
         const capture = React.useCallback(
@@ -37,11 +40,28 @@ const WebcamCapture = () => {
           
         )
 
+        /*
+        let savedPhotosSrc=[]; 
         const uploadPhoto = e => {
           e.preventDefault();
           savedPhotosSrc=[...savedPhotosSrc, src.slice(5)]
           console.log(savedPhotosSrc)
+        }*/
+        const uploadPhoto = async e => {
+          e.preventDefault();
+          // If no photo chosen do nothing
+          if (!src) { return; }
+          // Create a new Photo
+          let photo = new Photo({
+            // (we are not using tag and description fields yet)
+            author: g.user._id,
+            url: src
+          });
+          await photo.save();
+          console.log('hello from upload')
+          g.photos=[...g.photos,photo]
         }
+        
         
   return (
     <div>
@@ -74,16 +94,17 @@ const WebcamCapture = () => {
           }  
         <img src={src} alt="token picture" />
         <br />
-        <button onClick={uploadPhoto}>publish photo</button>
+        <form name="photoUpload" onSubmit={uploadPhoto}>
+          {s.imageData && <img src={src} width="300" />}
+          <input type="submit" value="Publish photo" />
+        </form>
          
         <h2>Posted photos</h2>
         <div>
-          {savedPhotosSrc.map((source)=>{
-            <div>
-              <img src={source} alt=""/>
-            </div>
-
-          })}
+        {g.photos.map(photo => <div key={photo.url}>
+          <img src={'/uploads/' + photo.url} />
+          <p>By: {photo.author.name}</p>
+        </div>)}
         </div>
 
     </div>)

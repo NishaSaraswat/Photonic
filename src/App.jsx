@@ -5,7 +5,8 @@ import { withContext, useNamedContext, Style, If, Else }
   from 'react-easier';
 import mongoosy from 'mongoosy/frontend';
 import CameraPage from './pages/CameraPage';
-const { Login } = mongoosy;
+import UploadPhotoPage from './UploadPhotoPage';
+
 
 let photos = [], messages = [];
 
@@ -26,6 +27,9 @@ export default withContext('global', {
   return (
     <Router>
       <Switch>
+        <Route path="/upload">
+          <UploadPhotoPage />
+        </Route>
         <Route path="/camera">
           <CameraPage />
         </Route>
