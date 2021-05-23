@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Webcam from "react-webcam";
 import { Style, useStates, useNamedContext } from 'react-easier';
 import mongoosy from 'mongoosy/frontend';
@@ -22,11 +22,8 @@ const Camera = () => {
           chatMessage: '',
           toWhom: '',
           imageData: '',
-          display: null
         });
-      
-
-
+        const capturedImg=useRef();
         const capture = React.useCallback(
             () => {
             const imageSrc = webcamRef.current.getScreenshot();
@@ -35,11 +32,6 @@ const Camera = () => {
             },
             [webcamRef],
         );
-
-        const recapture= React.useCallback(
-          
-        )
-
         const uploadPhoto = async e => {
           e.preventDefault();
           if (!src) { return; }
@@ -50,9 +42,10 @@ const Camera = () => {
           await photo.save();
           console.log('hello from upload')
           g.photos=[...g.photos,photo]
+          capturedImg.current.style.display='none';
+          console.log(capturedImg.current)
         }
-        
-        
+     
   return (
     <div>
         <h1>take a photo</h1>
@@ -82,7 +75,7 @@ const Camera = () => {
             capture()}}
           className="webcam-btn">Capture</button>)
           }  
-        <img src={src} alt="token picture" />
+        <img src={src} alt="token picture" ref={capturedImg} />
         <br />
         <form name="photoUpload" onSubmit={uploadPhoto}>
           {s.imageData && <img src={src} width="300" />}
