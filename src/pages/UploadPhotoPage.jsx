@@ -3,8 +3,10 @@ import { Style, useStates, useNamedContext } from 'react-easier';
 import mongoosy from 'mongoosy/frontend';
 const { User, Photo } = mongoosy;
 import { Card } from '@material-ui/core';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 
-const UploadPhotoPage=()=>{
+const UploadPhotoPage=({userName})=>{
   const g = useNamedContext('global');
   const s = useStates({
     users: [],
@@ -24,6 +26,7 @@ const UploadPhotoPage=()=>{
     s.display = true;
   }
   useEffect(() => getUsers(), []);
+
   const photoChosen = () => {
     let file = document.forms.photoUpload.file.files[0];
     if (!file) { return; }
@@ -40,6 +43,8 @@ const UploadPhotoPage=()=>{
     let photo = new Photo({
       author: g.user._id,
       url: s.imageData,
+      tags: 'nature',
+      description: 'lalalala',
     });
     await photo.save();
     console.log('hello from upload')
@@ -62,27 +67,33 @@ return (
       <input type="submit" value="Send" />
     </form>
 
-    <div>
+   
       <h2>Upload photo</h2>
       <form name="photoUpload" onSubmit={uploadPhoto}>
         <input name="file" type="file"
           accept="image/*" onChange={photoChosen} />
-        {s.imageData && <img src={s.imageData} width="300" ref={chosenImg}/>}
-        <select>
-          <option value="nature">nature</option>
-          <option value="nature">nature</option>
-          <option value="nature">nature</option>
-          <option value="nature">nature</option>
-          <option value="nature">nature</option>
-          <option value="nature">nature</option>
-        </select>
-        <span>Posted at: {timeNow}</span>
+        <div className="photo-card">
+          {s.imageData && <img src={s.imageData} width="300" ref={chosenImg}/>}
+          <div className="photo-tags">
+           <FavoriteBorderIcon />
+           <ThumbUpIcon />
+            <select>
+              <option value="nature">nature</option>
+              <option value="nature">nature</option>
+              <option value="nature">nature</option>
+              <option value="nature">nature</option>
+              <option value="nature">nature</option>
+              <option value="nature">nature</option>
+            </select>
+            <span>Posted at: {timeNow}</span>
+          </div>
+        </div>
         <input type="submit" value="Publish photo" />
         
       </form>
-  </div>
+
     <h2>All photos</h2>
-    {g.photos.map(photo => <div key={photo.url}>
+    {g.photos.map(photo =><div key={photo.url}>
       <img src={'/uploads/' + photo.url} style={{width:'90%'}}/>
       <p>By: {photo.author.name}</p>
     </div>)}

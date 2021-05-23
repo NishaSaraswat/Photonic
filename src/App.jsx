@@ -108,7 +108,7 @@ export default withContext('global', {
           <LoginPage {...{ loginCheck }} />
         </Route>
         <Route path="/upload">
-          <UploadPhotoPage />
+          <UploadPhotoPage userName={g.user.name}/>
         </Route>
         <Route path="/camera">
           <Camera />

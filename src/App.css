@@ -34,3 +34,15 @@
     border:none;
 }
 
+.photo-card{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width:100%;
+}
+.photo-tags{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
