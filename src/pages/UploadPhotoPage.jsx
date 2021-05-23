@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Style, useStates, useNamedContext } from 'react-easier';
 import mongoosy from 'mongoosy/frontend';
 const { User, Photo } = mongoosy;
@@ -14,6 +14,7 @@ const UploadPhotoPage=()=>{
     description:'',
     posted: ''
   });
+  const chosenImg=useRef()
   let today=new Date();
   let timeNow= today.getHours() + ":" + today.getMinutes()
 
@@ -38,13 +39,11 @@ const UploadPhotoPage=()=>{
     let photo = new Photo({
       author: g.user._id,
       url: s.imageData,
-      tags: [String],
-      description: String,
-      posted: {timeNow}
     });
     await photo.save();
     console.log('hello from upload')
     g.photos=[...g.photos,photo]
+    chosenImg.current.style.display='none';
   }
 return (
   <>
@@ -66,7 +65,8 @@ return (
     <form name="photoUpload" onSubmit={uploadPhoto}>
       <input name="file" type="file"
         accept="image/*" onChange={photoChosen} />
-      {s.imageData && <img src={s.imageData} width="300" />}
+      {s.imageData && <img src={s.imageData} width="300" ref={chosenImg}/>}
+      <input type="submit" value="Publish photo" />
       <select>
         <option value="nature">nature</option>
         <option value="nature">nature</option>
@@ -76,13 +76,12 @@ return (
         <option value="nature">nature</option>
       </select>
       <span>Posted at: {timeNow}</span>
-      <input type="submit" value="Publish photo" />
     </form>
     <hr />
 
     <h2>All photos</h2>
     {g.photos.map(photo => <div key={photo.url}>
-      <img src={'/uploads/' + photo.url} style={{width:'320px', height:'250px'}}/>
+      <img src={'/uploads/' + photo.url} style={{width:'90%'}}/>
       <p>By: {photo.author.name}</p>
     </div>)}
 
