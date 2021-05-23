@@ -3,19 +3,14 @@ import { BrowserRouter as Router, Switch, Route, Link, useHistory }
   from "react-router-dom";
 import { withContext, useNamedContext, Style, If, Else }
   from 'react-easier';
-
 import StartPage from './StartPage';
 import RegisterPage from './RegisterPage';
 import LoginPage from './LoginPage';
-
 import mongoosy from 'mongoosy/frontend';
-import CameraPage from './pages/CameraPage';
 const { Login } = mongoosy;
-
 
 // This shouldn't be needed but ensures that 
 // we do not get any resets of these context vars
-
 let photos = [], messages = [];
 
 export default withContext('global', {
@@ -29,7 +24,6 @@ export default withContext('global', {
 
   // LOGIC
   const g = useNamedContext('global');
-
   const history = useHistory();
 
   // start an SSE connection or close it if no user
@@ -134,18 +128,3 @@ export default withContext('global', {
 
   return render();
 });
-
-
-  // TEMPLATE
-  return (
-    <Router>
-      <Switch>
-        <Route path="/camera">
-          <CameraPage />
-        </Route>
-      </Switch>
-    </Router>
-  ) 
-
-
-
