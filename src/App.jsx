@@ -147,5 +147,5 @@ export default withContext('global', {
     </Router>
   ) 
 
-})
+
 
