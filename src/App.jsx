@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link, useHistory }
 import { withContext, useNamedContext, Style, If, Else }
   from 'react-easier';
 import mongoosy from 'mongoosy/frontend';
-import CameraPage from './CameraPage';
+import CameraPage from './pages/CameraPage';
 const { Login } = mongoosy;
 
 let photos = [], messages = [];
