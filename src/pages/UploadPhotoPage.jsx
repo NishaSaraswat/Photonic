@@ -10,7 +10,13 @@ const UploadPhotoPage=()=>{
     chatMessage: '',
     toWhom: '',
     imageData: '',
+    tags:'',
+    description:'',
+    posted: ''
   });
+  let today=new Date();
+  let timeNow= today.getHours() + ":" + today.getMinutes()
+
   const getUsers = async () => {
     s.users = await User.find();
     s.display = true;
@@ -31,7 +37,10 @@ const UploadPhotoPage=()=>{
     if (!s.imageData) { return; }
     let photo = new Photo({
       author: g.user._id,
-      url: s.imageData
+      url: s.imageData,
+      tags: [String],
+      description: String,
+      posted: {timeNow}
     });
     await photo.save();
     console.log('hello from upload')
@@ -58,6 +67,15 @@ return (
       <input name="file" type="file"
         accept="image/*" onChange={photoChosen} />
       {s.imageData && <img src={s.imageData} width="300" />}
+      <select>
+        <option value="nature">nature</option>
+        <option value="nature">nature</option>
+        <option value="nature">nature</option>
+        <option value="nature">nature</option>
+        <option value="nature">nature</option>
+        <option value="nature">nature</option>
+      </select>
+      <span>Posted at: {timeNow}</span>
       <input type="submit" value="Publish photo" />
     </form>
     <hr />

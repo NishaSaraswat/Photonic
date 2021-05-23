@@ -22,11 +22,7 @@ const Camera = () => {
           chatMessage: '',
           toWhom: '',
           imageData: '',
-          display: null
         });
-      
-
-
         const capture = React.useCallback(
             () => {
             const imageSrc = webcamRef.current.getScreenshot();
@@ -35,11 +31,6 @@ const Camera = () => {
             },
             [webcamRef],
         );
-
-        const recapture= React.useCallback(
-          
-        )
-
         const uploadPhoto = async e => {
           e.preventDefault();
           if (!src) { return; }
@@ -51,8 +42,7 @@ const Camera = () => {
           console.log('hello from upload')
           g.photos=[...g.photos,photo]
         }
-        
-        
+     
   return (
     <div>
         <h1>take a photo</h1>
