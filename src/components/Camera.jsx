@@ -58,7 +58,7 @@ const Camera = () => {
           width={260}
           videoConstraints={videoConstraints}
           />)
-        : (<img src={src} />)}
+        : (<img src={src} ref={capturedImg}/>)}
 
           {src!=''
           ?
@@ -75,7 +75,6 @@ const Camera = () => {
             capture()}}
           className="webcam-btn">Capture</button>)
           }  
-        <img src={src} alt="token picture" ref={capturedImg} />
         <br />
         <form name="photoUpload" onSubmit={uploadPhoto}>
           {s.imageData && <img src={src} width="300" />}
