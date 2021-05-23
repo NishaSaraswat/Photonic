@@ -7,7 +7,10 @@ import StartPage from './StartPage';
 import RegisterPage from './RegisterPage';
 import LoginPage from './LoginPage';
 import mongoosy from 'mongoosy/frontend';
+import Camera from './pages/Camera';
+import UploadPhotoPage from './pages/UploadPhotoPage';
 const { Login } = mongoosy;
+
 
 // This shouldn't be needed but ensures that 
 // we do not get any resets of these context vars
@@ -102,6 +105,12 @@ export default withContext('global', {
         </Route>
         <Route path="/login">
           <LoginPage {...{ loginCheck }} />
+        </Route>
+        <Route path="/upload">
+          <UploadPhotoPage />
+        </Route>
+        <Route path="/camera">
+          <Camera />
         </Route>
       </Switch>
 
