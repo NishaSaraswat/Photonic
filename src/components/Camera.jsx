@@ -3,7 +3,8 @@ import Webcam from "react-webcam";
 import { Style, useStates, useNamedContext } from 'react-easier';
 import mongoosy from 'mongoosy/frontend';
 const { User, Photo } = mongoosy;
-
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 
 const WebcamComponent = () => <Webcam />
 
@@ -13,7 +14,7 @@ const videoConstraints = {
   facingMode: "user"
 };
 
-const Camera = () => {
+const Camera = ({userName}) => {
         const webcamRef = React.useRef(null);
         const [src,setSrc]=useState('');
         const g = useNamedContext('global');
@@ -85,7 +86,12 @@ const Camera = () => {
         <div>
         {g.photos.map(photo => <div key={photo.url}>
           <img src={'/uploads/' + photo.url} style={{width:'320px', height:'250px'}}/>
-          <p>By: {photo.author.name}</p>
+          <p>By: {userName}</p>
+          <FavoriteBorderIcon />
+          <ThumbUpIcon />
+          <form>
+            <input type="text" placeholder="what do you think..."></input>
+          </form>
         </div>)}
         </div>
 

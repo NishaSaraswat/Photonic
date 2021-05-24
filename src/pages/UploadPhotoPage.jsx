@@ -53,41 +53,11 @@ const UploadPhotoPage=({userName})=>{
   }
 return (
   <Card>
-    <h2>Chat</h2>
-    <form name="writeInChat">
-      <label>To whom:&nbsp;
-      <select {...s.bind('toWhom')}>
-          {s.users
-            .filter(x => x._id !== g.user._id)
-            .map((x, i) => <option key={x._id}>{x.name}</option>)}
-        </select>
-      </label>
-      <input type="text" placeholder="Message"
-        {...s.bind('chatMessage')} />
-      <input type="submit" value="Send" />
-    </form>
-
-   
       <h2>Upload photo</h2>
       <form name="photoUpload" onSubmit={uploadPhoto}>
         <input name="file" type="file"
           accept="image/*" onChange={photoChosen} />
-        <div className="photo-card">
           {s.imageData && <img src={s.imageData} width="300" ref={chosenImg}/>}
-          <div className="photo-tags">
-           <FavoriteBorderIcon />
-           <ThumbUpIcon />
-            <select>
-              <option value="nature">nature</option>
-              <option value="nature">nature</option>
-              <option value="nature">nature</option>
-              <option value="nature">nature</option>
-              <option value="nature">nature</option>
-              <option value="nature">nature</option>
-            </select>
-            <span>Posted at: {timeNow}</span>
-          </div>
-        </div>
         <input type="submit" value="Publish photo" />
         
       </form>
@@ -95,8 +65,17 @@ return (
     <h2>All photos</h2>
     {g.photos.map(photo =><div key={photo.url}>
       <img src={'/uploads/' + photo.url} style={{width:'90%'}}/>
-      <p>By: {photo.author.name}</p>
+      <h5>{photo.url}</h5>
+      <h5>created by: {userName}</h5>
+      <span>{timeNow}</span>
+      <FavoriteBorderIcon />
+      <ThumbUpIcon />
+      <form>
+        <input type="text" placeholder="what do you think..."></input>
+      </form>
+      
     </div>)}
+
 
   </Card>
  )

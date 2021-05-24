@@ -109,11 +109,11 @@ export default withContext('global', {
         <Route path="/login">
           <LoginPage {...{ loginCheck }} />
         </Route>
-        <Route path="/upload">
-          <UploadPhotoPage userName={g.user.name}/>
+        <Route path="/uploadpage">
+          <UploadPhotoPage userName={g.user.name} {...{ loginCheck }}/>
         </Route>
         <Route path="/camera">
-          <Camera />
+          <Camera userName={g.user.name} {...{ loginCheck }}/>
         </Route>
         <Route path="/profile">
           <ProfilePage />
