@@ -1,0 +1,20 @@
+.header_part{
+
+    background-color:rgba(11, 224, 224, 0.452);
+    height:50px;
+    width:100%;
+}
+.header_part img{
+    
+    margin-top:-15px;
+}
+.footer_part{
+    background-color:rgba(11, 224, 224, 0.452);
+    height:50px;
+    position: fixed;
+    left:0%;
+    bottom:0%;
+    width: 100%;
+    color:white;   
+
+}

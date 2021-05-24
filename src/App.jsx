@@ -94,7 +94,7 @@ export default withContext('global', {
         </If>
         <hr />
       </nav> */}
-      <Header/>
+    
       <Switch>
         <Route exact path="/">
           <If c={g.user}>

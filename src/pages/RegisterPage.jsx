@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { Style, useStates } from 'react-easier';
 import mongoosy from 'mongoosy/frontend';
 const { User, Login } = mongoosy;
+import Header from '../components/Header'
 
 export default function RegisterPage({ loginCheck }) {
   // LOGIC
@@ -40,7 +41,7 @@ export default function RegisterPage({ loginCheck }) {
 
   // TEMPLATE
   const render = () => <Style css={css()}>
-    <h1>Register</h1>
+    <Header/>
     <form onSubmit={register} autoComplete="off">
       <input type="text" placeholder="Your name"
         required {...s.bind('name')} />
@@ -51,7 +52,7 @@ export default function RegisterPage({ loginCheck }) {
       <input type="password" placeholder="Repeat password"
         required minLength="6" {...s.bind('passwordRepeat')} />
       {s.error && <p>{s.error}</p>}
-      <input type="submit" value="Register" />
+      <input type="submit" value="SignUp" />
     </form>
   </Style>;
 
