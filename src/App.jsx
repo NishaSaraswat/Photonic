@@ -4,11 +4,12 @@ import { BrowserRouter as Router, Switch, Route, Link, useHistory }
 import { withContext, useNamedContext, Style, If, Else }
   from 'react-easier';
 import StartPage from './StartPage';
-import RegisterPage from './RegisterPage';
-import LoginPage from './LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import LoginPage from './pages/LoginPage';
 import mongoosy from 'mongoosy/frontend';
-import Camera from './pages/Camera';
+import Camera from './components/Camera';
 import UploadPhotoPage from './pages/UploadPhotoPage';
+import ProfilePage from './pages/ProfilePage';
 const { Login } = mongoosy;
 
 
@@ -107,10 +108,13 @@ export default withContext('global', {
           <LoginPage {...{ loginCheck }} />
         </Route>
         <Route path="/upload">
-          <UploadPhotoPage />
+          <UploadPhotoPage userName={g.user.name}/>
         </Route>
         <Route path="/camera">
           <Camera />
+        </Route>
+        <Route path="/profile">
+          <ProfilePage />
         </Route>
       </Switch>
 
