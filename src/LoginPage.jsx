@@ -3,6 +3,10 @@ import { useHistory } from "react-router-dom";
 import { Style, useStates } from 'react-easier';
 import mongoosy from 'mongoosy/frontend';
 const { Login } = mongoosy;
+import { TextField } from '@material-ui/core';
+import './CommonCss/main.css'
+
+
 
 export default function LoginPage({ loginCheck }) {
   // LOGIC
@@ -29,11 +33,11 @@ export default function LoginPage({ loginCheck }) {
 
   // TEMPLATE
   const render = () => <Style css={css()}>
-    <h1>Log in</h1>
+    
     <form onSubmit={login}>
-      <input type="email" placeholder="Email"
+      <TextField type="email" label="Email" color='secondary'
         required {...s.bind('email')} />
-      <input type="password" placeholder="Password"
+      <TextField type="password" label="Password" color='secondary'
         required minLength="6"{...s.bind('password')} />
       {s.error && <p>{s.error}</p>}
       <input type="submit" value="Log in" />

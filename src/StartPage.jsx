@@ -76,13 +76,14 @@ export default function StartPage() {
     </form>
     <hr />
 
-    <h2>All photos</h2>
-    {g.photos.map(photo => <div key={photo.url}>
+    {/* <h2>All photos</h2>
+    {g.photo.map(photo => <div key={photo.url}>
       <img src={'/uploads/' + photo.url} />
-      <p>By: {photo.author.name}</p>
+      <p>By: {photo.author.name}
+     
+      </p>
     </div>)}
-
-
+     */}
   </Style>;
 
   // STYLE
