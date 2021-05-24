@@ -1,11 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { Style, useStates, useNamedContext } from 'react-easier';
+import {Link} from 'react-router-dom'
 import mongoosy from 'mongoosy/frontend';
 const { User, Photo } = mongoosy;
 import { Card } from '@material-ui/core';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import ThumbUpIcon from '@material-ui/icons/ThumbUp';
-import Photos from '../components/Photos';
 
 const UploadPhotoPage=({userName})=>{
   const g = useNamedContext('global');
@@ -59,18 +57,17 @@ return (
         <input name="file" type="file"
           accept="image/*" onChange={photoChosen} />
           {s.imageData && <img src={s.imageData} width="300" ref={chosenImg}/>}
-        <input type="submit" value="Publish photo" />
-        
+          <a href='/home'><input type="submit" value="Publish photo" /></a>
       </form>
 
-    <h2>All photos</h2>
+   {/* <h2>All photos</h2>
     <Photos 
       photos={g.photos}
       time={timeNow}
       userName={userName}
       />
 
-   {/* {g.photos.map(photo =><div key={photo.url}>
+    {g.photos.map(photo =><div key={photo.url}>
       <img src={'/uploads/' + photo.url} style={{width:'90%'}}/>
       <h5>{photo.url}</h5>
       <h5>created by: {userName}</h5>
