@@ -11,6 +11,8 @@ import Camera from './components/Camera';
 import UploadPhotoPage from './pages/UploadPhotoPage';
 import ProfilePage from './pages/ProfilePage';
 const { Login } = mongoosy;
+import './styleapp/Main.css'
+import Header from './components/Header'
 
 
 // This shouldn't be needed but ensures that 
@@ -79,7 +81,7 @@ export default withContext('global', {
   const render = () => g.display && <Style css={css()}>
     <Router>
 
-      <nav>
+      {/* <nav>
         <Link to="/">Home</Link>
         <If c={g.user}>
           <p>Logged in as {g.user.name} ({g.user.email})</p>
@@ -90,8 +92,8 @@ export default withContext('global', {
           </Else>
         </If>
         <hr />
-      </nav>
-
+      </nav> */}
+      <Header/>
       <Switch>
         <Route exact path="/">
           <If c={g.user}>

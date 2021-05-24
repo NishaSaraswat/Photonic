@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { Style, useStates } from 'react-easier';
 import mongoosy from 'mongoosy/frontend';
 const { Login } = mongoosy;
+import '../styleapp/Main.css'
 
 export default function LoginPage({ loginCheck }) {
   // LOGIC

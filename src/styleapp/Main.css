@@ -1,0 +1,36 @@
+*{
+       
+    margin:0;
+    
+}
+body{
+box-sizing: border-box;
+background-color: rgb(31, 29, 29);
+}
+.header{
+object-fit: contain;
+box-sizing: border-box; 
+display: block;
+}
+span{
+
+color:white;
+padding-bottom: 50px; 
+margin-top: -35px;
+text-align: center;
+box-sizing: border-box;
+display: block;     
+}
+#group2{
+margin-right: 165px;
+box-sizing:border-box;
+display: block;
+}
+#logo{
+padding-left: 40px;
+box-sizing:border-box;
+display: block;
+size: 50%;
+margin-top:-60px
+
+}
