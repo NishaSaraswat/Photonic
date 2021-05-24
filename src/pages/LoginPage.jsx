@@ -4,6 +4,7 @@ import { Style, useStates } from 'react-easier';
 import mongoosy from 'mongoosy/frontend';
 const { Login } = mongoosy;
 import '../styleapp/Main.css'
+import Header from '../components/Header'
 
 export default function LoginPage({ loginCheck }) {
   // LOGIC
@@ -30,7 +31,7 @@ export default function LoginPage({ loginCheck }) {
 
   // TEMPLATE
   const render = () => <Style css={css()}>
-    <h1>Log in</h1>
+   <Header/>
     <form onSubmit={login}>
       <input type="email" placeholder="Email"
         required {...s.bind('email')} />
