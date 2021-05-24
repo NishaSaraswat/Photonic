@@ -10,6 +10,7 @@ import mongoosy from 'mongoosy/frontend';
 import Camera from './components/Camera';
 import UploadPhotoPage from './pages/UploadPhotoPage';
 import ProfilePage from './pages/ProfilePage';
+import PhotosPosts from './pages/PhotosPosts';
 const { Login } = mongoosy;
 
 
@@ -115,6 +116,10 @@ export default withContext('global', {
         </Route>
         <Route path="/profile">
           <ProfilePage />
+        </Route>
+        <Route path="/photos">
+          <PhotosPosts photos={g.photos} userName={g.user.name} {...{ loginCheck }}/>
+
         </Route>
       </Switch>
 
