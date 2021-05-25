@@ -24,7 +24,7 @@ function Post() {
                 alt="picture"
                 />
     
-            <h4 className="post-text"><strong>username:</strong> comment</h4>
+            <h4 className="post-text"><strong>username:</strong> comments</h4>
 
             
         </div>
