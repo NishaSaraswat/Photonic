@@ -57,7 +57,7 @@ return (
         <input name="file" type="file"
           accept="image/*" onChange={photoChosen} />
           {s.imageData && <img src={s.imageData} width="300" ref={chosenImg}/>}
-          <a href='/home'><input type="submit" value="Publish photo" /></a>
+          <a href='/photos'><input type="submit" value="Publish photo" /></a>
       </form>
 
    {/* <h2>All photos</h2>
