@@ -11,7 +11,7 @@ import Camera from './components/Camera';
 import UploadPhotoPage from './pages/UploadPhotoPage';
 import ProfilePage from './pages/ProfilePage';
 import PhotosPage from './pages/PhotosPage';
-const { Login } = mongoosy;
+const { Login, Photo } = mongoosy;
 import './styleapp/Main.css'
 import Header from './components/Header'
 
@@ -110,7 +110,7 @@ export default withContext('global', {
         <Route path="/login">
           <LoginPage {...{ loginCheck }} />
         </Route>
-        <Route path="/uploadpage">
+        <Route path="/uploadphoto">
           <UploadPhotoPage userName={g.user.name} {...{ loginCheck }}/>
         </Route>
         <Route path="/camera">
