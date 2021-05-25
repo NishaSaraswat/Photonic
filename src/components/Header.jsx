@@ -13,7 +13,7 @@ function Header() {
         transition={{delay:0.2,duration:3,ease:'backInOut'}} 
         src={Logo} alt="logo" id="logo">
         </motion.img>
-        <span>Share Photos & Chat</span>
+        <span id="glow">Share Photos & Chat</span>
             
         </div>
     )
