@@ -2,7 +2,7 @@
        
     margin:0;
     color:rgba(196, 196, 196, 1);
-    font-family:Courier New;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     
 }
 body{
@@ -14,18 +14,16 @@ object-fit: contain;
 box-sizing: border-box; 
 display: block;
 }
-span{
-
-color:white;
+#glow{
 padding-bottom: 50px; 
 margin-top: -35px;
 text-align: center;
 box-sizing: border-box;
 display: block;   
 
--webkit-animation: span 2s ease-in-out infinite alternate;
--moz-animation: span 2s ease-in-out infinite alternate;
-animation: span 2s ease-in-out infinite alternate;
+-webkit-animation: glow 2s ease-in-out infinite alternate;
+-moz-animation: glow 2s ease-in-out infinite alternate;
+animation: glow 2s ease-in-out infinite alternate;
 }
 #group2{
 margin-right: 165px;
@@ -39,7 +37,7 @@ display: block;
 size: 30%;
 margin-top:-60px;
 }
-@keyframes span{
+@keyframes glow{
     from{
         text-shadow:0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0BDFDF, 0 0 40px #0BDFDF;
     }
@@ -47,3 +45,35 @@ margin-top:-60px;
         text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6;
     }
 }
+input{
+    height:30px;
+    max-width: 220px;
+    text-align: center;
+    border-radius: 15px;
+    margin-left:25px;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.50);
+    border-style: none;
+}
+input:focus{
+    outline: none;
+}
+#login_button{
+        margin-left: 30px;
+        color: rgba(11, 223, 223, 1);
+        background-color:rgba(64, 62, 65, 0.178);
+        border-style: none;
+        font-size: 1.2rem;
+        height:40px;
+        
+}
+#signup{
+    color: rgba(11, 223, 223, 1);
+    font-size: 1.2rem;
+}
+p{
+    margin-left:60px;
+    margin-top: 30px;
+}
+
+
