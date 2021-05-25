@@ -23,9 +23,9 @@ text-align: center;
 box-sizing: border-box;
 display: block;   
 
--webkit-animation: span 1s ease-in-out infinite alternate;
--moz-animation: span 1s ease-in-out infinite alternate;
-animation: span 1s ease-in-out infinite alternate;
+-webkit-animation: span 2s ease-in-out infinite alternate;
+-moz-animation: span 2s ease-in-out infinite alternate;
+animation: span 2s ease-in-out infinite alternate;
 }
 #group2{
 margin-right: 165px;
@@ -41,9 +41,9 @@ margin-top:-60px;
 }
 @keyframes span{
     from{
-        text-shadow:0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0BDFDF, 0 0 40px #0BDFDF, 0 0 50px #e60073, 0 0 50px #ecbcd4,0 0 60px #0BDFDF, 0 0 70px #0BDFDF;
+        text-shadow:0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0BDFDF, 0 0 40px #0BDFDF;
     }
     to{
-        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6,0 0 50px #eba6c8, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6;
     }
 }
