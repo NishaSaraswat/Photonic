@@ -70,10 +70,6 @@ return (
           <input type="submit" value='Publish Photo' />
       </form>
 
-
-    <h2>All photos</h2>
-    {g.photos.map(photo => <div key={photo.url}>
-
    {/*<h2>All photos</h2>
     <Photos 
       photos={g.photos}
@@ -103,8 +99,6 @@ return (
     </div>)}
 
     </div>)}*/}
-
-
 
   </Card>
  )
