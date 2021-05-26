@@ -1,0 +1,15 @@
+.footer {
+  background: rgba(11, 224, 224, 0.25);
+  position: fixed;
+  width: 100%;
+  height: 56px;
+  left: 0px;
+  bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-icons {
+  display: flex;
+  margin: 15px;
+}
