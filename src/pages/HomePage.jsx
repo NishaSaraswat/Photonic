@@ -13,6 +13,7 @@ const HomePage = () => {
             </div>
             
             <Post/>
+            <Photos/>
 
         </div>
     )
