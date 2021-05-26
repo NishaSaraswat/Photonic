@@ -2,6 +2,7 @@ import React from 'react'
 import Post from './Post'
 import '../styleapp/HomePage.css'
 import LogoHeader from '../components/LogoHeader'
+import Footer from '../components/Footer'
 
 const HomePage = () => {
     return (
@@ -10,8 +11,11 @@ const HomePage = () => {
         <LogoHeader/>
            
          <Post/>
-
+            
+            <Footer/>
         </div>
+
+       
         
     )
 }
