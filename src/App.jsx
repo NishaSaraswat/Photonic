@@ -129,7 +129,7 @@ export default withContext('global', {
         
         </Route>
         <Route path="/homepage">
-          <HomePage photos={g.photos} userName={g.user.name} {...{ loginCheck }}/>
+          <HomePage/>
 
         </Route>
       </Switch>

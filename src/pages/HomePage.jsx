@@ -4,7 +4,7 @@ import Group2 from '../styleapp/icons/Group2.png'
 import '../styleapp/HomePage.css'
 import Photos from '../components/Photos'
 
-const HomePage = (userName, photos) => {
+const HomePage = () => {
     return (
         
         
@@ -14,13 +14,6 @@ const HomePage = (userName, photos) => {
             
 
             <Post/>
-            <Photos photos={photos} userName={userName}/>
-
-                
-            
-            
-           
-
 
         </div>
         
