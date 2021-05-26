@@ -1,9 +1,10 @@
 import React from 'react'
-import './HomePage.css'
 import Avataricon from "@material-ui/core/Avatar";
+import '../styleapp/Post.css'
 
 function Post() {
     return (
+        
         <div className="post">
         
         {/*Header + avatar + username*/}

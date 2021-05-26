@@ -1,20 +1,23 @@
 import React from 'react'
+import Post from './Post'
+import Group2 from '../styleapp/icons/Group2.png'
+import '../styleapp/HomePage.css'
 
 const HomePage = () => {
     return (
+        
+        
         <div className="Main">
+           <img src={Group2} alt="group2" id="group2"></img>
            
-            <div className="Main-header">
-                <img 
-                    className="Main_logo-meetDev"
-                    src={Logo} 
-                    alt="logo-meetDev"
-                />
-            </div>
             
-            <Post/>
+                
+            
+            
+           <Post/>
 
         </div>
+        
     )
 }
 
