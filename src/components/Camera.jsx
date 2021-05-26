@@ -4,7 +4,7 @@ import {useHistory} from 'react-router-dom'
 import { useStates, useNamedContext } from 'react-easier';
 import mongoosy from 'mongoosy/frontend';
 const { User, Photo } = mongoosy;
-
+import '../styleapp/upload-camera.css';
 
 const WebcamComponent = () => <Webcam />
 
