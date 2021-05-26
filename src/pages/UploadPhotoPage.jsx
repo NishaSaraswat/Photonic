@@ -5,6 +5,8 @@ const { User, Photo } = mongoosy;
 import { Card } from '@material-ui/core';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import {Link} from 'react-router-dom';
+
 
 const UploadPhotoPage=({userName})=>{
   const g = useNamedContext('global');
@@ -63,7 +65,7 @@ return (
       </form>
 
     <h2>All photos</h2>
-    {g.photos.map(photo =><div key={photo.url}>
+    {g.photos.map(photo => <div key={photo.url}>
       <img src={'/uploads/' + photo.url} style={{width:'90%'}}/>
       <h5>{photo.url}</h5>
       <h5>created by: {userName}</h5>
@@ -73,6 +75,12 @@ return (
       <form>
         <input type="text" placeholder="what do you think..."></input>
       </form>
+
+      <Link to={`/uploads/${photo["_id"]}`}>
+      <button>
+        Show this Photo
+      </button>
+      </Link>
       
     </div>)}
 
