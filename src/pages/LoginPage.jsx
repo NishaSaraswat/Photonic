@@ -4,6 +4,8 @@ import { Style, useStates } from 'react-easier';
 import mongoosy from 'mongoosy/frontend';
 const { Login } = mongoosy;
 import '../styleapp/Main.css'
+import Header from '../components/Header'
+import {Link} from 'react-router-dom'
 
 export default function LoginPage({ loginCheck }) {
   // LOGIC
@@ -30,15 +32,18 @@ export default function LoginPage({ loginCheck }) {
 
   // TEMPLATE
   const render = () => <Style css={css()}>
-    <h1>Log in</h1>
+  
+   <Header/>
+   
     <form onSubmit={login}>
       <input type="email" placeholder="Email"
         required {...s.bind('email')} />
       <input type="password" placeholder="Password"
         required minLength="6"{...s.bind('password')} />
       {s.error && <p>{s.error}</p>}
-      <input type="submit" value="Log in" />
+      <input id = "login_button" type="submit" value="Login" />
     </form>
+    <p>Be a member <Link to="/register" style={{textDecoration:"none"}}><span id="signup">SignUp</span></Link></p>
   </Style>;
 
   // STYLE

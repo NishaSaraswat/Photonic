@@ -1,10 +1,10 @@
 import React, { useState, useRef } from 'react';
 import Webcam from "react-webcam";
-import { Style, useStates, useNamedContext } from 'react-easier';
+import {useHistory} from 'react-router-dom'
+import { useStates, useNamedContext } from 'react-easier';
 import mongoosy from 'mongoosy/frontend';
 const { User, Photo } = mongoosy;
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+
 
 const WebcamComponent = () => <Webcam />
 
@@ -25,6 +25,7 @@ const Camera = ({userName}) => {
           imageData: '',
         });
         const capturedImg=useRef();
+        const history=useHistory();
         const capture = React.useCallback(
             () => {
             const imageSrc = webcamRef.current.getScreenshot();
@@ -45,6 +46,7 @@ const Camera = ({userName}) => {
           g.photos=[...g.photos,photo]
           capturedImg.current.style.display='none';
           console.log(capturedImg.current)
+          history.push('/photos')
         }
      
   return (
@@ -81,7 +83,7 @@ const Camera = ({userName}) => {
           {s.imageData && <img src={src} width="300" />}
           <input type="submit" value="Publish photo" />
         </form>
-         
+       {/* 
         <h2>Posted photos</h2>
         <div>
         {g.photos.map(photo => <div key={photo.url}>
@@ -93,7 +95,7 @@ const Camera = ({userName}) => {
             <input type="text" placeholder="what do you think..."></input>
           </form>
         </div>)}
-        </div>
+        </div>*/}
 
     </div>)
 }

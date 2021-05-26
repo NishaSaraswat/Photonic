@@ -2,13 +2,11 @@ import React from 'react'
 import AvatarCamera from '../components/AvatarCamera'
 import '../App.css'
 
-const ProfilePage = () => {
+const ProfilePage = ({userName}) => {
     return (
         <div className="profile-wrapper">
            <AvatarCamera />
-
-        </div>
-    )
-}
+           
+    </div>)}
 
 export default ProfilePage
