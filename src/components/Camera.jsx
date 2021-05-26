@@ -46,7 +46,7 @@ const Camera = ({userName}) => {
           g.photos=[...g.photos,photo]
           capturedImg.current.style.display='none';
           console.log(capturedImg.current)
-          history.push('/photos')
+          history.push('/homepage')
         }
      
   return (

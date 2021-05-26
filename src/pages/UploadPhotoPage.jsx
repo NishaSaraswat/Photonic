@@ -52,7 +52,7 @@ const UploadPhotoPage=({userName})=>{
     console.log('hello from upload')
     g.photos=[...g.photos,photo]
     chosenImg.current.style.display='none';
-    history.push('/photos');
+    history.push('/homepage');
   }
 return (
   <Card>
