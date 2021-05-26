@@ -11,10 +11,15 @@ const HomePage = () => {
            <img src={Group2} alt="group2" id="group2"></img>
            
             
+
+            <Post/>
+            <Photos/>
+
                 
             
             
            <Post/>
+
 
         </div>
         
