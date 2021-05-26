@@ -2,8 +2,9 @@ import React from 'react'
 import Post from './Post'
 import Group2 from '../styleapp/icons/Group2.png'
 import '../styleapp/HomePage.css'
+import Photos from '../components/Photos'
 
-const HomePage = () => {
+const HomePage = (userName, photos) => {
     return (
         
         
@@ -13,12 +14,12 @@ const HomePage = () => {
             
 
             <Post/>
-            <Photos/>
+            <Photos photos={photos} userName={userName}/>
 
                 
             
             
-           <Post/>
+           
 
 
         </div>

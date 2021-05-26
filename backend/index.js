@@ -15,6 +15,8 @@ const { app } = require('mongoosy')({
 // Add logic to handle SSE (Server Sent Events)
 require('./SSE-handler')(app);
 
+// require('./socketio')(app); 
+
 // Start the Express web server
 app.listen(4000, () =>
   console.log('Backend running!'));
