@@ -10,10 +10,11 @@ import mongoosy from 'mongoosy/frontend';
 import Camera from './components/Camera';
 import UploadPhotoPage from './pages/UploadPhotoPage';
 import ProfilePage from './pages/ProfilePage';
-import PhotosPosts from './pages/PhotosPosts';
-const { Login } = mongoosy;
+import PhotosPage from './pages/PhotosPage';
+const { Login, Photo } = mongoosy;
 import './styleapp/Main.css'
 import Header from './components/Header'
+import SinglePhotoPage from './pages/SinglePhotoPage';
 
 
 // This shouldn't be needed but ensures that 
@@ -94,7 +95,7 @@ export default withContext('global', {
         </If>
         <hr />
       </nav> */}
-      <Header/>
+    
       <Switch>
         <Route exact path="/">
           <If c={g.user}>
@@ -110,8 +111,11 @@ export default withContext('global', {
         <Route path="/login">
           <LoginPage {...{ loginCheck }} />
         </Route>
-        <Route path="/uploadpage">
+        <Route path="/uploadphoto">
           <UploadPhotoPage userName={g.user.name} {...{ loginCheck }}/>
+        </Route>
+        <Route path="/uploads/:id">
+          <SinglePhotoPage userName={g.user.name} {...{ loginCheck }}/>
         </Route>
         <Route path="/camera">
           <Camera userName={g.user.name} {...{ loginCheck }}/>
@@ -120,7 +124,7 @@ export default withContext('global', {
           <ProfilePage />
         </Route>
         <Route path="/photos">
-          <PhotosPosts photos={g.photos} userName={g.user.name} {...{ loginCheck }}/>
+          <PhotosPage photos={g.photos} userName={g.user.name} {...{ loginCheck }}/>
 
         </Route>
       </Switch>

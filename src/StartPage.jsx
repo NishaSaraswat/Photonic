@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { Style, useStates, useNamedContext } from 'react-easier';
 import mongoosy from 'mongoosy/frontend';
 const { User, Photo } = mongoosy;
+import Logo from "./styleapp/icons/LogoChat.png"
+import './styleapp/Startpage.css'
 
 export default function StartPage() {
   // LOGIC
@@ -53,7 +55,10 @@ export default function StartPage() {
 
   // TEMPLATE
   const render = () => s.display && <Style css={css()}>
-    <h2>Chat</h2>
+  <div className="header_part">
+      <img src={Logo} alt="logo" style={{height:60,width:60}}></img>
+  </div>
+    <h3>Chat</h3>
     <form name="writeInChat">
       <label>To whom:&nbsp;
       <select {...s.bind('toWhom')}>
@@ -67,7 +72,7 @@ export default function StartPage() {
       <input type="submit" value="Send" />
     </form>
 
-    <h2>Upload photo</h2>
+    <h3>Upload photo</h3>
     <form name="photoUpload" onSubmit={uploadPhoto}>
       <input name="file" type="file"
         accept="image/*" onChange={photoChosen} />
@@ -75,12 +80,13 @@ export default function StartPage() {
       <input type="submit" value="Publish photo" />
     </form>
     <hr />
+    <div className="footer_part"></div>
 
-    <h2>All photos</h2>
+    {/* <h2>All photos</h2>
     {g.photos.map(photo => <div key={photo.url}>
       <img src={'/uploads/' + photo.url} />
       <p>By: {photo.author.name}</p>
-    </div>)}
+    </div>)} */}
 
 
   </Style>;
