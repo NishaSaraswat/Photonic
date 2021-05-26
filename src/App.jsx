@@ -11,9 +11,11 @@ import Camera from './components/Camera';
 import UploadPhotoPage from './pages/UploadPhotoPage';
 import ProfilePage from './pages/ProfilePage';
 import PhotosPage from './pages/PhotosPage';
+import HomePage from './pages/HomePage';
 const { Login, Photo } = mongoosy;
 import './styleapp/Main.css'
 import Header from './components/Header'
+import SinglePhotoPage from './pages/SinglePhotoPage';
 
 
 // This shouldn't be needed but ensures that 
@@ -113,6 +115,9 @@ export default withContext('global', {
         <Route path="/uploadphoto">
           <UploadPhotoPage userName={g.user.name} {...{ loginCheck }}/>
         </Route>
+        <Route path="/uploads/:id">
+          <SinglePhotoPage userName={g.user.name} {...{ loginCheck }}/>
+        </Route>
         <Route path="/camera">
           <Camera userName={g.user.name} {...{ loginCheck }}/>
         </Route>
@@ -121,6 +126,10 @@ export default withContext('global', {
         </Route>
         <Route path="/photos">
           <PhotosPage photos={g.photos} userName={g.user.name} {...{ loginCheck }}/>
+        
+        </Route>
+        <Route path="/homepage">
+          <HomePage/>
 
         </Route>
       </Switch>
