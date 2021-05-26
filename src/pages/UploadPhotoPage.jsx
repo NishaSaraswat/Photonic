@@ -4,14 +4,7 @@ import {useHistory} from 'react-router-dom'
 import mongoosy from 'mongoosy/frontend';
 const { User, Photo } = mongoosy;
 import { Card } from '@material-ui/core';
-
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import ThumbUpIcon from '@material-ui/icons/ThumbUp';
-import {Link} from 'react-router-dom';
-
-
 import Photos from '../components/Photos';
-
 
 const UploadPhotoPage=({userName})=>{
   const g = useNamedContext('global');
@@ -78,7 +71,6 @@ return (
       />*/}
 
      {/*{g.photos.map(photo =><div key={photo.url}>
-
       <img src={'/uploads/' + photo.url} style={{width:'90%'}}/>
       <h5>{photo.url}</h5>
       <h5>created by: {userName}</h5>
@@ -88,17 +80,8 @@ return (
       <form onSubmit={submitComment}>
         <input onChange={commentInput} type="text" placeholder="what do you think..."></input>
       </form>
-
-
-      <Link to={`/uploads/${photo["_id"]}`}>
-      <button>
-        Show this Photo
-      </button>
-      </Link>
-      
-    </div>)}
-
     </div>)}*/}
+
 
   </Card>
  )
