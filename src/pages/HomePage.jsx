@@ -12,9 +12,28 @@ const HomePage = () => {
            
          <Post/>
             
+
+
+            <Post/>
+           
+           
+            
+            
+            
+              
+                <Footer/>
+               
+            
+        
+
+
             <Footer/>
+
         </div>
 
+
+        
+        
        
         
     )
