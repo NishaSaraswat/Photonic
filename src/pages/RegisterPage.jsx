@@ -53,6 +53,7 @@ export default function RegisterPage({ loginCheck }) {
         required minLength="6" {...s.bind('passwordRepeat')} />
       {s.error && <p>{s.error}</p>}
       <input style={{color:'rgba(11, 223, 223, 1)',height:'40',borderStyle:'none',backgroundColor:'rgba(64, 62, 65, 0.178)',fontSize:'20px'}} type="submit" value="SignUp" />
+      
     </form>
   </Style>;
 
