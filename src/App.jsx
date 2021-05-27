@@ -100,7 +100,7 @@ export default withContext('global', {
       <Switch>
         <Route exact path="/">
           <If c={g.user}>
-            <StartPage />
+          <LoginPage {...{ loginCheck }} />
             <Else>
               <h1>Welcome</h1>
             </Else>

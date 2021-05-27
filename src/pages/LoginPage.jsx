@@ -3,9 +3,9 @@ import { useHistory } from "react-router-dom";
 import { Style, useStates } from 'react-easier';
 import mongoosy from 'mongoosy/frontend';
 const { Login } = mongoosy;
-import '../styleapp/Main.css'
 import Header from '../components/Header'
 import {Link} from 'react-router-dom'
+import '../styleapp/Main.css'
 
 export default function LoginPage({ loginCheck }) {
   // LOGIC
@@ -32,9 +32,8 @@ export default function LoginPage({ loginCheck }) {
 
   // TEMPLATE
   const render = () => <Style css={css()}>
-  
+ 
    <Header/>
-   
     <form onSubmit={login}>
       <input type="email" placeholder="Email"
         required {...s.bind('email')} />
