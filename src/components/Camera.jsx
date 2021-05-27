@@ -4,13 +4,13 @@ import {useHistory} from 'react-router-dom'
 import { useStates, useNamedContext } from 'react-easier';
 import mongoosy from 'mongoosy/frontend';
 const { User, Photo } = mongoosy;
-
+import '../styleapp/upload-camera.css';
 
 const WebcamComponent = () => <Webcam />
 
 const videoConstraints = {
-  width: 260,
-  height: 200,
+  width: 100+'vw',
+  height: 100+'vh',
   facingMode: "user"
 };
 
@@ -20,8 +20,6 @@ const Camera = ({userName}) => {
         const g = useNamedContext('global');
         const s = useStates({
           users: [],
-          chatMessage: '',
-          toWhom: '',
           imageData: '',
         });
         const capturedImg=useRef();
@@ -46,12 +44,11 @@ const Camera = ({userName}) => {
           g.photos=[...g.photos,photo]
           capturedImg.current.style.display='none';
           console.log(capturedImg.current)
-          history.push('/photos')
+          history.push('/homepage')
         }
      
   return (
     <div>
-        <h1>take a photo</h1>
         {src==''
         ? (<Webcam
           audio={false}
@@ -60,6 +57,7 @@ const Camera = ({userName}) => {
           screenshotFormat="image/jpeg"
           width={260}
           videoConstraints={videoConstraints}
+          className="camera"
           />)
         : (<img src={src} ref={capturedImg}/>)}
 
@@ -81,21 +79,8 @@ const Camera = ({userName}) => {
         <br />
         <form name="photoUpload" onSubmit={uploadPhoto}>
           {s.imageData && <img src={src} width="300" />}
-          <input type="submit" value="Publish photo" />
+          <button type="submit" className="upload-button">Publish</button>
         </form>
-       {/* 
-        <h2>Posted photos</h2>
-        <div>
-        {g.photos.map(photo => <div key={photo.url}>
-          <img src={'/uploads/' + photo.url} style={{width:'320px', height:'250px'}}/>
-          <p>By: {userName}</p>
-          <FavoriteBorderIcon />
-          <ThumbUpIcon />
-          <form>
-            <input type="text" placeholder="what do you think..."></input>
-          </form>
-        </div>)}
-        </div>*/}
 
     </div>)
 }

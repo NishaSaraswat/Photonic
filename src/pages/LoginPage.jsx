@@ -27,7 +27,7 @@ export default function LoginPage({ loginCheck }) {
     // update login info
     loginCheck();
     // redirect to the start page
-    history.push('/');
+    history.push('/homepage');
   };
 
   // TEMPLATE

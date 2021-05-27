@@ -1,6 +1,6 @@
 import React from 'react'
 import AvatarCamera from '../components/AvatarCamera'
-import '../App.css'
+import '../styleapp/upload-camera.css'
 
 const ProfilePage = ({userName}) => {
     return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import Photos from '../components/Photos'
 
-const PhotosPage = ({userName, photos}) => {
+const PhotosPosts = ({userName, photos}) => {
     let today=new Date();
     let timeNow= today.getHours() + ":" + today.getMinutes()
     return (
@@ -11,4 +11,4 @@ const PhotosPage = ({userName, photos}) => {
     )
 }
 
-export default PhotosPage
+export default PhotosPosts
