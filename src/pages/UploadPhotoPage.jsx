@@ -23,11 +23,14 @@ const UploadPhotoPage=({userName})=>{
   let today=new Date();
   let timeNow= today.getHours() + ":" + today.getMinutes()
   const history = useHistory();
+  
 
 
   const getUsers = async () => {
     s.users = await User.find();
     s.display = true;
+    let photos=await Photo.find()
+    console.log(photos)
   }
   useEffect(() => getUsers(), []);
 
@@ -62,7 +65,7 @@ return (
       <form name="photoUpload" onSubmit={uploadPhoto} className="upload-form">
         {!s.imageData && <img src={placeholder} alt="placeholder" ref={placeholderPhoto} className="upload-placeholder"/>}
         <div className="upload-field">
-          <label htmlFor="files" className="upload-field-label">Upload</label>
+          <label htmlFor="files" className="upload-field-label">Upload +</label>
           <input name="file" type="file" id="files"
             accept="image/*" onChange={photoChosen} style={{display:'none'}} className="upload-input"/>
           <button type="submit" className="upload-button">Publish</button>
