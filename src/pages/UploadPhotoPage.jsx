@@ -13,8 +13,6 @@ const UploadPhotoPage=({userName})=>{
   const g = useNamedContext('global');
   const s = useStates({
     users: [],
-    chatMessage: '',
-    toWhom: '',
     imageData: '',
     tags:'',
     description:'',

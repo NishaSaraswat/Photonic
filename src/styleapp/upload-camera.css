@@ -79,7 +79,8 @@
     object-fit: contain;
 }
 .upload-field-label,
-.upload-button{
+.upload-button,
+.webcam-btn{
     width:80%;
     background-color:rgb(235, 241, 241) ;
     margin-left: 10%;
@@ -91,7 +92,8 @@
     font-size: 0.9em;
     padding-top: 8px;
 }
-.upload-button{ 
+.upload-button,
+.webcam-btn{ 
    
     height: 35px;
     background-color: none;
@@ -99,3 +101,12 @@
     padding-top: 3px;
 
 }
+
+
+/* Camera css*/
+
+.camera{
+    margin-left: 3.2%;
+    margin-top: 40%;
+}
+
