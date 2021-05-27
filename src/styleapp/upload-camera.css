@@ -52,9 +52,9 @@
     flex-direction: column;
     flex-wrap: wrap;
     width:90%;
-    margin-left: 5%;
     margin-top: 5%;
     padding-top: 10%;
+    margin-left: 5%;
 }
 
 .upload-placeholder{
@@ -75,7 +75,7 @@
 
 }
 .upload-image{
-    padding-left: 3.5%;
+    width:100%;
     object-fit: contain;
 }
 .upload-field-label,
@@ -108,5 +108,9 @@
 .camera{
     margin-left: 3.2%;
     margin-top: 40%;
+}
+.captured-photo{
+   width:100%;
+   
 }
 
