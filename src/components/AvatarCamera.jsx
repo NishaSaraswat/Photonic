@@ -3,7 +3,7 @@ import Webcam from "react-webcam";
 import { useStates, useNamedContext } from 'react-easier';
 import mongoosy from 'mongoosy/frontend';
 const { User, Photo } = mongoosy;
-import '../App.css';
+import '../styleapp/upload-camera.css'
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
 import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 import SaveAltIcon from '@material-ui/icons/SaveAlt';
