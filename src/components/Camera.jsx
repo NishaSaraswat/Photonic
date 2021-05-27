@@ -9,8 +9,8 @@ import '../styleapp/upload-camera.css';
 const WebcamComponent = () => <Webcam />
 
 const videoConstraints = {
-  width: 100+'vw',
-  height: 100+'vh',
+  width: 100+'%',
+  height: 100+'%',
   facingMode: "user"
 };
 
@@ -52,10 +52,8 @@ const Camera = ({userName}) => {
         {src==''
         ? (<Webcam
           audio={false}
-          height={200}
           ref={webcamRef}
           screenshotFormat="image/jpeg"
-          width={260}
           videoConstraints={videoConstraints}
           className="camera"
           />)
@@ -78,7 +76,7 @@ const Camera = ({userName}) => {
           }  
         <br />
         <form name="photoUpload" onSubmit={uploadPhoto}>
-          {s.imageData && <img src={src} width="300" />}
+          {s.imageData && <img src={src} width="300" className="captured-photo"/>}
           <button type="submit" className="upload-button">Publish</button>
         </form>
 
