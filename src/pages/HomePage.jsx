@@ -15,9 +15,22 @@ const HomePage = () => {
             
 
             <Post/>
-            <Footer/>
+           
+           
+            
+            
+            
+              
+                <Footer/>
+               
+            
+        
+
         </div>
 
+
+        
+        
        
         
     )
