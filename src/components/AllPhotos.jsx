@@ -3,6 +3,7 @@ import mongoosy from 'mongoosy/frontend';
 const { User, Photo } = mongoosy;
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import DeleteIcon from '@material-ui/icons/Delete';
+import LastPosted from '../components/LastPosted'
 
 const Photos = () => {
     const [allPhotos, setAllPhotos]=useState([]);
@@ -34,9 +35,10 @@ const Photos = () => {
                     <ThumbUpIcon onClick={handleLikes}/>
                     <DeleteIcon />
                     <span>{count} likes </span>
-                    <p>{photo.description}</p>
+                    <p>{photo.authorName}: {photo.description}</p>
                     <p>{photo.tags}</p>
-                    <span>{photo.posted}</span>
+                    <LastPosted date={photo.posted} />
+                    <hr/>
                 
                 </div>)}
         </div>

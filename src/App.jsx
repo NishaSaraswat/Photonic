@@ -16,7 +16,12 @@ const { Login, Photo } = mongoosy;
 import './styleapp/Main.css'
 import Header from './components/Header'
 import SinglePhotoPage from './pages/SinglePhotoPage';
+import TimeAgo from 'javascript-time-ago'
+import en from 'javascript-time-ago/locale/en'
+import ru from 'javascript-time-ago/locale/ru'
 
+TimeAgo.addDefaultLocale(en)
+TimeAgo.addLocale(ru)
 
 // This shouldn't be needed but ensures that 
 // we do not get any resets of these context vars
