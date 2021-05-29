@@ -37,6 +37,7 @@ const Camera = ({userName}) => {
           if (!src) { return; }
           let photo = new Photo({
             author: g.user._id,
+            authorName:g.user.name,
             url: src
           });
           await photo.save();

@@ -5,6 +5,7 @@ const modelName = 'Photo';
 let schema = new Schema({
   url: { type: String, required: true },
   author: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+  authorName:{type: String, required: true},
   tags: [String],
   description: {type: String},
   posted: { type: Date, default: Date.now }
