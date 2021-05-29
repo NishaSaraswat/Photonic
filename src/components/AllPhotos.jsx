@@ -39,12 +39,9 @@ const Photos = () => {
                 <DeleteIcon />
                 <span>{count} likes </span>
                 <p>Description: {photo.description}</p>
-                <form>
-                    <input 
-                    type="text" 
-                    placeholder="what's in your mind..." 
-                    />
-                </form>
+                <br />
+                <p>Tags:{photo.tags}</p>
+                
                 </div>)}
         </div>
     )

@@ -21,8 +21,6 @@ const UploadPhotoPage=()=>{
   const placeholderPhoto=useRef()
   const history = useHistory();
   
-
-
   const getUsers = async () => {
     s.users = await User.find();
   }
@@ -38,13 +36,14 @@ const UploadPhotoPage=()=>{
     reader.readAsDataURL(file);
     placeholderPhoto.current.style.display="none";
   }
-
   const handleDescriptionChange=(e)=>{
-    console.log('Hello from handle Change')
+    console.log('Hello from handle Description Change')
     s.description=e.target.value;
 }
-
-
+  const handleTags=(e)=>{
+    console.log('Hello from handle Tags Change')
+    s.tags=e.target.value;
+}
   const uploadPhoto = async e => {
     e.preventDefault();
     if (!s.imageData) { return; }
@@ -53,6 +52,7 @@ const UploadPhotoPage=()=>{
       authorName:g.user.name,
       url: s.imageData,
       description:s.description,
+      tags:s.tags
     });
     let result=await photo.save();
     console.log(result);
@@ -64,24 +64,33 @@ const UploadPhotoPage=()=>{
   }
 return (
   <div className='upload-photo-wrapper'>
-      {s.imageData && <img src={s.imageData} width="300" ref={chosenImg} className="upload-image"/>}
+     
       <form name="photoUpload" onSubmit={uploadPhoto} className="upload-form">
+        <div className="upload-field">
+            <label htmlFor="files" className="upload-field-label">Upload +</label>
+            <input name="file" type="file" id="files"
+              accept="image/*" onChange={photoChosen} style={{display:'none'}} className="upload-input"/>
+           
+          </div>
+        {s.imageData && <img src={s.imageData} width="300" ref={chosenImg} className="upload-image"/>}
         {!s.imageData && <img src={placeholder} alt="placeholder" ref={placeholderPhoto} className="upload-placeholder"/>}
         <div className="description-field">
           <label htmlFor="description">Description: </label>
           <input 
-          rows="4" 
           name="description" 
-          placeholder="Description" 
+          placeholder="what's in your mind..."
           onChange={handleDescriptionChange}
           />
         </div>
-        <div className="upload-field">
-          <label htmlFor="files" className="upload-field-label">Upload +</label>
-          <input name="file" type="file" id="files"
-            accept="image/*" onChange={photoChosen} style={{display:'none'}} className="upload-input"/>
-          <button type="submit" className="upload-button">Publish</button>
+        <div>
+          <label htmlFor="tags">Tags: </label>
+          <input 
+          type="text"
+          name="tags"
+          onChange={handleTags}
+          />
         </div>
+        <button type="submit" className="upload-button">Publish</button>
       </form>
   </div>
  )

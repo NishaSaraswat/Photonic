@@ -6,7 +6,7 @@ let schema = new Schema({
   url: { type: String, required: true },
   author: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   authorName:{type: String, required: true},
-  tags: [String],
+  tags: {type: String},
   description: {type: String},
   posted: { type: Date, default: Date.now }
 });
@@ -18,7 +18,7 @@ schema.pre('save', function (next) {
   let [type, base64] = this.url.split(',');
   let extension = type.split('/')[1].split(';')[0];
   let buffer = Buffer.from(base64, 'base64');
-  let fileName = `${this.author}_${Date.now()}.${extension}`;
+  let fileName = `${this.authorName}_${Date.now()}.${extension}`;
   let filePath = path.join(
     __dirname, '../', '../', 'public', 'uploads', fileName
   );
