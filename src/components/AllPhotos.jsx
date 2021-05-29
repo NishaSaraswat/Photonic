@@ -23,18 +23,7 @@ const Photos = () => {
         getAllPhotos();
     }, [])
 
-    const handleChange=(e)=>{
-        console.log('Hello from handle Change')
-        setPhotoDescription(e.target.value)
-    }
-
-    const submitDescription=(e)=>{
-        e.preventDefault();
-        console.log(photoDescription);
-        description=photoDescription;
-        photoDescription='';
-    }
-
+    
     const handleLikes=()=>{
         count++;
         setCount(count);
@@ -49,12 +38,11 @@ const Photos = () => {
                 <ThumbUpIcon onClick={handleLikes}/>
                 <DeleteIcon />
                 <span>{count} likes </span>
-                <p>{description}</p>
-                <form onSubmit={submitDescription}>
+                <p>Description: {photo.description}</p>
+                <form>
                     <input 
                     type="text" 
                     placeholder="what's in your mind..." 
-                    onChange={handleChange}
                     />
                 </form>
                 </div>)}

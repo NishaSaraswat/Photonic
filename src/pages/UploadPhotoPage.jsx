@@ -25,7 +25,6 @@ const UploadPhotoPage=()=>{
 
   const getUsers = async () => {
     s.users = await User.find();
-    s.display = true;
   }
   useEffect(() => getUsers(), []);
 
@@ -40,6 +39,12 @@ const UploadPhotoPage=()=>{
     placeholderPhoto.current.style.display="none";
   }
 
+  const handleDescriptionChange=(e)=>{
+    console.log('Hello from handle Change')
+    s.description=e.target.value;
+}
+
+
   const uploadPhoto = async e => {
     e.preventDefault();
     if (!s.imageData) { return; }
@@ -47,6 +52,7 @@ const UploadPhotoPage=()=>{
       author: g.user._id,
       authorName:g.user.name,
       url: s.imageData,
+      description:s.description,
     });
     let result=await photo.save();
     console.log(result);
@@ -61,6 +67,15 @@ return (
       {s.imageData && <img src={s.imageData} width="300" ref={chosenImg} className="upload-image"/>}
       <form name="photoUpload" onSubmit={uploadPhoto} className="upload-form">
         {!s.imageData && <img src={placeholder} alt="placeholder" ref={placeholderPhoto} className="upload-placeholder"/>}
+        <div className="description-field">
+          <label htmlFor="description">Description: </label>
+          <input 
+          rows="4" 
+          name="description" 
+          placeholder="Description" 
+          onChange={handleDescriptionChange}
+          />
+        </div>
         <div className="upload-field">
           <label htmlFor="files" className="upload-field-label">Upload +</label>
           <input name="file" type="file" id="files"
