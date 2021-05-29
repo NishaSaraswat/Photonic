@@ -8,7 +8,7 @@ import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
 import mongoosy from 'mongoosy/frontend';
 import Camera from './components/Camera';
-import UploadPhotoPage from './pages/UploadPhotoPage';
+import UploadPhoto from './components/UploadPhoto';
 import ProfilePage from './pages/ProfilePage';
 import PhotosPage from './pages/PhotosPage';
 import HomePage from './pages/HomePage';
@@ -118,7 +118,7 @@ export default withContext('global', {
           <LoginPage {...{ loginCheck }} />
         </Route>
         <Route path="/upload">
-          <UploadPhotoPage />
+          <UploadPhoto />
         </Route>
         <Route path="/uploads/:id">
           <SinglePhotoPage userName={g.user.name} {...{ loginCheck }}/>
