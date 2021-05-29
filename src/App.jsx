@@ -112,20 +112,20 @@ export default withContext('global', {
         <Route path="/login">
           <LoginPage {...{ loginCheck }} />
         </Route>
-        <Route path="/uploadphoto">
-          <UploadPhotoPage userName={g.user.name} {...{ loginCheck }}/>
+        <Route path="/upload">
+          <UploadPhotoPage />
         </Route>
         <Route path="/uploads/:id">
           <SinglePhotoPage userName={g.user.name} {...{ loginCheck }}/>
         </Route>
         <Route path="/camera">
-          <Camera userName={g.user.name} {...{ loginCheck }}/>
+          <Camera />
         </Route>
         <Route path="/profile">
           <ProfilePage />
         </Route>
         <Route path="/photos">
-          <PhotosPage photos={g.photos} userName={g.user.name} {...{ loginCheck }}/>
+          <PhotosPage />
         
         </Route>
         <Route path="/homepage">
