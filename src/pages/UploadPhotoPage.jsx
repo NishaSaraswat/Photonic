@@ -6,10 +6,9 @@ const { User, Photo } = mongoosy;
 import '../styleapp/upload-camera.css'
 import placeholder from '../styleapp/icons/keepcoding.png'
 import Header from '../components/Header';
-import PublishIcon from '@material-ui/icons/Publish';
-import AddToPhotosIcon from '@material-ui/icons/AddToPhotos';
 
-const UploadPhotoPage=({userName})=>{
+
+const UploadPhotoPage=()=>{
   const g = useNamedContext('global');
   const s = useStates({
     users: [],
@@ -20,8 +19,6 @@ const UploadPhotoPage=({userName})=>{
   });
   const chosenImg=useRef()
   const placeholderPhoto=useRef()
-  let today=new Date();
-  let timeNow= today.getHours() + ":" + today.getMinutes()
   const history = useHistory();
   
 
@@ -29,8 +26,6 @@ const UploadPhotoPage=({userName})=>{
   const getUsers = async () => {
     s.users = await User.find();
     s.display = true;
-    let photos=await Photo.find()
-    console.log(photos)
   }
   useEffect(() => getUsers(), []);
 
@@ -50,14 +45,16 @@ const UploadPhotoPage=({userName})=>{
     if (!s.imageData) { return; }
     let photo = new Photo({
       author: g.user._id,
+      authorName:g.user.name,
       url: s.imageData,
     });
     let result=await photo.save();
     console.log(result);
+    console.log(g.user.name);
     console.log('hello from upload')
     g.photos=[...g.photos,photo]
     chosenImg.current.style.display='none';
-    history.push('/homepage');
+    history.push('/photos');
   }
 return (
   <div className='upload-photo-wrapper'>
