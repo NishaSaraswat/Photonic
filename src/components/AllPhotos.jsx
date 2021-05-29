@@ -1,14 +1,17 @@
 import React,{useEffect, useState} from 'react';
 import mongoosy from 'mongoosy/frontend';
 const { User, Photo } = mongoosy;
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import DeleteIcon from '@material-ui/icons/Delete';
+import { LeakAddTwoTone } from '@material-ui/icons';
 
 
 
 const Photos = () => {
     const [allPhotos, setAllPhotos]=useState([]);
+    let [photoDescription, setPhotoDescription]=useState('');
+    let [count, setCount]=useState(0)
+    let description='';
     
     const getAllPhotos=async ()=>{
         let photos=await Photo.find();
@@ -20,16 +23,39 @@ const Photos = () => {
         getAllPhotos();
     }, [])
 
+    const handleChange=(e)=>{
+        console.log('Hello from handle Change')
+        setPhotoDescription(e.target.value)
+    }
+
+    const submitDescription=(e)=>{
+        e.preventDefault();
+        console.log(photoDescription);
+        description=photoDescription;
+        photoDescription='';
+    }
+
+    const handleLikes=()=>{
+        count++;
+        setCount(count);
+        console.log(`icon is clicked ${count} times`)
+    }
+
     return (
         <div>
              {allPhotos.map(photo =><div key={photo.url}>
                 <h4>created by: {photo.authorName}</h4>
                 <img src={'/uploads/' + photo.url} style={{width:'90%'}}/>
-                <FavoriteBorderIcon />
-                <ThumbUpIcon />
+                <ThumbUpIcon onClick={handleLikes}/>
                 <DeleteIcon />
-                <form>
-                    <input type="text" placeholder="what do you think..."></input>
+                <span>{count} likes </span>
+                <p>{description}</p>
+                <form onSubmit={submitDescription}>
+                    <input 
+                    type="text" 
+                    placeholder="what's in your mind..." 
+                    onChange={handleChange}
+                    />
                 </form>
                 </div>)}
         </div>
