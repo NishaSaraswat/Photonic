@@ -1,11 +1,11 @@
 import React from 'react'
-import Photos from '../components/Photos'
+import AllPhotos from '../components/AllPhotos'
 
 const PhotosPage = ({userName, photos}) => {
 
     return (
         <div>
-            <Photos />
+            <AllPhotos />
         </div>
     )
 }
