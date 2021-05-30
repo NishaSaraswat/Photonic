@@ -3,20 +3,19 @@ import mongoosy from 'mongoosy/frontend';
 const { User, Photo } = mongoosy;
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import DeleteIcon from '@material-ui/icons/Delete';
-import { LeakAddTwoTone } from '@material-ui/icons';
-
-
+import LastPosted from '../components/LastPosted'
 
 const Photos = () => {
     const [allPhotos, setAllPhotos]=useState([]);
-    let [photoDescription, setPhotoDescription]=useState('');
     let [count, setCount]=useState(0)
-    let description='';
+
     
     const getAllPhotos=async ()=>{
         let photos=await Photo.find();
+        photos.sort((a, b) => a.posted > b.posted ? -1 : 1);
         console.log(photos);
         setAllPhotos(photos)
+        
     }
 
     useEffect(() => {
@@ -33,14 +32,15 @@ const Photos = () => {
     return (
         <div>
              {allPhotos.map(photo =><div key={photo.url}>
-                <h4>created by: {photo.authorName}</h4>
-                <img src={'/uploads/' + photo.url} style={{width:'90%'}}/>
-                <ThumbUpIcon onClick={handleLikes}/>
-                <DeleteIcon />
-                <span>{count} likes </span>
-                <p>Description: {photo.description}</p>
-                <br />
-                <p>Tags:{photo.tags}</p>
+                    <h4>created by: {photo.authorName}</h4>
+                    <img src={'/uploads/' + photo.url} style={{width:'90%'}}/>
+                    <ThumbUpIcon onClick={handleLikes}/>
+                    <DeleteIcon />
+                    <span>{count} likes </span>
+                    <p>{photo.authorName}: {photo.description}</p>
+                    <p>{photo.tags}</p>
+                    <LastPosted date={photo.posted} />
+                    <hr/>
                 
                 </div>)}
         </div>

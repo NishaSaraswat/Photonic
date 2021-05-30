@@ -4,8 +4,9 @@ import {useHistory} from 'react-router-dom'
 import mongoosy from 'mongoosy/frontend';
 const { User, Photo } = mongoosy;
 import '../styleapp/upload-camera.css'
-import placeholder from '../styleapp/icons/keepcoding.png'
-import Header from '../components/Header';
+import placeholder from '../styleapp/icons/imageplaceholder.jpeg'
+import Header from './Header';
+import TagsInput from './TagsInput';
 
 
 const UploadPhotoPage=()=>{
@@ -37,13 +38,12 @@ const UploadPhotoPage=()=>{
     placeholderPhoto.current.style.display="none";
   }
   const handleDescriptionChange=(e)=>{
-    console.log('Hello from handle Description Change')
     s.description=e.target.value;
 }
-  const handleTags=(e)=>{
-    console.log('Hello from handle Tags Change')
-    s.tags=e.target.value;
+  const handleTagsChange=(e)=>{
+  s.tags=e.target.value;
 }
+
   const uploadPhoto = async e => {
     e.preventDefault();
     if (!s.imageData) { return; }
@@ -55,9 +55,6 @@ const UploadPhotoPage=()=>{
       tags:s.tags
     });
     let result=await photo.save();
-    console.log(result);
-    console.log(g.user.name);
-    console.log('hello from upload')
     g.photos=[...g.photos,photo]
     chosenImg.current.style.display='none';
     history.push('/photos');
@@ -75,19 +72,19 @@ return (
         {s.imageData && <img src={s.imageData} width="300" ref={chosenImg} className="upload-image"/>}
         {!s.imageData && <img src={placeholder} alt="placeholder" ref={placeholderPhoto} className="upload-placeholder"/>}
         <div className="description-field">
-          <label htmlFor="description">Description: </label>
-          <input 
-          name="description" 
-          placeholder="what's in your mind..."
-          onChange={handleDescriptionChange}
+          <input
+            name="description" 
+            placeholder="what's in your mind..."
+            onChange={handleDescriptionChange}
+            className="description-input"
           />
         </div>
-        <div>
-          <label htmlFor="tags">Tags: </label>
-          <input 
-          type="text"
-          name="tags"
-          onChange={handleTags}
+        <div className="description-field">
+          <input
+            name="tags" 
+            placeholder="tags"
+            onChange={handleTagsChange}
+            className="tags-input"
           />
         </div>
         <button type="submit" className="upload-button">Publish</button>
