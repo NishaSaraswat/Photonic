@@ -12,8 +12,10 @@ const Photos = () => {
     
     const getAllPhotos=async ()=>{
         let photos=await Photo.find();
+        photos.sort((a, b) => a.posted > b.posted ? -1 : 1);
         console.log(photos);
         setAllPhotos(photos)
+        
     }
 
     useEffect(() => {

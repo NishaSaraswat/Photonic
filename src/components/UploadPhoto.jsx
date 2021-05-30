@@ -6,6 +6,7 @@ const { User, Photo } = mongoosy;
 import '../styleapp/upload-camera.css'
 import placeholder from '../styleapp/icons/imageplaceholder.jpeg'
 import Header from './Header';
+import TagsInput from './TagsInput';
 
 
 const UploadPhotoPage=()=>{
@@ -37,13 +38,12 @@ const UploadPhotoPage=()=>{
     placeholderPhoto.current.style.display="none";
   }
   const handleDescriptionChange=(e)=>{
-    console.log('Hello from handle Description Change')
     s.description=e.target.value;
 }
-  const handleTags=(e)=>{
-    console.log('Hello from handle Tags Change')
-    s.tags=e.target.value;
+  const handleTagsChange=(e)=>{
+  s.tags=e.target.value;
 }
+
   const uploadPhoto = async e => {
     e.preventDefault();
     if (!s.imageData) { return; }
@@ -55,9 +55,6 @@ const UploadPhotoPage=()=>{
       tags:s.tags
     });
     let result=await photo.save();
-    console.log(result);
-    console.log(g.user.name);
-    console.log('hello from upload')
     g.photos=[...g.photos,photo]
     chosenImg.current.style.display='none';
     history.push('/photos');
@@ -82,13 +79,12 @@ return (
             className="description-input"
           />
         </div>
-        <div className="tags-field">
-          <input 
-          type="text"
-          name="tags"
-          placeholder="tags"
-          onChange={handleTags}
-          className="tags-input"
+        <div className="description-field">
+          <input
+            name="tags" 
+            placeholder="tags"
+            onChange={handleTagsChange}
+            className="tags-input"
           />
         </div>
         <button type="submit" className="upload-button">Publish</button>

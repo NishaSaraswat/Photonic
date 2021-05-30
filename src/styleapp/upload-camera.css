@@ -87,7 +87,7 @@
     margin-left: 4.5%;
     margin-top: 1%;
     color: rgb(206, 249, 249);
-    border-radius: 20px;
+    border-radius: 15px;
     height: 30px;
     text-align: center;
     font-size: 0.9em;
@@ -97,12 +97,12 @@
 .upload-button,
 .webcam-btn{ 
    
-    height: 35px;
+    height: 40px;
     background-color: none;
     border: none;
-    padding-top: 2px;
-
+    padding-top: 2px;   
 }
+
 
 .description-field,
 .tags-field,
@@ -113,6 +113,7 @@
     flex-wrap: wrap;
     width:60%;
     justify-content: center;
+    margin-left: 1%;
 }
 
 .description-input,
@@ -142,11 +143,38 @@
 .camera-upload-button{
     width:80%;
     border:none;
-    height: 35px;
+    height: 40px;
     margin-left: 10%;
 }
 .camera-description-field,
 .camera-tags-field{
     margin-left: 5%;
 }
+/*
+.tags-input{
+    width:80%;
+    margin-left: -4.5%;
+}
+#tags{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+.tag-btn{
+    background-color: rgb(100, 99, 99);
+    height:30px;
+    border-radius: 10px;
+    border: none;
+    color:rgb(195, 212, 218);
+    margin-right:3px;
+}
+.tag-close-icon{
+    margin-left: 10%;
+    color:rgb(79, 171, 207)
+}
+.tags-input-field{
+    height:40px;
+}*/
 
