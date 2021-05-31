@@ -10,5 +10,4 @@ const PhotosPage = ({userName, photos}) => {
         </div>
     )
 }
-
 export default PhotosPage
