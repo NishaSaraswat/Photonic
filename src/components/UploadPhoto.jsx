@@ -7,9 +7,6 @@ import '../styleapp/upload-camera.css'
 import placeholder from '../styleapp/icons/imageplaceholder.jpeg'
 import Header from './Header';
 import TagsInput from './TagsInput';
-import placeholder from '../styleapp/icons/keepcoding.png'
-
-
 
 const UploadPhotoPage=()=>{
   const g = useNamedContext('global');
