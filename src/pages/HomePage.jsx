@@ -18,9 +18,14 @@ const HomePage = () => {
                 />
              ))}
             
-            <Footer/>
-        </div>  
-        
+
+
+            <Post/>
+           
+                <Footer/>
+               
+        </div>
+
     )
 }
 

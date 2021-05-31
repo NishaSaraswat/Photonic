@@ -4,13 +4,13 @@ import {useHistory} from 'react-router-dom'
 import { useStates, useNamedContext } from 'react-easier';
 import mongoosy from 'mongoosy/frontend';
 const { User, Photo } = mongoosy;
-
+import '../styleapp/upload-camera.css';
 
 const WebcamComponent = () => <Webcam />
 
 const videoConstraints = {
-  width: 260,
-  height: 200,
+  width: 100+'%',
+  height: 100+'%',
   facingMode: "user"
 };
 
@@ -20,9 +20,10 @@ const Camera = ({userName}) => {
         const g = useNamedContext('global');
         const s = useStates({
           users: [],
-          chatMessage: '',
-          toWhom: '',
           imageData: '',
+          tags:'',
+          description:'',
+          posted: ''
         });
         const capturedImg=useRef();
         const history=useHistory();
@@ -34,34 +35,62 @@ const Camera = ({userName}) => {
             },
             [webcamRef],
         );
+       
         const uploadPhoto = async e => {
           e.preventDefault();
           if (!src) { return; }
           let photo = new Photo({
             author: g.user._id,
-            url: src
+            authorName:g.user.name,
+            url: src,
+            description:s.description,
+            tags:s.tags
           });
           await photo.save();
           console.log('hello from upload')
           g.photos=[...g.photos,photo]
           capturedImg.current.style.display='none';
           console.log(capturedImg.current)
-          history.push('/homepage')
+          history.push('/photos')
         }
+        const handleDescriptionChange=(e)=>{
+          console.log('Hello from handle Change')
+          s.description=e.target.value;
+      }
+        const handleTags=(e)=>{
+          console.log('Hello from handle Tags Change')
+          s.tags=e.target.value;
+      }
      
   return (
     <div>
-        <h1>take a photo</h1>
         {src==''
         ? (<Webcam
           audio={false}
-          height={200}
           ref={webcamRef}
           screenshotFormat="image/jpeg"
-          width={260}
           videoConstraints={videoConstraints}
+          className="camera"
           />)
         : (<img src={src} ref={capturedImg}/>)}
+
+        <div className="camera-description-field">
+              <input 
+              name="description" 
+              placeholder="what's in your mind..." 
+              onChange={handleDescriptionChange}
+              className="description-input"
+              />
+          </div>
+          <div className="camera-tags-field">
+              <input 
+              type="text"
+              name="tags"
+              placeholder="Tags"
+              onChange={handleTags}
+              className="tags-input"
+              />
+          </div>
 
           {src!=''
           ?
@@ -80,22 +109,10 @@ const Camera = ({userName}) => {
           }  
         <br />
         <form name="photoUpload" onSubmit={uploadPhoto}>
-          {s.imageData && <img src={src} width="300" />}
-          <input type="submit" value="Publish photo" />
+          {s.imageData && <img src={src} width="300" className="captured-photo"/>}
+          
+          <button type="submit" className="camera-upload-button">Publish</button>
         </form>
-       {/* 
-        <h2>Posted photos</h2>
-        <div>
-        {g.photos.map(photo => <div key={photo.url}>
-          <img src={'/uploads/' + photo.url} style={{width:'320px', height:'250px'}}/>
-          <p>By: {userName}</p>
-          <FavoriteBorderIcon />
-          <ThumbUpIcon />
-          <form>
-            <input type="text" placeholder="what do you think..."></input>
-          </form>
-        </div>)}
-        </div>*/}
 
     </div>)
 }

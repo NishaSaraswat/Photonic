@@ -1,0 +1,180 @@
+.profile-wrapper{
+    color:rgb(190, 184, 184);
+    width:100%
+}
+
+.avatar-camera{
+    padding-top: 1em;
+    margin-left: 20%;
+}
+
+#captured-avatar{
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+    margin-left: 35%;
+    margin-top: 1em;
+}
+
+.avatar-icons{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-items: right;
+    margin-left:40%;
+}
+
+#retake-button{
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    font-size: 6px;
+    background-color: teal;
+    color:white;
+    border:none;
+}
+
+.photo-card{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width:100%;
+}
+.photo-tags{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.upload-photo-wrapper{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width:90%;
+    margin-top: 15%;
+    padding-top: 10%;
+    margin-left: 5%;
+}
+
+.upload-placeholder{
+    width:90%;
+    object-fit: contain;
+    margin-left: 5%;
+}
+
+.upload-field{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width:80%;
+    margin-left: 10%;
+}
+.upload-form{
+    padding-left: 1%;
+
+}
+.upload-image{
+    width:100%;
+    object-fit: contain;
+}
+.upload-field-label,
+.upload-button,
+.webcam-btn,
+.camera-upload-button{
+    width:90%;
+    background-color:rgb(24, 23, 23) ;
+    margin-left: 4.5%;
+    margin-top: 1%;
+    color: rgb(206, 249, 249);
+    border-radius: 15px;
+    height: 30px;
+    text-align: center;
+    font-size: 0.9em;
+    padding-top: 8px;
+    margin-bottom: 10px;
+}
+.upload-button,
+.webcam-btn{ 
+   
+    height: 40px;
+    background-color: none;
+    border: none;
+    padding-top: 2px;   
+}
+
+
+.description-field,
+.tags-field,
+.camera-description-field,
+.camera-tags-field{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width:60%;
+    justify-content: center;
+    margin-left: 1%;
+}
+
+.description-input,
+.tags-input{
+    width:60%;
+    margin-left: 7%;
+    height:35px;
+}
+
+.description-input{
+    margin-top: 7%;
+}
+
+.camera-wrapper{
+    margin-left: 5%;
+}
+
+.camera{
+    margin-top: 30%;
+    margin-left: 0%;
+}
+.captured-photo{
+   width:100%;
+   
+}
+.webcam-btn,
+.camera-upload-button{
+    width:80%;
+    border:none;
+    height: 40px;
+    margin-left: 10%;
+}
+.camera-description-field,
+.camera-tags-field{
+    margin-left: 5%;
+}
+/*
+.tags-input{
+    width:80%;
+    margin-left: -4.5%;
+}
+#tags{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+.tag-btn{
+    background-color: rgb(100, 99, 99);
+    height:30px;
+    border-radius: 10px;
+    border: none;
+    color:rgb(195, 212, 218);
+    margin-right:3px;
+}
+.tag-close-icon{
+    margin-left: 10%;
+    color:rgb(79, 171, 207)
+}
+.tags-input-field{
+    height:40px;
+}*/
+

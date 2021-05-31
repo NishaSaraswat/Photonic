@@ -4,6 +4,7 @@ import { Style, useStates } from 'react-easier';
 import mongoosy from 'mongoosy/frontend';
 const { User, Login } = mongoosy;
 import Header from '../components/Header'
+import {Link} from "react-router-dom";
 
 export default function RegisterPage({ loginCheck }) {
   // LOGIC
@@ -53,6 +54,7 @@ export default function RegisterPage({ loginCheck }) {
         required minLength="6" {...s.bind('passwordRepeat')} />
       {s.error && <p>{s.error}</p>}
       <input style={{color:'rgba(11, 223, 223, 1)',height:'40',borderStyle:'none',backgroundColor:'rgba(64, 62, 65, 0.178)',fontSize:'20px'}} type="submit" value="SignUp" />
+      <span style={{marginLeft:70}}>Back to </span><Link to="/login" style={{color:'rgba(11, 223, 223, 1)',height:'40',textDecoration:"none",backgroundColor:'rgba(64, 62, 65, 0.178)',fontSize:'20px'}}>SignIn</Link>
     </form>
   </Style>;
 

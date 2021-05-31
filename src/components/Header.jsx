@@ -6,10 +6,10 @@ import {motion} from 'framer-motion'
 
 function Header() {
     return (
-        <div className="header">
+        <div className="head">
         <img src={Group2} alt="group2" id="group2"></img>
         <motion.img 
-        animate={{x:0,y:0,opacity:1,scale:1,rotate:360}} 
+        animate={{x:100,y:0,opacity:1,scale:1,rotate:360}} 
         transition={{delay:0.2,duration:3,ease:'backInOut'}} 
         src={Logo} alt="logo" id="logo">
         </motion.img>
