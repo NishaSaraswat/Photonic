@@ -74,6 +74,24 @@ const Camera = ({userName}) => {
           />)
         : (<img src={src} ref={capturedImg}/>)}
 
+        <div className="camera-description-field">
+              <input 
+              name="description" 
+              placeholder="what's in your mind..." 
+              onChange={handleDescriptionChange}
+              className="description-input"
+              />
+          </div>
+          <div className="camera-tags-field">
+              <input 
+              type="text"
+              name="tags"
+              placeholder="Tags"
+              onChange={handleTags}
+              className="tags-input"
+              />
+          </div>
+
           {src!=''
           ?
             (<button onClick={(e)=>
@@ -92,23 +110,8 @@ const Camera = ({userName}) => {
         <br />
         <form name="photoUpload" onSubmit={uploadPhoto}>
           {s.imageData && <img src={src} width="300" className="captured-photo"/>}
-          <div className="description-field">
-              <label htmlFor="description">Description: </label>
-              <input 
-              name="description" 
-              placeholder="Description" 
-              onChange={handleDescriptionChange}
-              />
-          </div>
-          <div>
-              <label htmlFor="tags">Tags: </label>
-              <input 
-              type="text"
-              name="tags"
-              onChange={handleTags}
-              />
-          </div>
-          <button type="submit" className="upload-button">Publish</button>
+          
+          <button type="submit" className="camera-upload-button">Publish</button>
         </form>
 
     </div>)

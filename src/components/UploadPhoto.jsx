@@ -4,6 +4,9 @@ import {useHistory} from 'react-router-dom'
 import mongoosy from 'mongoosy/frontend';
 const { User, Photo } = mongoosy;
 import '../styleapp/upload-camera.css'
+import placeholder from '../styleapp/icons/imageplaceholder.jpeg'
+import Header from './Header';
+import TagsInput from './TagsInput';
 import placeholder from '../styleapp/icons/keepcoding.png'
 
 
@@ -15,7 +18,8 @@ const UploadPhotoPage=()=>{
     imageData: '',
     tags:'',
     description:'',
-    posted: ''
+    posted: '',
+    likes:[]
   });
   const chosenImg=useRef()
   const placeholderPhoto=useRef()
@@ -44,6 +48,7 @@ const UploadPhotoPage=()=>{
     console.log('Hello from handle Tags Change')
     s.tags=e.target.value;
 }
+
   const uploadPhoto = async e => {
     e.preventDefault();
     if (!s.imageData) { return; }
@@ -52,13 +57,15 @@ const UploadPhotoPage=()=>{
       authorName:g.user.name,
       url: s.imageData,
       description:s.description,
-      tags:s.tags
+      tags:s.tags,
+      likes:s.likes.length
     });
     let result=await photo.save();
     console.log(result);
     console.log(g.user.name);
     console.log('hello from upload')
     g.photos=[...g.photos,photo]
+    console.log(s.likes)
     chosenImg.current.style.display='none';
     history.push('/photos');
   }

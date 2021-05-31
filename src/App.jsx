@@ -8,7 +8,7 @@ import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
 import mongoosy from 'mongoosy/frontend';
 import Camera from './components/Camera';
-import UploadPhotoPage from './pages/UploadPhotoPage';
+import UploadPhoto from './components/UploadPhoto';
 import ProfilePage from './pages/ProfilePage';
 import PhotosPage from './pages/PhotosPage';
 import HomePage from './pages/HomePage';
@@ -16,7 +16,12 @@ const { Login, Photo } = mongoosy;
 import './styleapp/Main.css'
 import Header from './components/Header'
 import SinglePhotoPage from './pages/SinglePhotoPage';
+import TimeAgo from 'javascript-time-ago'
+import en from 'javascript-time-ago/locale/en'
+import ru from 'javascript-time-ago/locale/ru'
 
+TimeAgo.addDefaultLocale(en)
+TimeAgo.addLocale(ru)
 
 // This shouldn't be needed but ensures that 
 // we do not get any resets of these context vars
@@ -111,7 +116,7 @@ export default withContext('global', {
           <LoginPage {...{ loginCheck }} />
         </Route>
         <Route path="/upload">
-          <UploadPhotoPage />
+          <UploadPhoto />
         </Route>
         <Route path="/uploads/:id">
           <SinglePhotoPage userName={g.user.name} {...{ loginCheck }}/>
