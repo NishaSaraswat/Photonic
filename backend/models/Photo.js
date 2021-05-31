@@ -8,7 +8,12 @@ let schema = new Schema({
   authorName:{type: String, required: true},
   tags: {type: String},
   description: {type: String},
-  posted: { type: Date, default: Date.now }
+  likes: {
+    type: Array,
+    default: [],
+  },
+  posted: { type: Date, default: Date.now },
+ 
 });
 
 // the whole image data is sent from frontend as the property url

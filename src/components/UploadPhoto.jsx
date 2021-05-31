@@ -16,7 +16,8 @@ const UploadPhotoPage=()=>{
     imageData: '',
     tags:'',
     description:'',
-    posted: ''
+    posted: '',
+    likes:[]
   });
   const chosenImg=useRef()
   const placeholderPhoto=useRef()
@@ -52,10 +53,12 @@ const UploadPhotoPage=()=>{
       authorName:g.user.name,
       url: s.imageData,
       description:s.description,
-      tags:s.tags
+      tags:s.tags,
+      likes:s.likes.length
     });
     let result=await photo.save();
     g.photos=[...g.photos,photo]
+    console.log(s.likes)
     chosenImg.current.style.display='none';
     history.push('/photos');
   }
