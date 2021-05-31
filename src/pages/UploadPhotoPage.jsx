@@ -5,7 +5,7 @@ import mongoosy from 'mongoosy/frontend';
 const { User, Photo } = mongoosy;
 import '../styleapp/upload-camera.css'
 import placeholder from '../styleapp/icons/keepcoding.png'
-import Header from '../components/Header';
+
 
 
 const UploadPhotoPage=()=>{
