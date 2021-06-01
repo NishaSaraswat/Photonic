@@ -1,5 +1,4 @@
-*{
-       
+*{  
     margin:0;
     color:rgba(196, 196, 196, 1);
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -11,7 +10,6 @@ background-color:rgba(0, 0, 0, 0.808);
 display: flex;
 justify-content: center;
 }
-
 
 #glow{
 margin-top: -35px;
@@ -73,6 +71,7 @@ p{
     text-align: center;
    
 }
+
 @media only screen and (min-width: 600px) {
     #group2{    
         height: 250px;
@@ -146,9 +145,14 @@ p{
         margin-left:-525px;
         }
         #login_button{
-          
+          margin-bottom: 20px;
            height: 50px;
         }
+        #sign-in{
+            font-size: 1.5rem;
+            padding-right: 20px;
+        }
+    
 }
 
  
