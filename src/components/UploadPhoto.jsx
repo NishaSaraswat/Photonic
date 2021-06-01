@@ -7,6 +7,7 @@ import '../styleapp/upload-camera.css'
 import placeholder from '../styleapp/icons/imageplaceholder.jpeg'
 import Header from './Header';
 import TagsInput from './TagsInput';
+import {Link} from 'react-router-dom';
 
 const UploadPhotoPage=()=>{
   const g = useNamedContext('global');
@@ -55,7 +56,7 @@ const UploadPhotoPage=()=>{
       url: s.imageData,
       description:s.description,
       tags:s.tags,
-      likes:s.likes.length
+      likes:s.likes.length,
     });
     let result=await photo.save();
     console.log(result);
@@ -64,7 +65,7 @@ const UploadPhotoPage=()=>{
     g.photos=[...g.photos,photo]
     console.log(s.likes)
     chosenImg.current.style.display='none';
-    history.push('/photos');
+    history.push('/homepage');
   }
 return (
   <div className='upload-photo-wrapper'>
