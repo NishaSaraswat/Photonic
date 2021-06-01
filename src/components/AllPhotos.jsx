@@ -4,6 +4,9 @@ const { User, Photo } = mongoosy;
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import DeleteIcon from '@material-ui/icons/Delete';
 import LastPosted from '../components/LastPosted'
+import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
+import Avataricon from "@material-ui/core/Avatar";
+import '../styleapp/HomePage.css'
 
 const Photos = () => {
     const [allPhotos, setAllPhotos]=useState([]);
@@ -30,19 +33,49 @@ const Photos = () => {
     }
 
     return (
-        <div>
+        <div className="feed">
+            <div className="post">
              {allPhotos.map(photo =><div key={photo.url}>
-                    <h4>created by: {photo.authorName}</h4>
-                    <img src={'/uploads/' + photo.url} style={{width:'90%'}}/>
-                    <ThumbUpIcon onClick={handleLikes}/>
-                    <DeleteIcon />
-                    <span>{count} likes </span>
-                    <p>{photo.authorName}: {photo.description}</p>
-                    <p>{photo.tags}</p>
-                    <LastPosted date={photo.posted} />
-                    <hr/>
+
+                <div className="post-header">
+                    <Avataricon
+                        className="post-avatar"
+                        alt={''}
+                        src="/static/images/avatar/1.jpg"
+                        />
+                    <h3 className="post-text">{photo.authorName}</h3>
+                </div>
+
+                <img 
+                    src={'/uploads/' + photo.url} 
+                    className="post-image"
+                    alt="picture"
+                />
+
+                <div className="post-icons">
+                 <ChatBubbleOutlineIcon
+                    className="post-commentIcon"
+                    alt={''}
+                    src=""
+                    onclick={""}
+                    />
+                    <ThumbUpIcon 
+                        onClick={handleLikes}
+                    />
+                    <span className="post-likes">{count} likes</span>
+                </div>
+
+                <h4 className="post-text"><strong>{photo.authorName}</strong>{photo.description}</h4>
                 
+                <h4 className="post-tags">{photo.tags}</h4>
+
+
+
+                    
+                    <LastPosted date={photo.posted} />
+
                 </div>)}
+            </div>
         </div>
     )
 }

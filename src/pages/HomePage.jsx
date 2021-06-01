@@ -1,29 +1,20 @@
 import React from 'react'
-import Post from './Post'
+import AllPhotos from '../components/AllPhotos'
 import '../styleapp/HomePage.css'
 import LogoHeader from '../components/LogoHeader'
 import Footer from '../components/Footer'
 import { PostAddSharp } from '@material-ui/icons'
 
-const HomePage = () => {
+const HomePage = ({photos, userName}) => {
+
+
     return (
          <div className="Main">
-             <LogoHeader/>
+            <LogoHeader/>
 
-             {posts.mao(post => (
-                 <Post  username={post.username}  
-                        imageUrl={post.imageUrl}
-                        description={post.description}
-                        tags={post.tags}
-                />
-             ))}
-            
-
-
-            <Post/>
+            <AllPhotos />
            
-                <Footer/>
-               
+            <Footer/>
         </div>
 
     )
