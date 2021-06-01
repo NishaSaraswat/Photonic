@@ -5,6 +5,8 @@ import { useStates, useNamedContext } from 'react-easier';
 import mongoosy from 'mongoosy/frontend';
 const { User, Photo } = mongoosy;
 import '../styleapp/upload-camera.css';
+import HeaderAllPages from './HeaderAllPages';
+import Footer from './Footer';
 
 const WebcamComponent = () => <Webcam />
 
@@ -64,6 +66,7 @@ const Camera = ({userName}) => {
      
   return (
     <div>
+      <HeaderAllPages/>
         {src==''
         ? (<Webcam
           audio={false}
@@ -113,7 +116,7 @@ const Camera = ({userName}) => {
           
           <button type="submit" className="camera-upload-button">Publish</button>
         </form>
-
+      <Footer/>
     </div>)
 }
 

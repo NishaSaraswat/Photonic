@@ -7,6 +7,8 @@ import '../styleapp/upload-camera.css'
 import placeholder from '../styleapp/icons/imageplaceholder.jpeg'
 import Header from './Header';
 import TagsInput from './TagsInput';
+import HeaderAllPages from './HeaderAllPages';
+import Footer from './Footer';
 
 const UploadPhotoPage=()=>{
   const g = useNamedContext('global');
@@ -67,6 +69,8 @@ const UploadPhotoPage=()=>{
     history.push('/photos');
   }
 return (
+  <div>
+      <HeaderAllPages/>
   <div className='upload-photo-wrapper'>
      
       <form name="photoUpload" onSubmit={uploadPhoto} className="upload-form">
@@ -96,6 +100,8 @@ return (
         </div>
         <button type="submit" className="upload-button">Publish</button>
       </form>
+  </div>
+    <Footer/>
   </div>
  )
 }
