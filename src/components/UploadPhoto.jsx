@@ -7,8 +7,9 @@ import '../styleapp/upload-camera.css'
 import placeholder from '../styleapp/icons/imageplaceholder.jpeg'
 import Header from './Header';
 import TagsInput from './TagsInput';
+import HeaderAllPages from './HeaderAllPages';
+import Footer from './Footer';
 import {Link} from 'react-router-dom';
-
 const UploadPhotoPage=()=>{
   const g = useNamedContext('global');
   const s = useStates({
@@ -68,6 +69,8 @@ const UploadPhotoPage=()=>{
     history.push('/homepage');
   }
 return (
+  <div>
+      <HeaderAllPages/>
   <div className='upload-photo-wrapper'>
      
       <form name="photoUpload" onSubmit={uploadPhoto} className="upload-form">
@@ -98,6 +101,8 @@ return (
         </div>
         <button type="submit" className="upload-button">Publish</button>
       </form>
+  </div>
+    <Footer/>
   </div>
  )
 }
