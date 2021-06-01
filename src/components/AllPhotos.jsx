@@ -57,7 +57,7 @@ const Photos = () => {
                     className="post-commentIcon"
                     alt={''}
                     src=""
-                    onclick={""}
+                    onClick={""}
                     />
                     <ThumbUpIcon 
                         onClick={handleLikes}

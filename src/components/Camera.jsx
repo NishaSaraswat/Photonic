@@ -53,7 +53,7 @@ const Camera = ({userName}) => {
           g.photos=[...g.photos,photo]
           capturedImg.current.style.display='none';
           console.log(capturedImg.current)
-          history.push('/photos')
+          history.push('/homepage')
         }
         const handleDescriptionChange=(e)=>{
           console.log('Hello from handle Change')
@@ -82,7 +82,7 @@ const Camera = ({userName}) => {
               name="description" 
               placeholder="what's in your mind..." 
               onChange={handleDescriptionChange}
-              className="description-input"
+              className="camera-description-input"
               />
           </div>
           <div className="camera-tags-field">
@@ -91,7 +91,7 @@ const Camera = ({userName}) => {
               name="tags"
               placeholder="Tags"
               onChange={handleTags}
-              className="tags-input"
+              className="camera-tags-input"
               />
           </div>
 
