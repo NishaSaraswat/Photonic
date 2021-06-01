@@ -115,7 +115,7 @@
     background-color: none;
     border: none;
     padding-top: 2px;  
-    margin-left: 10%;
+    margin-left: 15%;
     width:68%;
 }
 
@@ -154,7 +154,7 @@
 }
 .camera-description-input,
 .camera-tags-input{
-    margin-left: 10%;
+    margin-left: 15%;
     height: 40px;
 }
 .camera-description-input{
