@@ -47,13 +47,21 @@
     justify-content: space-between;
 }
 
+.header-icon{
+    width:70px;
+    margin-top: -70px;
+    margin-left: -15px;
+}
+
+.header-logo{
+    width:70px;
+}
 .upload-photo-wrapper{
     display:flex;
     flex-direction: column;
     flex-wrap: wrap;
     width:90%;
-    margin-top: 15%;
-    padding-top: 10%;
+    padding-top: 1%;
     margin-left: 5%;
 }
 
@@ -84,7 +92,7 @@
 .camera-upload-button{
     background-color:rgb(24, 23, 23) ;
     margin-left: 9%;
-    margin-top: 1%;
+    margin-top: 0%;
     color: rgb(206, 249, 249);
     border-radius: 15px;
     width:85%;
@@ -108,9 +116,8 @@
     border: none;
     padding-top: 2px;  
     margin-left: 10%;
-    width:70%;
+    width:68%;
 }
-
 
 .description-field,
 .tags-field{
@@ -121,19 +128,11 @@
     justify-content: center;
     margin-left: 8%;
 }
-.camera-description-field{
-    margin-top: 3%;
-}
-.camera-description-input,
-.camera-tags-input{
-    width:80%;
-    margin-left: 10%;
-    height: 40px;
-}
+
 
 .description-input,
 .tags-input{
-    width:80%;
+    width:100%;
     margin-left: 7%;
     height:40px;
 }
@@ -143,21 +142,23 @@
     margin-left:-1%;
     height:80px;
 }
-.camera-description-input{
-    margin-top: 8%;
-    height:80px;
-}
+
 
 .camera-wrapper{
     margin-left: 5%;
 }
 
-.camera{
-    margin-top: 30%;
-    margin-left: 0%;
-}
 .captured-photo{
    width:100%;
    
+}
+.camera-description-input,
+.camera-tags-input{
+    margin-left: 10%;
+    height: 40px;
+}
+.camera-description-input{
+    height:80px;
+    margin-top: 5%;
 }
 
