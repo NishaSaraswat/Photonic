@@ -42,8 +42,7 @@ export default withContext('global', {
 
   // start an SSE connection or close it if no user
   const startSSE = user => {
-    // someone has been logged in but has now logged out
-    // close sse connection and empty messages and photos
+   
     if (!user && g.sseConnection) {
       g.sseConnection.close();
       photos = g.photos = [];
@@ -81,7 +80,6 @@ export default withContext('global', {
     e.preventDefault();
     await Login.logout();
     loginCheck();
-    // redirect to the start page
     history.push('/');
   }
 
