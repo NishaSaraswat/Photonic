@@ -10,6 +10,7 @@ import TagsInput from './TagsInput';
 import HeaderAllPages from './HeaderAllPages';
 import Footer from './Footer';
 import {Link} from 'react-router-dom';
+
 const UploadPhotoPage=()=>{
   const g = useNamedContext('global');
   const s = useStates({
@@ -72,7 +73,7 @@ return (
   <div>
       <HeaderAllPages/>
   <div className='upload-photo-wrapper'>
-     
+      <img src={HeaderIcon} alt="Photonic Logo" className="header-icon"/>
       <form name="photoUpload" onSubmit={uploadPhoto} className="upload-form">
         <div className="upload-field">
             <label htmlFor="files" className="upload-field-label">Upload +</label>

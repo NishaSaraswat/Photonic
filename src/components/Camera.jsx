@@ -56,11 +56,9 @@ const Camera = ({userName}) => {
           history.push('/homepage')
         }
         const handleDescriptionChange=(e)=>{
-          console.log('Hello from handle Change')
           s.description=e.target.value;
       }
         const handleTags=(e)=>{
-          console.log('Hello from handle Tags Change')
           s.tags=e.target.value;
       }
      
@@ -77,15 +75,15 @@ const Camera = ({userName}) => {
           />)
         : (<img src={src} ref={capturedImg}/>)}
 
-        <div className="camera-description-field">
-              <input 
-              name="description" 
-              placeholder="what's in your mind..." 
-              onChange={handleDescriptionChange}
-              className="camera-description-input"
-              />
+          <div>
+            <input 
+            name="description" 
+            placeholder="what's in your mind..." 
+            onChange={handleDescriptionChange}
+            className="camera-description-input"
+            />
           </div>
-          <div className="camera-tags-field">
+          <div>
               <input 
               type="text"
               name="tags"

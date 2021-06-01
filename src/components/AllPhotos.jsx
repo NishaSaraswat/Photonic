@@ -65,7 +65,7 @@ const Photos = () => {
                     <span className="post-likes">{count} likes</span>
                 </div>
 
-                <h4 className="post-text"><strong>{photo.authorName}</strong>{photo.description}</h4>
+                <h4 className="post-text"><strong>{photo.authorName} </strong>{photo.description}</h4>
                 
                 <h4 className="post-tags">{photo.tags}</h4>
 
@@ -73,6 +73,7 @@ const Photos = () => {
 
                     
                     <LastPosted date={photo.posted} />
+                    <hr />
 
                 </div>)}
             </div>
