@@ -52,6 +52,7 @@ module.exports = app => {
     sendSSE(connection.res, 'photos', photos);
   }
 
+
   // Calculate which messages to send to a connection/user
   // (all the one he/she doesn't have with the user as
   //  a recipient or as the author)
