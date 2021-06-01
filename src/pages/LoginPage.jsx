@@ -21,12 +21,9 @@ export default function LoginPage({ loginCheck }) {
   const login = async e => {
     e.preventDefault();
     let { email, password } = s;
-    // try to login
     let result = await Login.login({ email, password });
     if (result.js.error) { s.error = 'Login failed'; return; }
-    // update login info
     loginCheck();
-    // redirect to the start page
     history.push('/homepage');
   };
 

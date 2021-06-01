@@ -21,22 +21,19 @@ export default function RegisterPage({ loginCheck }) {
 
   const register = async e => {
     e.preventDefault();
-    // check that passwords match
     let error = s.password === s.passwordRepeat ?
       '' : 'Passwords does not match...';
     if (error) { s.error = error; return; }
     let { name, email, password } = s;
     let newUser = new User({ name, email, password });
     let result = await newUser.save();
-    // check that the server did not give us an error
+ 
     error = !result.error ?
       '' : 'Email-address already in use!';
     if (error) { s.error = error; return; }
     // login
     await Login.login({ email, password });
-    // update login info
     loginCheck();
-    // redirect to the start page
     history.push('/homepage');
   };
 
