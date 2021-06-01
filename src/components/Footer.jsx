@@ -2,9 +2,10 @@ import React from 'react'
 import '../styleapp/Footer.css'
 import PhotoCameraIcon from '@material-ui/icons/PhotoCamera';
 import CropOriginalIcon from '@material-ui/icons/CropOriginal';
-import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
+// import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import {Link} from 'react-router-dom'
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
 
 
 
@@ -43,7 +44,7 @@ function Footer() {
                 </div>
                 
                 <div className="footer-icons">
-            <PersonOutlineIcon
+            <AccountBoxIcon
                 className="footer-profile"
                 alt={''}
                 src=""

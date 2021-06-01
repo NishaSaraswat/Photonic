@@ -43,7 +43,7 @@ const Photos = () => {
                         alt={''}
                         src="/static/images/avatar/1.jpg"
                         />
-                    <h3 className="post-text">{photo.authorName}</h3>
+                    <h3 className="post-text-user">{photo.authorName}</h3>
                 </div>
 
                 <img 
@@ -53,31 +53,33 @@ const Photos = () => {
                 />
 
                 <div className="post-icons">
-                 <ChatBubbleOutlineIcon
-                    className="post-commentIcon"
-                    alt={''}
-                    src=""
-                    onClick={""}
-                    />
-                    <ThumbUpIcon 
-                        onClick={handleLikes}
-                    />
-                    <span className="post-likes">{count} likes</span>
+                    <div className="post-commentIcon">  
+                        <ChatBubbleOutlineIcon
+                            alt={''}
+                            src=""
+                            onClick={""}
+                        />
+                    </div>
+
+                    <div className="post-thumpUp">
+                        <ThumbUpIcon 
+                            onClick={handleLikes}
+                        />
+                        <span className="post-likes">{count} likes</span>
+                    </div> 
                 </div>
 
-                <h4 className="post-text"><strong>{photo.authorName} </strong>{photo.description}</h4>
-                
+                <h4 className="post-text"><strong>{photo.authorName}</strong>{photo.description}</h4>
                 <h4 className="post-tags">{photo.tags}</h4>
 
-
-
-                    
-                    <LastPosted date={photo.posted} />
-                    <hr />
-
-                </div>)}
-            </div>
+                <div className="post-date">
+                    <LastPosted 
+                    className="posted"
+                    date={photo.posted} />
+                </div>
+            </div>)}
         </div>
+    </div>
     )
 }
 
