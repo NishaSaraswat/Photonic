@@ -79,7 +79,7 @@ const Camera = ({userName}) => {
               name="description" 
               placeholder="what's in your mind..." 
               onChange={handleDescriptionChange}
-              className="description-input"
+              className="camera-description-input"
               />
           </div>
           <div className="camera-tags-field">
@@ -88,7 +88,7 @@ const Camera = ({userName}) => {
               name="tags"
               placeholder="Tags"
               onChange={handleTags}
-              className="tags-input"
+              className="camera-tags-input"
               />
           </div>
 

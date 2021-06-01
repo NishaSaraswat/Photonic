@@ -105,26 +105,32 @@
 
 
 .description-field,
-.tags-field,
-.camera-description-field,
-.camera-tags-field{
+.tags-field{
     display:flex;
     flex-direction: column;
     flex-wrap: wrap;
     width:60%;
     justify-content: center;
-    margin-left: 1%;
+    margin-left: 8%;
+}
+.camera-description-field{
+    margin-top: 3%;
+}
+.camera-description-input,
+.camera-tags-input{
+    margin-left: 5%;
+    height: 40px;
 }
 
 .description-input,
 .tags-input{
     width:60%;
-    margin-left: 7%;
-    height:35px;
+    margin-left: -5%;
+    height:40px;
 }
 
 .description-input{
-    margin-top: 7%;
+    margin-top: 8%;
 }
 
 .camera-wrapper{

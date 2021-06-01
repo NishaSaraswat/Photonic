@@ -6,7 +6,6 @@ const { User, Photo } = mongoosy;
 import '../styleapp/upload-camera.css'
 import placeholder from '../styleapp/icons/imageplaceholder.jpeg'
 import Header from './Header';
-import TagsInput from './TagsInput';
 
 const UploadPhotoPage=()=>{
   const g = useNamedContext('global');
@@ -79,19 +78,20 @@ return (
         {s.imageData && <img src={s.imageData} width="300" ref={chosenImg} className="upload-image"/>}
         {!s.imageData && <img src={placeholder} alt="placeholder" ref={placeholderPhoto} className="upload-placeholder"/>}
         <div className="description-field">
-          <label htmlFor="description">Description: </label>
           <input 
           name="description" 
           placeholder="what's in your mind..."
           onChange={handleDescriptionChange}
+          className="description-input"
           />
         </div>
-        <div>
-          <label htmlFor="tags">Tags: </label>
+        <div className="tags-field">
           <input 
           type="text"
           name="tags"
+          placeholder="tags"
           onChange={handleTags}
+          className="tags-input"
           />
         </div>
         <button type="submit" className="upload-button">Publish</button>
