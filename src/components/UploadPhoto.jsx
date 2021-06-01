@@ -72,15 +72,14 @@ const UploadPhotoPage=()=>{
 return (
   <div>
       <HeaderAllPages/>
-  <div className='upload-photo-wrapper'>
-      <img src={HeaderIcon} alt="Photonic Logo" className="header-icon"/>
-      <form name="photoUpload" onSubmit={uploadPhoto} className="upload-form">
-        <div className="upload-field">
-            <label htmlFor="files" className="upload-field-label">Upload +</label>
-            <input name="file" type="file" id="files"
-              accept="image/*" onChange={photoChosen} style={{display:'none'}} className="upload-input"/>
-           
-          </div>
+        <div className='upload-photo-wrapper'>
+            <form name="photoUpload" onSubmit={uploadPhoto} className="upload-form">
+              <div className="upload-field">
+                  <label htmlFor="files" className="upload-field-label">Upload +</label>
+                  <input name="file" type="file" id="files"
+                    accept="image/*" onChange={photoChosen} style={{display:'none'}} className="upload-input"/>
+          
+        </div>
         {s.imageData && <img src={s.imageData} width="300" ref={chosenImg} className="upload-image"/>}
         {!s.imageData && <img src={placeholder} alt="placeholder" ref={placeholderPhoto} className="upload-placeholder"/>}
         <div className="description-field">
