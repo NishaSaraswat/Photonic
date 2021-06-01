@@ -64,7 +64,7 @@ const UploadPhotoPage=()=>{
     g.photos=[...g.photos,photo]
     console.log(s.likes)
     chosenImg.current.style.display='none';
-    history.push('/photos');
+    history.push('/homepage');
   }
 return (
   <div className='upload-photo-wrapper'>
@@ -79,19 +79,20 @@ return (
         {s.imageData && <img src={s.imageData} width="300" ref={chosenImg} className="upload-image"/>}
         {!s.imageData && <img src={placeholder} alt="placeholder" ref={placeholderPhoto} className="upload-placeholder"/>}
         <div className="description-field">
-          <label htmlFor="description">Description: </label>
           <input 
           name="description" 
           placeholder="what's in your mind..."
           onChange={handleDescriptionChange}
+          className="description-input"
           />
         </div>
         <div>
-          <label htmlFor="tags">Tags: </label>
           <input 
           type="text"
           name="tags"
+          placeholder="tags"
           onChange={handleTags}
+          className="tags-input"
           />
         </div>
         <button type="submit" className="upload-button">Publish</button>
