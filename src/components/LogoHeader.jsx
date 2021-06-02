@@ -1,8 +1,9 @@
 import React from 'react'
 import LogoChat from '../styleapp/icons/LogoChat.png'
-import Avataricon from "@material-ui/core/Avatar";
+// import Avataricon from "@material-ui/core/Avatar";
 import SearchIcon from '@material-ui/icons/Search';
 import '../styleapp/LogoHeader.css'
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
 
 function LogoHeader() {
     return (
@@ -18,7 +19,10 @@ function LogoHeader() {
                     alt={''}
                     src=""
                 />
-                <Avataricon
+                </div>
+                <div className="avatar-header">
+                <AccountBoxIcon 
+                    fontSize="large"
                     className="header-avatar"
                     alt={''}
                     src="/static/images/avatar/1.jpg"

@@ -5,7 +5,9 @@ import LastPosted from './LastPosted'
 import mongoosy from 'mongoosy/frontend';
 const { User, Photo } = mongoosy;
 
+
 const PhotoPost = ({url,authorName,description,likes,tags,time}) => {
+    
 
     return (
         <div >
@@ -17,8 +19,12 @@ const PhotoPost = ({url,authorName,description,likes,tags,time}) => {
             <p>{tags}</p>
             <LastPosted date={time} />
             <DeleteIcon />
-            <hr/>     
-        </div>)
+            <hr/>      
+        </div>
+        
+    
+        )
+
 }
 
 export default PhotoPost;

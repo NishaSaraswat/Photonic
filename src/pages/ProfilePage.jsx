@@ -1,22 +1,61 @@
 import React from 'react'
 import AvatarCamera from '../components/AvatarCamera'
-import Footer from '../components/Footer'
-import HeaderAllPages from '../components/HeaderAllPages'
-import '../styleapp/upload-camera.css'
+import '../styleapp/upload-camera.css';
+import mongoosy from 'mongoosy/frontend';
+import HeaderAllPages from '../components/HeaderAllPages';
+// import '../styleapp/Footer.css';
+import '../styleapp/LogoHeader.css';
+import '../styleapp/ProfilePage.css';
+const { Photo, User } = mongoosy;
+import { useState, useEffect } from "react";
+import {useParams} from "react-router-dom";
 
-const ProfilePage = ({userName}) => {
+const ProfilePage = () => {
+  const [photos, setPhotos] = useState()
+  const [profile, setProfile] = useState()
+    const {id} = useParams()
+    console.log(id)
+
+    //"60b61518865850152fa74e32"
+     
+    useEffect(() => {
+       getSingleAuthorId(id);
+     }, []);
+     
+     
+    const getSingleAuthorId = async(userId) => {
+      const photos = await Photo.find({author:userId}).populate('author')
+       const author = await User.findById(userId)
+        setProfile(author)
+        setPhotos(photos)
+
+       console.log(author)
+       console.log(photos)
+     
+    }
+   
+
     return (
-    <div >
-        <HeaderAllPages/>
+   <>
+        <HeaderAllPages  />
+        <AvatarCamera/>
+      {profile && photos && (
 
-        <div className="profile-wrapper">
+  
+        <div className="profile">
 
-            <AvatarCamera />
+           <h1>{profile.name}</h1> 
+           <img src={photos[0].url}/>
+        
+        
+           
+    </div>
+        )}
 
-        </div>
 
-        <Footer/>
+</>)
 
-    </div>)}
 
+}         
 export default ProfilePage
+
