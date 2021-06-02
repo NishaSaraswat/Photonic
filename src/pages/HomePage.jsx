@@ -3,14 +3,14 @@ import AllPhotos from '../components/AllPhotos'
 import '../styleapp/HomePage.css'
 import LogoHeader from '../components/LogoHeader'
 import Footer from '../components/Footer'
-import { PostAddSharp } from '@material-ui/icons';
-
+//import { PostAddSharp } from '@material-ui/icons';
 
 const HomePage = ({photos, userName}) => {
 
 
     return (
 
+        <>
  
          <div className="Main">
          
@@ -27,7 +27,7 @@ const HomePage = ({photos, userName}) => {
          
      
              ))}
-          
+          </div>
           
             
   
@@ -50,7 +50,7 @@ const HomePage = ({photos, userName}) => {
         <Footer/>
 
         </div>
-
+</>
 
     )
    

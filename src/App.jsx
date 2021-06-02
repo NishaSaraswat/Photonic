@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link, useHistory,  useRouteMatch}
+import { BrowserRouter as Router, Switch, Route, Link, useHistory}
   from "react-router-dom";
 import { withContext, useNamedContext, Style, If, Else }
   from 'react-easier';
@@ -38,6 +38,7 @@ export default withContext('global', {
   // LOGIC
   const g = useNamedContext('global');
   const history = useHistory();
+
 
   // start an SSE connection or close it if no user
   const startSSE = user => {
@@ -121,8 +122,8 @@ export default withContext('global', {
           <Camera />
         </Route>
 
-        <Route path="uploads/:id" >
-        <ProfilePage  {...{ loginCheck }} />
+        <Route path="/uploads/:id">
+        <ProfilePage/>
         </Route>
 
         <Route path="/photos">

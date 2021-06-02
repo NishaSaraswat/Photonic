@@ -7,16 +7,18 @@ import LastPosted from '../components/LastPosted'
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import Avataricon from "@material-ui/core/Avatar";
 import '../styleapp/HomePage.css'
+import {Link} from "react-router-dom"
 
 const Photos = () => {
     const [allPhotos, setAllPhotos]=useState([]);
     let [count, setCount]=useState(0)
 
+
     
     const getAllPhotos=async ()=>{
         let photos=await Photo.find();
         photos.sort((a, b) => a.posted > b.posted ? -1 : 1);
-        console.log(photos);
+        //console.log(photos);
         setAllPhotos(photos)
         
     }
@@ -77,6 +79,7 @@ const Photos = () => {
                     className="posted"
                     date={photo.posted} />
                 </div>
+                <Link to={`/uploads/${photo["author"]}`}>Show profile</Link>
             </div>)}
         </div>
     </div>
