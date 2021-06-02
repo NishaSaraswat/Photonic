@@ -8,6 +8,7 @@ let schema = new Schema({
   authorName:{type: String, required: true},
   tags: {type: String},
   description: {type: String},
+  posted:{type: Date, default: Date.now},
   likes: {
     type: Array,
     default: [],

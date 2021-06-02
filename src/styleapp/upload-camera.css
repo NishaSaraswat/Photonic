@@ -47,20 +47,28 @@
     justify-content: space-between;
 }
 
+.header-icon{
+    width:70px;
+    margin-top: -70px;
+    margin-left: -15px;
+}
+
+.header-logo{
+    width:70px;
+}
 .upload-photo-wrapper{
     display:flex;
     flex-direction: column;
     flex-wrap: wrap;
     width:90%;
-    margin-top: 15%;
-    padding-top: 10%;
+    padding-top: 1%;
     margin-left: 5%;
 }
 
 .upload-placeholder{
-    width:90%;
+    width:100%;
     object-fit: contain;
-    margin-left: 5%;
+    margin-left: 0%;
 }
 
 .upload-field{
@@ -82,99 +90,75 @@
 .upload-button,
 .webcam-btn,
 .camera-upload-button{
-    width:90%;
     background-color:rgb(24, 23, 23) ;
-    margin-left: 4.5%;
-    margin-top: 1%;
+    margin-left: 9%;
+    margin-top: 0%;
     color: rgb(206, 249, 249);
     border-radius: 15px;
-    height: 30px;
+    width:85%;
+    height:40px;
     text-align: center;
     font-size: 0.9em;
-    padding-top: 8px;
-    margin-bottom: 10px;
+    padding-top: 5px;
+    margin-bottom: 15px;
+    border:none;
 }
-.upload-button,
+.upload-field-label{
+    padding-top:5%;
+    height: 35px;
+    text-align: center;
+    justify-content: center;
+}
+.camera-upload-button,
 .webcam-btn{ 
-   
     height: 40px;
     background-color: none;
     border: none;
-    padding-top: 2px;   
+    padding-top: 2px;  
+    margin-left: 15%;
+    width:68%;
 }
 
-
 .description-field,
-.tags-field,
-.camera-description-field,
-.camera-tags-field{
+.tags-field{
     display:flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width:60%;
+    width:100%;
     justify-content: center;
-    margin-left: 1%;
+    margin-left: 8%;
 }
+
 
 .description-input,
 .tags-input{
-    width:60%;
+    width:100%;
     margin-left: 7%;
-    height:35px;
+    height:40px;
 }
 
 .description-input{
-    margin-top: 7%;
+    margin-top: 8%;
+    margin-left:-1%;
+    height:80px;
 }
+
 
 .camera-wrapper{
     margin-left: 5%;
 }
 
-.camera{
-    margin-top: 30%;
-    margin-left: 0%;
-}
 .captured-photo{
    width:100%;
    
 }
-.webcam-btn,
-.camera-upload-button{
-    width:80%;
-    border:none;
+.camera-description-input,
+.camera-tags-input{
+    margin-left: 15%;
     height: 40px;
-    margin-left: 10%;
 }
-.camera-description-field,
-.camera-tags-field{
-    margin-left: 5%;
+.camera-description-input{
+    height:80px;
+    margin-top: 5%;
 }
-/*
-.tags-input{
-    width:80%;
-    margin-left: -4.5%;
-}
-#tags{
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    margin-bottom: 10px;
-}
-.tag-btn{
-    background-color: rgb(100, 99, 99);
-    height:30px;
-    border-radius: 10px;
-    border: none;
-    color:rgb(195, 212, 218);
-    margin-right:3px;
-}
-.tag-close-icon{
-    margin-left: 10%;
-    color:rgb(79, 171, 207)
-}
-.tags-input-field{
-    height:40px;
-}*/
 

@@ -5,6 +5,8 @@ import { useStates, useNamedContext } from 'react-easier';
 import mongoosy from 'mongoosy/frontend';
 const { User, Photo } = mongoosy;
 import '../styleapp/upload-camera.css';
+import HeaderAllPages from './HeaderAllPages';
+import Footer from './Footer';
 
 const WebcamComponent = () => <Webcam />
 
@@ -51,19 +53,18 @@ const Camera = ({userName}) => {
           g.photos=[...g.photos,photo]
           capturedImg.current.style.display='none';
           console.log(capturedImg.current)
-          history.push('/photos')
+          history.push('/homepage')
         }
         const handleDescriptionChange=(e)=>{
-          console.log('Hello from handle Change')
           s.description=e.target.value;
       }
         const handleTags=(e)=>{
-          console.log('Hello from handle Tags Change')
           s.tags=e.target.value;
       }
      
   return (
     <div>
+      <HeaderAllPages/>
         {src==''
         ? (<Webcam
           audio={false}
@@ -74,21 +75,21 @@ const Camera = ({userName}) => {
           />)
         : (<img src={src} ref={capturedImg}/>)}
 
-        <div className="camera-description-field">
-              <input 
-              name="description" 
-              placeholder="what's in your mind..." 
-              onChange={handleDescriptionChange}
-              className="description-input"
-              />
+          <div>
+            <input 
+            name="description" 
+            placeholder="what's in your mind..." 
+            onChange={handleDescriptionChange}
+            className="camera-description-input"
+            />
           </div>
-          <div className="camera-tags-field">
+          <div>
               <input 
               type="text"
               name="tags"
               placeholder="Tags"
               onChange={handleTags}
-              className="tags-input"
+              className="camera-tags-input"
               />
           </div>
 
@@ -113,7 +114,7 @@ const Camera = ({userName}) => {
           
           <button type="submit" className="camera-upload-button">Publish</button>
         </form>
-
+      <Footer/>
     </div>)
 }
 

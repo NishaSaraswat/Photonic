@@ -1,29 +1,20 @@
-import React, { useEffect } from 'react';
+import React,{useEffect, useState} from 'react';
 import mongoosy from 'mongoosy/frontend';
 const { User, Photo } = mongoosy;
+import AllPhotos from '../components/AllPhotos'
 import Avataricon from "@material-ui/core/Avatar";
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import DeleteIcon from '@material-ui/icons/Delete';
+import LastPosted from '../components/LastPosted'
 import '../styleapp/Post.css'
+import PhotosPage from './PhotosPage';
 
-function Post() {
-
-    const g = useNamedContext('global');
-    const s = useStates({
-      users: [],
-      imageData: '',
-      tags:'',
-      description:'',
-    });
-
-    const getUsers = async () => {
-        s.users = await User.find();
-        s.display = true;
-      }
-      useEffect(() => getUsers(), []);
-
+const Post = ({userName, photos}) => {
 
     return (
+
     <div className="feed">
 
          <div className="post">
@@ -34,18 +25,21 @@ function Post() {
                     alt={''}
                     src="/static/images/avatar/1.jpg"
                 />
-                <h3>{userName}</h3>
+                <h3>{photo.authorName}</h3>
             </div>
 
             <img 
                 className="post-image"
-                src={imageData} 
+                src={'/uploads/' + photo.url}
                 alt="picture"
                 />
     
-            <h4 className="post-text"><strong>{userName}</strong>{description}</h4>
-            <h4 className="post-likes">5 likes</h4>
+            <h4 className="post-text"><strong>{photo.authorName}</strong>{photo.description}</h4>
+            <h4 className="post-likes">{count} likes</h4>
             <h4 className="post-tags">{tags}</h4>
+            <p>{photo.tags}</p>
+            <LastPosted date={photo.posted} />
+
 
             <div className="post-icons">   
                 <FavoriteBorderIcon

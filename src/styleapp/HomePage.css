@@ -1,3 +1,98 @@
+body{
+    background-color:rgb(8, 10, 10);
+    /* background-color:rgba(0, 0, 0, 0.808); */
+}
+
 .footer{
     margin: 0;
 }
+.feed{
+    margin-bottom:10px ;
+}
+
+.post{
+    
+    margin-bottom: 0px 0px 0px 0px; 
+}
+
+.post-header{
+    /* border-top: 1px solid rgba(255, 255, 255, 0.103) ; */
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    padding-top: 10px; 
+    
+}
+.post-avatar{
+    margin-right: 10px;
+    margin-top: 10px; 
+    margin-bottom: 10px;
+}
+
+.post-text-user{
+    font-weight: bold;
+    font-size: 18px;
+    padding-left: 5px; 
+    padding-top: 5px; 
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+.post-image{
+    width: 100%;
+    object-fit: contain;
+}
+
+.post-text{
+    font-weight: normal;
+    font-size: 18px;
+    padding-left: 12px; 
+    padding-top: 5px; 
+  }
+
+.post-tags{
+    font-weight: normal;
+    font-size: 18px;
+    padding-left: 12px; 
+    padding-top: 5px; 
+  }
+
+.post-likes {
+    padding-left: 12px; 
+    margin-bottom: 20px;
+  }
+
+.post-icons{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px; 
+}
+
+.post-commentIcon {
+    padding-left: 2px; 
+    padding-right: 20px;
+}
+.post-thumpUp{
+    padding-left: 2px; 
+}
+
+.post-date{
+    font-weight: normal;
+    font-size: 16px;
+    padding-left: 12px; 
+    padding-top: 3px; 
+    margin-bottom: 20px;
+}
+
+.avatar-header {
+    display: flex; 
+    margin-top: 6px; 
+    position: absolute;
+    top: 4px; 
+    right: 15px; 
+    
+  }
+

@@ -7,6 +7,9 @@ import '../styleapp/upload-camera.css'
 import placeholder from '../styleapp/icons/imageplaceholder.jpeg'
 import Header from './Header';
 import TagsInput from './TagsInput';
+import HeaderAllPages from './HeaderAllPages';
+import Footer from './Footer';
+import {Link} from 'react-router-dom';
 
 const UploadPhotoPage=()=>{
   const g = useNamedContext('global');
@@ -55,7 +58,7 @@ const UploadPhotoPage=()=>{
       url: s.imageData,
       description:s.description,
       tags:s.tags,
-      likes:s.likes.length
+      likes:s.likes.length,
     });
     let result=await photo.save();
     console.log(result);
@@ -64,38 +67,42 @@ const UploadPhotoPage=()=>{
     g.photos=[...g.photos,photo]
     console.log(s.likes)
     chosenImg.current.style.display='none';
-    history.push('/photos');
+    history.push('/homepage');
   }
 return (
-  <div className='upload-photo-wrapper'>
-     
-      <form name="photoUpload" onSubmit={uploadPhoto} className="upload-form">
-        <div className="upload-field">
-            <label htmlFor="files" className="upload-field-label">Upload +</label>
-            <input name="file" type="file" id="files"
-              accept="image/*" onChange={photoChosen} style={{display:'none'}} className="upload-input"/>
-           
-          </div>
+  <div>
+      <HeaderAllPages/>
+        <div className='upload-photo-wrapper'>
+            <form name="photoUpload" onSubmit={uploadPhoto} className="upload-form">
+              <div className="upload-field">
+                  <label htmlFor="files" className="upload-field-label">Upload +</label>
+                  <input name="file" type="file" id="files"
+                    accept="image/*" onChange={photoChosen} style={{display:'none'}} className="upload-input"/>
+          
+        </div>
         {s.imageData && <img src={s.imageData} width="300" ref={chosenImg} className="upload-image"/>}
         {!s.imageData && <img src={placeholder} alt="placeholder" ref={placeholderPhoto} className="upload-placeholder"/>}
         <div className="description-field">
-          <label htmlFor="description">Description: </label>
           <input 
           name="description" 
           placeholder="what's in your mind..."
           onChange={handleDescriptionChange}
+          className="description-input"
           />
         </div>
         <div>
-          <label htmlFor="tags">Tags: </label>
           <input 
           type="text"
           name="tags"
+          placeholder="tags"
           onChange={handleTags}
+          className="tags-input"
           />
         </div>
         <button type="submit" className="upload-button">Publish</button>
       </form>
+  </div>
+    <Footer/>
   </div>
  )
 }

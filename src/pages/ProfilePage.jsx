@@ -1,5 +1,6 @@
 import React from 'react'
 import AvatarCamera from '../components/AvatarCamera'
+
 import '../styleapp/upload-camera.css';
 import mongoosy from 'mongoosy/frontend';
 const { Photo } = mongoosy;
@@ -26,8 +27,17 @@ const ProfilePage = () => {
     }
     
 
+import Footer from '../components/Footer'
+import HeaderAllPages from '../components/HeaderAllPages'
+import '../styleapp/upload-camera.css'
+
+
     return (
+    <div >
+        <HeaderAllPages/>
+
         <div className="profile-wrapper">
+
 
            <h1>{use.authorName}</h1>
            <AvatarCamera />
@@ -36,5 +46,14 @@ const ProfilePage = () => {
     
     )
 }
+
+            <AvatarCamera />
+
+        </div>
+
+        <Footer/>
+
+    </div>)}
+
 
 export default ProfilePage
