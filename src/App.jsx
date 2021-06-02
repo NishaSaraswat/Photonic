@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link, useHistory }
+import { BrowserRouter as Router, Switch, Route, Link, useHistory,  useRouteMatch}
   from "react-router-dom";
 import { withContext, useNamedContext, Style, If, Else }
   from 'react-easier';
@@ -14,11 +14,10 @@ import PhotosPage from './pages/PhotosPage';
 import HomePage from './pages/HomePage';
 const { Login, Photo } = mongoosy;
 import './styleapp/Main.css'
-import Header from './components/Header'
-import SinglePhotoPage from './pages/SinglePhotoPage';
-import TimeAgo from 'javascript-time-ago'
-import en from 'javascript-time-ago/locale/en'
-import ru from 'javascript-time-ago/locale/ru'
+import Header from './components/Header';
+import TimeAgo from 'javascript-time-ago';
+import en from 'javascript-time-ago/locale/en';
+import ru from 'javascript-time-ago/locale/ru';
 
 TimeAgo.addDefaultLocale(en)
 TimeAgo.addLocale(ru)
@@ -118,15 +117,14 @@ export default withContext('global', {
         <Route path="/upload">
           <UploadPhoto />
         </Route>
-        <Route path="/uploads/:id">
-          <SinglePhotoPage userName={g.user.name} {...{ loginCheck }}/>
-        </Route>
         <Route path="/camera">
           <Camera />
         </Route>
-        <Route path="/profile">
-          <ProfilePage />
+
+        <Route path="uploads/:id" >
+        <ProfilePage  {...{ loginCheck }} />
         </Route>
+
         <Route path="/photos">
           <PhotosPage />
         
