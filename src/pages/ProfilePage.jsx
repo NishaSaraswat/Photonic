@@ -13,8 +13,8 @@ import {useParams} from "react-router-dom";
 const ProfilePage = () => {
   const [photos, setPhotos] = useState()
   const [profile, setProfile] = useState()
-    const {id} = useParams()
-    console.log(id)
+   const {id} = useParams()
+    //console.log(id)
 
     //"60b61518865850152fa74e32"
      
@@ -39,18 +39,19 @@ const ProfilePage = () => {
    <>
         <HeaderAllPages  />
         <AvatarCamera/>
-      {profile && photos && (
+      {profile && photos && photos.map((phot) =>(
 
-  
-        <div className="profile">
+        <div className="profile-wrapper">
 
            <h1>{profile.name}</h1> 
-           <img src={photos[0].url}/>
+
+              
+           <img src={phot.url}/>
         
         
            
     </div>
-        )}
+))}
 
 
 </>)
