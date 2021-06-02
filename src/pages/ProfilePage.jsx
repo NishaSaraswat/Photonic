@@ -1,10 +1,11 @@
 import React from 'react'
 import AvatarCamera from '../components/AvatarCamera'
-import '../styleapp/upload-camera.css';
 import mongoosy from 'mongoosy/frontend';
 import HeaderAllPages from '../components/HeaderAllPages';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
-// import '../styleapp/Footer.css';
+import Footer from '../components/Footer';
+import '../styleapp/upload-camera.css';
+ import '../styleapp/Footer.css';
 import '../styleapp/LogoHeader.css';
 import '../styleapp/ProfilePage.css';
 const { Photo, User } = mongoosy;
@@ -49,9 +50,9 @@ const ProfilePage = () => {
        
            <h3>{profile.name}</h3>
            <img src={phot.url}/> 
-           <strong>Posted: </strong>{phot.posted}
+           <span><strong>Posted: </strong>{phot.posted}</span>
            <br/>
-            <strong>Coment: </strong>{phot.description}
+           <span><strong>Coment: </strong>{phot.description}</span> 
             <br/>
             <div className="likeIcon">
             <ThumbUpIcon/>
@@ -65,7 +66,7 @@ const ProfilePage = () => {
     </div>
 ))}
 
-
+<Footer />
 </>)
 
 
