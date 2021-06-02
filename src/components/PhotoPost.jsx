@@ -3,9 +3,12 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import DeleteIcon from '@material-ui/icons/Delete';
 import LastPosted from './LastPosted'
 import mongoosy from 'mongoosy/frontend';
+import {Link,  useRouteMatch} from 'react-router-dom'
 const { User, Photo } = mongoosy;
 
-const PhotoPost = ({url,authorName,description,likes,tags,time}) => {
+
+const PhotoPost = ({url,authorName,description,likes,tags,time,author}) => {
+    
 
     return (
         <div >
@@ -18,7 +21,13 @@ const PhotoPost = ({url,authorName,description,likes,tags,time}) => {
             <LastPosted date={time} />
             <DeleteIcon />
             <hr/>     
-        </div>)
+
+        <Link to={`uploads/${author["_id"]}`}>Show Profil</Link>     
+        </div>
+        
+    
+        )
+
 }
 
 export default PhotoPost;

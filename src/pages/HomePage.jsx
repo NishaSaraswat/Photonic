@@ -3,12 +3,37 @@ import AllPhotos from '../components/AllPhotos'
 import '../styleapp/HomePage.css'
 import LogoHeader from '../components/LogoHeader'
 import Footer from '../components/Footer'
-import { PostAddSharp } from '@material-ui/icons'
+import { PostAddSharp } from '@material-ui/icons';
+
 
 const HomePage = ({photos, userName}) => {
 
 
     return (
+
+ 
+         <div className="Main">
+         
+             <LogoHeader/>
+      
+             {posts.mao(post => (
+                 <Post  username={post.username}  
+                        imageUrl={post.imageUrl}
+                        description={post.description}
+                        tags={post.tags}
+                />
+         
+             
+         
+     
+             ))}
+          
+          
+            
+  
+
+            <Post/>
+
         <div className="Homepage-feed">
 
         <LogoHeader/>
@@ -17,6 +42,7 @@ const HomePage = ({photos, userName}) => {
             
 
             <AllPhotos />
+
            
             
         </div>
@@ -25,7 +51,9 @@ const HomePage = ({photos, userName}) => {
 
         </div>
 
+
     )
+   
 }
 
 export default HomePage
