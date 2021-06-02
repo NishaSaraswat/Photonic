@@ -3,6 +3,7 @@ import AvatarCamera from '../components/AvatarCamera'
 import '../styleapp/upload-camera.css';
 import mongoosy from 'mongoosy/frontend';
 import HeaderAllPages from '../components/HeaderAllPages';
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 // import '../styleapp/Footer.css';
 import '../styleapp/LogoHeader.css';
 import '../styleapp/ProfilePage.css';
@@ -23,9 +24,9 @@ const ProfilePage = () => {
      }, []);
      
      
-    const getSingleAuthorId = async(userId) => {
+      const getSingleAuthorId = async(userId) => {
       const photos = await Photo.find({author:userId}).populate('author')
-       const author = await User.findById(userId)
+      const author = await User.findById(userId)
         setProfile(author)
         setPhotos(photos)
 
@@ -34,20 +35,31 @@ const ProfilePage = () => {
      
     }
    
-
     return (
-   <>
-        <HeaderAllPages  />
-        <AvatarCamera/>
+   <>  
+
+   <HeaderAllPages  />
+   <title>My Posts</title>
+   <AvatarCamera/>
+ 
       {profile && photos && photos.map((phot) =>(
 
-        <div className="profile-wrapper">
+        <div className="profile">
 
-           <h1>{profile.name}</h1> 
-
-              
-           <img src={phot.url}/>
+       
+           <h3>{profile.name}</h3>
+           <img src={phot.url}/> 
+           <strong>Posted: </strong>{phot.posted}
+           <br/>
+            <strong>Coment: </strong>{phot.description}
+            <br/>
+            <div className="likeIcon">
+            <ThumbUpIcon/>
+            </div>
         
+            <br/>
+            <span>{phot.likes}</span>   
+           
         
            
     </div>

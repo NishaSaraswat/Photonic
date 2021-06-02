@@ -1,5 +1,16 @@
-.profile h1{
-    display: flex;
-    width: auto;
+.profile h3 {
+    margin-left: 15px;
     color: aliceblue;
+}
+.profile strong {
+    margin-left: 15px;
+    color: aliceblue;
+}
+
+.profile img {
+    width: 100%;
+    object-fit: contain;
+}
+.likeIcon{
+    margin-left: 15px;
 }
