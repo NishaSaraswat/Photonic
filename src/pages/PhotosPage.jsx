@@ -1,7 +1,8 @@
 import React from 'react'
 import AllPhotos from '../components/AllPhotos'
 
-const PhotosPage = ({userName, photos}) => {
+
+const PhotosPage = () => {
     
     return (
         <div>
