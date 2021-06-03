@@ -6,6 +6,9 @@ import '../styleapp/LogoHeader.css'
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 
 function LogoHeader() {
+
+    
+
     return (
         <div className="header">
             <img src={LogoChat} 
@@ -13,11 +16,17 @@ function LogoHeader() {
                 id="LogoChat"/>
                 {/* <h1 id="photonicLogo">Photonic</h1> */}
                 
-            <div className="header-icons">
-                <SearchIcon
+            <div className="search-icon">
+                <input 
+                    type="text" 
+                    id="userinput"
+                    placeholder="Find user..."
                     className="post-search"
-                    alt={''}
-                    src=""
+                        
+                    // <SearchIcon
+                    // className="post-search"
+                    // alt={''}
+                    // src="" />
                 />
                 </div>
                 <div className="avatar-header">

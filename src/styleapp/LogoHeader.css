@@ -25,7 +25,10 @@
   }
   .header-icons{
     display: flex;
-    flex-direction: row;
+    align-items:center;
+  }
+  .search-icon{
+    display: flex;
     align-items:center;
   }
 
