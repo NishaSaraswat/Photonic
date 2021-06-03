@@ -1,10 +1,23 @@
 .profile h3 {
-    margin-left: 15px;
+    padding-left: 20px;
     color: aliceblue;
 }
-.profile  span {
-    margin-left: 15px;
-    color: aliceblue;
+.profile {
+    font-weight: normal;
+    font-size: 18px;
+    padding-left: 20px; 
+    padding-top: 5px; 
+      
+}
+.post-date{
+    margin: 0;
+    margin-bottom: 20px;
+}
+.post-coment{
+    font-weight: normal;
+    font-size: 18px;
+    padding-left: 12px; 
+    padding-top: 5px; 
 }
 
 .profile img {
@@ -12,5 +25,23 @@
     object-fit: contain;
 }
 .likeIcon{
-    margin-left: 15px;
+    padding-left: 20px;
+}
+.likes{
+
+   padding-left: 12px; 
+}
+
+ .button-back button{
+    background-color: rgba(11, 224, 224, 0.25);
+    color: #0BDFDF;
+    text-decoration: none ;
+    float: right;
+    font-size: medium;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width:70px; 
+    height: 30px
+
+
 }
