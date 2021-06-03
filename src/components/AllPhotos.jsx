@@ -42,7 +42,7 @@ const Photos = () => {
                 <div className="post-header">
                     <Avataricon
                         className="post-avatar"
-                        alt={''}
+                        alt={photo.authorName}
                         src="/static/images/avatar/1.jpg"
                         />
                     <h3 className="post-text-user">{photo.authorName}</h3>
