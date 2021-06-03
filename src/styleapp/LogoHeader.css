@@ -23,18 +23,20 @@
     object-fit: contain;
     margin-left: 10px;
   }
-  .header-icons{
+  /* .header-icons{
     display: flex;
     align-items:center;
-  }
+  } */
   .search-icon{
     display: flex;
-    align-items:center;
+    display: inline;
+    width: 100%;
+   
   }
 
   .post-search{
-      margin-right: 10px;  
-  }
+      margin-left: 15px;  
+  } 
 
  
 
