@@ -58,7 +58,7 @@ const UploadPhotoPage=()=>{
       url: s.imageData,
       description:s.description,
       tags:s.tags,
-      likes:s.likes.length,
+      likes:s.likes.length
     });
     let result=await photo.save();
     console.log(result);

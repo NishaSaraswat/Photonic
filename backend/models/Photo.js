@@ -13,8 +13,7 @@ let schema = new Schema({
     type: Array,
     default: [],
   },
-  posted: { type: Date, default: Date.now },
- 
+  posted: { type: Date, default: Date.now }
 });
 
 // the whole image data is sent from frontend as the property url
