@@ -152,7 +152,11 @@
 }
 
 .camera{
+<<<<<<< HEAD
     margin-top:100px
+=======
+    margin-top:50px
+>>>>>>> 193d49fada0561e62049dc724ff2d3ca807a6d41
 }
 .captured-photo{
    width:100%;
