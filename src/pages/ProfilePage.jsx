@@ -17,6 +17,7 @@ const ProfilePage = () => {
   const [photos, setPhotos] = useState()
   const [profile, setProfile] = useState()
    const {id} = useParams()
+
     //console.log(id)
 
     //"60b61518865850152fa74e32"
@@ -41,7 +42,7 @@ const ProfilePage = () => {
    <>  
 
    <HeaderAllPages  />
-   {/* <AvatarCamera/> */}
+
    <div className="button-back">
       <Link to={'/homepage'}><button>&larr; Back</button></Link>
       </div>
