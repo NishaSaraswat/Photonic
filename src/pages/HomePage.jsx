@@ -9,7 +9,11 @@ const HomePage = () => {
     return (
         <div className="Homepage-feed">
             <LogoHeader/>
+            
             <div className="Main">
+                <br />
+                <br />
+                <br />
                 <AllPhotos />    
             </div>
             <Footer/>

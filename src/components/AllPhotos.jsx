@@ -40,11 +40,18 @@ const Photos = () => {
              {allPhotos.map(photo => <div key={photo.url}>
 
                 <div className="post-header">
+                <Link to={`/uploads/${photo["author"]}`}>
                     <Avataricon
+                    className="post-avatar"
+                    alt={photo.authorName}
+                    src="/static/images/avatar/1.jpg"
+                    />
+                </Link>
+                    {/* <Avataricon
                         className="post-avatar"
                         alt={photo.authorName}
                         src="/static/images/avatar/1.jpg"
-                        />
+                        /> */}
                     <h3 className="post-text-user">{photo.authorName}</h3>
                 </div>
 
@@ -70,9 +77,10 @@ const Photos = () => {
                         <span className="post-likes">{count} likes</span>
                     </div> 
                 </div>
-
-                <h4 className="post-text"><strong>{photo.authorName} </strong>{photo.description}</h4>
-                <h4 className="post-tags">{photo.tags}</h4>
+                
+                <Link to={`/uploads/${photo["author"]}`}><h4 className="post-text"><strong className="post-strong-text">{photo.authorName} </strong>{photo.description}</h4></Link>
+                {/* <h4 className="post-text"><strong className="post-strong-text">{photo.authorName} </strong>{photo.description}</h4> */}
+                <h4 className="post-tags">#{photo.tags}</h4>
 
                 <div className="post-date">
                     <LastPosted 
@@ -80,13 +88,13 @@ const Photos = () => {
                     date={photo.posted} />
                 
                 </div>
-                <div className="ProfileButton"><Link to={`/uploads/${photo["author"]}`}>Show profile</Link>
+                {/* <div className="ProfileButton"><Link to={`/uploads/${photo["author"]}`}>Show profile</Link>
              
-                </div>
+                </div> */}
+                {/* <br/>
                 <br/>
-                <br/>
-                <br/>
-                <hr/>
+                <br/> */}
+                {/* <hr/> */}
            
              
             </div>)}
