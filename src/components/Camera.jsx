@@ -63,8 +63,9 @@ const Camera = ({userName}) => {
       }
      
   return (
-    <div>
-      <HeaderAllPages/>
+    <>
+    <HeaderAllPages/>
+    <div className="camera-container">
         {src==''
         ? (<Webcam
           audio={false}
@@ -114,8 +115,10 @@ const Camera = ({userName}) => {
           
           <button type="submit" className="camera-upload-button">Publish</button>
         </form>
-      <Footer/>
-    </div>)
+     
+    </div>
+    <Footer/>
+    </>)
 }
 
 export default Camera;

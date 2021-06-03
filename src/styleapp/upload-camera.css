@@ -85,7 +85,7 @@
 .upload-button,
 .webcam-btn,
 .camera-upload-button{
-    background-color:rgb(24, 23, 23) ;
+    background-color:rgb(25, 26, 25) ;
     margin-left: 8%;
     margin-top: 0%;
     color: rgb(206, 249, 249);
@@ -130,6 +130,7 @@
     width:100%;
     margin-left: 7%;
     height:40px;
+    background-color:rgb(25, 26, 25) ;
 }
 
 .description-input{
@@ -141,7 +142,9 @@
     margin-top: 0px;
 }
 
-
+.camera-container{
+    margin-bottom: 200px;
+}
 .camera-wrapper{
     margin-left: 5%;
 }
@@ -158,6 +161,7 @@
     margin-left: 20%;
     height: 40px;
     width:100%;
+    background-color:rgb(25, 26, 25) ;
 }
 .camera-description-input{
     height:80px;
@@ -180,5 +184,48 @@
     width:80px;
     height:80px;
     border-radius: 50%;
+}
+
+
+@media only screen and (min-width: 1200px) {
+    
+    .upload-placeholder{
+        width:50%;
+        margin-left: 25%;
+    }
+    .description-input,
+    .tags-input{
+        margin-left: 16%;
+        font-size: 1em;
+    }
+    .tags-input{
+        margin-left: 24%;
+    }
+    .upload-field-label,
+    .upload-button{
+        width:100px;
+        margin-left: 40%;
+    }
+    
+    .camera-description-input,
+    .camera-tags-input,
+    .webcam-btn,
+    .camera-upload-button{
+        margin-left: 3%;
+    }
+    .webcam-btn,
+    .camera-upload-button{
+        margin-left: 10px;
+        width:95%;
+    }
+    .camera-description-input,
+    .camera-tags-input{
+        font-size:1em;
+        width:80%;
+        margin-top: 15%;
+    }
+    .camera-tags-input{
+        margin-top: 2%;
+    }
 }
 
