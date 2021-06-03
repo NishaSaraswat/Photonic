@@ -37,7 +37,7 @@ const Photos = () => {
     return (
         <div className="feed">
             <div className="post">
-             {allPhotos.map(photo =><div key={photo.url}>
+             {allPhotos.map(photo => <div key={photo.url}>
 
                 <div className="post-header">
                     <Avataricon
@@ -79,7 +79,8 @@ const Photos = () => {
                     className="posted"
                     date={photo.posted} />
                 </div>
-                <Link to={`/uploads/${photo["author"]}`}>Show profile</Link>
+                <div><Link to={`/uploads/${photo["author"]}`}>Show profile</Link></div>
+             
             </div>)}
         </div>
     </div>
