@@ -3,26 +3,34 @@
     width: 100%;    
     display: flex;
     justify-content: center;
+   
+    
 }
 
 .container_body{
-    width: 60%;
+    width: 100%;
+    height: 40vh;
+   
+    
 }
 
 .div_image_com{
     display: flex;
     justify-content: center;
+    
+   
 }
 
 .imagen_com{
-    border-radius: 50% !important;
-    width: 200px !important;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
 }
 
 .comments{
-    background-color: white;
-    height: 100vh;
-    width: 100vh;
+    background-color: white; /*white*/
+    height: 70vh;
+    width: 100vw;
 }
 
 .comments_list{
@@ -30,6 +38,7 @@
     padding-bottom: 30px;     
     background: #ffff;
     justify-content: start;
+    
 }
 
 .comments_list p{
@@ -49,6 +58,8 @@
     position: absolute; 
     bottom: 0; 
     width: 100%; 
+    background-color: rgb(195, 195, 195);
+    height: 10vh;
 }
 
 .input_com{
