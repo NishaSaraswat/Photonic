@@ -30,12 +30,12 @@ function LogoHeader() {
                 />
                 </div>
                 <div className="avatar-header">
-                <AccountBoxIcon 
+                    {/* <AccountBoxIcon 
                     fontSize="large"
                     className="header-avatar"
                     alt={''}
                     src="/static/images/avatar/1.jpg"
-                />
+                />*/}
             </div>
         </div>
     )
