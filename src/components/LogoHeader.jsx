@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import LogoChat from '../styleapp/icons/LogoChat.png'
 // import Avataricon from "@material-ui/core/Avatar";
 import SearchIcon from '@material-ui/icons/Search';
@@ -6,8 +6,6 @@ import '../styleapp/LogoHeader.css'
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 
 function LogoHeader() {
-
-    
 
     return (
         <div className="header">
