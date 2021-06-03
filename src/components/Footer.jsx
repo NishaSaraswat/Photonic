@@ -24,15 +24,7 @@ function Footer() {
                 </div>
             </Link>  
 
-           <Link to="/upload"> 
-                <div className="footer-icons">
-                    <CropOriginalIcon
-                    className="footer-pics"
-                    alt={''}
-                    src=""
-                    />
-                </div>
-            </Link>    
+           
             <Link to="/camera">
             <div className="footer-icons">
             <PhotoCameraIcon
@@ -42,9 +34,19 @@ function Footer() {
 
                 />
             </div>
+
+            <Link to="/upload"> 
+                <div className="footer-icons">
+                    <CropOriginalIcon
+                    className="footer-pics"
+                    alt={''}
+                    src=""
+                    />
+                </div>
+            </Link>    
             </Link>
                 
-            <Link to="/profile">
+            {/* <Link to="/profile">
                 <div className="footer-icons">
             <AccountBoxIcon
                 className="footer-profile"
@@ -52,7 +54,7 @@ function Footer() {
                 src=""
             />
             </div>
-            </Link>
+            </Link> */}
         </div>
     )
 }
