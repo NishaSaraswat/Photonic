@@ -43,16 +43,7 @@ function Footer() {
                 />
             </div>
             </Link>
-                
-            <Link to="/profile">
-                <div className="footer-icons">
-            <AccountBoxIcon
-                className="footer-profile"
-                alt={''}
-                src=""
-            />
-            </div>
-            </Link>
+       
         </div>
     )
 }
