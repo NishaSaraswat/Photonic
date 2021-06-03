@@ -1,17 +1,17 @@
 import { Button } from '@material-ui/core';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import React,{ useEffect, useState } from 'react';
 import { useHistory, useParams, Link } from 'react-router-dom';
-//import { modelName } from '../../backend/models/Comment';
+import mongoosy from 'mongoosy/frontend';
+import '../styleapp/comments.css';
+
+const {
+    Message
+} = mongoosy;
 
 
 const Comments = () => {
-/*
-    const savedComment = new modelName({
-        id: '',
-        idPost: '',
-        comment: '',
-        user: ''
-    });*/
+
     const history = useHistory();
     const { id, user, url } = useParams();
     const [comments, setComments] = useState([]);
@@ -23,7 +23,7 @@ const Comments = () => {
           return () => clearInterval(interval);
     },[comments]);
 
-    const addComment =  () => {
+    const addComment = async () => {
 
         if( newComment === '' )
         { return; }
@@ -32,47 +32,56 @@ const Comments = () => {
                 id_Post: id,
                 user: user,
                 comment: newComment
-            });      
+            });
+            let newMessage = new Message ({
+                text: newComment, author: user
+                //Message.find({author.userId})...populate('author')
+            }) 
+            await newMessage.save();
+            console.log(newMessage);
         setNewComment('');
     }
 
     return(
-        <div  style={{color:'white', paddingTop:'15px', width:'95%'}}>
-            <div  style={{ display:'flex', justifyContent:'center'}}>
-                <img 
-                    style={{ borderRadius:'50%', width:"200px", height: '200px'}}                
-                    src={'/uploads/' + url}
+        <div className="container_com">
+            <div className="container_body">
+                <div className="div_image_com">
+                    <img 
+                        className="imagen_com"
+                        src={'/uploads/' + url}                    
+                        alt="picture"
+                    />
+                </div> 
+                <div className="comments">
+                    {
+                        comments.length===0?
+                        <p style={{color:'white'}}>Comments</p>
+                        :
+                        comments.map( item => 
+                            <div className="comments_list" key={item.id}> 
+                                <h4 className="userName">{item.user}</h4> 
+                                <p>{item.comment}</p>                        
+                            </div>
+                        )            
+                    } 
+                    <div className="comments_input">
+                        <input
+                            className="input_com"
+                            type="text"
+                            value={newComment}
+                            onChange={ (event) => setNewComment( event.target.value ) }
+                            placeholder="Write a Comment"
+                            autoFocus
+                        />                    
+                        <Button className="btn_com" onClick={ () => addComment() }> Send </Button>
                     
-                    alt="picture"
-                />
-            </div> 
-            <div style={{display:'flex', justifyContent:'center'}}>
-                {
-                    comments.length===0?
-                    <p style={{color:'white'}}>Not match</p>
-                    :
-                    comments.map( item => 
-                        <div key={item.id} style={{ paddingBottom:'30px', background:'#ffff', color:'#0000'}}> 
-                            <h4 style={{display:'block'}}>{item.user}</h4> 
-                            <p>{item.comment}</p>                        
-                        </div>
-                    )            
-                }
-                <input  
-                    style={{backgroundColor:'rgb(190, 184, 184)', color:'black'}}
-                    type="text"
-                    value={newComment}
-                    onChange={ (event) => setNewComment( event.target.value ) }
-                    placeholder="Write a Comment"
-                    autoFocus
-                />
-                <div style={{display:'flex', justifyContent:'space-between'}}>
-                    <Button onClick={ () => addComment() }> Add Comment </Button>
-                    <Link to={"/homepage"}>Back</Link>
-                </div>
-            </div>           
-
-
+                        <Link className="back_com" to={"/homepage"}>
+                            <ArrowBackIosIcon color="secondary"  title="Back"/>
+                        </Link>
+                    
+                    </div>
+                </div>    
+            </div>                 
         </div>
     )
 }
