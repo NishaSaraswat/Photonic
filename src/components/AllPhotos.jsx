@@ -28,7 +28,7 @@ const Photos = () => {
     }, [])
 
     
-    const handleLikes=()=>{
+    const handleLikes=()=> {
         count++;
         setCount(count);
         console.log(`icon is clicked ${count} times`)
@@ -78,8 +78,16 @@ const Photos = () => {
                     <LastPosted 
                     className="posted"
                     date={photo.posted} />
+                
                 </div>
-                <div><Link to={`/uploads/${photo["author"]}`}>Show profile</Link></div>
+                <div className="ProfileButton"><Link to={`/uploads/${photo["author"]}`}>Show profile</Link>
+             
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <hr/>
+           
              
             </div>)}
         </div>
