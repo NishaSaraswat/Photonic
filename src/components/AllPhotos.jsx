@@ -9,7 +9,7 @@ import Avataricon from "@material-ui/core/Avatar";
 import '../styleapp/HomePage.css'
 import {Link} from "react-router-dom"
 
-const Photos = () => {
+const Photos = ({name}) => {
     const [allPhotos, setAllPhotos]=useState([]);
     let [count, setCount]=useState(0)
 
@@ -70,6 +70,7 @@ const Photos = () => {
                         <span className="post-likes">{count} likes</span>
                     </div> 
                 </div>
+                <Link to={`/comments/${photo._id}/${photo.authorName}/${photo.url}/${name}`}>Comment</Link>
 
                 <h4 className="post-text"><strong>{photo.authorName} </strong>{photo.description}</h4>
                 <h4 className="post-tags">{photo.tags}</h4>
