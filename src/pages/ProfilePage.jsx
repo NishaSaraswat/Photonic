@@ -1,10 +1,8 @@
 import React from 'react'
-import AvatarCamera from '../components/AvatarCamera'
 import mongoosy from 'mongoosy/frontend';
 import HeaderAllPages from '../components/HeaderAllPages';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import Footer from '../components/Footer';
-import Button from '@material-ui/core/Button';
 import '../styleapp/upload-camera.css';
  import '../styleapp/Footer.css';
 import '../styleapp/LogoHeader.css';
@@ -13,6 +11,7 @@ const { Photo, User } = mongoosy;
 import { useState, useEffect } from "react";
 import {useParams} from "react-router-dom";
 import {Link} from 'react-router-dom';
+import LastPosted  from '../components/LastPosted'
 
 const ProfilePage = () => {
   const [photos, setPhotos] = useState()
@@ -51,7 +50,9 @@ const ProfilePage = () => {
    <div className="profile">
       <h3>{profile.name}</h3>
       <img src={phot.url}/> 
-      <span className="post-date">Posted: {phot.posted}</span>
+      <span className="post-date">
+         <LastPosted
+         date={phot.posted}/></span>
       <br/>
       <span className="post-coment">Coment: {phot.description}</span> 
       <br/>
