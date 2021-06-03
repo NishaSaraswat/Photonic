@@ -79,7 +79,7 @@ return (
                   <input name="file" type="file" id="files"
                     accept="image/*" onChange={photoChosen} style={{display:'none'}} className="upload-input"/>
           
-        </div>
+              </div>
         {s.imageData && <img src={s.imageData} width="300" ref={chosenImg} className="upload-image"/>}
         {!s.imageData && <img src={placeholder} alt="placeholder" ref={placeholderPhoto} className="upload-placeholder"/>}
         <div className="description-field">
