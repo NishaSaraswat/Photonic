@@ -3,7 +3,7 @@ import '../styleapp/Footer.css'
 import PhotoCameraIcon from '@material-ui/icons/PhotoCamera';
 import CropOriginalIcon from '@material-ui/icons/CropOriginal';
 // import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
-import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
+import HomeIcon from '@material-ui/icons/Home';
 import {Link} from 'react-router-dom'
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 
@@ -14,6 +14,15 @@ function Footer() {
     return (
         <div className="footer">
 
+            <Link to="/homepage"> 
+                <div className="footer-icons">
+                    <HomeIcon
+                    className="footer-pics"
+                    alt={''}
+                    src=""
+                    />
+                </div>
+            </Link>  
 
            <Link to="/upload"> 
                 <div className="footer-icons">
@@ -23,7 +32,8 @@ function Footer() {
                     src=""
                     />
                 </div>
-            </Link>     
+            </Link>    
+            <Link to="/camera">
             <div className="footer-icons">
             <PhotoCameraIcon
                 className="footer-camera"
@@ -32,27 +42,17 @@ function Footer() {
 
                 />
             </div>
-
-            <div className="footer-icons">
-            <ChatBubbleOutlineIcon
-                className="footer-chat"
-                alt={''}
-                src=""
-
-                />
+            </Link>
                 
-                </div>
-                
+            <Link to="/profile">
                 <div className="footer-icons">
             <AccountBoxIcon
                 className="footer-profile"
                 alt={''}
                 src=""
-
-                />
-                
+            />
             </div>
-            
+            </Link>
         </div>
     )
 }
