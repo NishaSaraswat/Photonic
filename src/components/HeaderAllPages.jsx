@@ -1,6 +1,6 @@
 import React from 'react'
 import LogoChat from '../styleapp/icons/LogoChat.png'
-import Avataricon from "@material-ui/core/Avatar";
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import '../styleapp/LogoHeader.css'
 
 function HeaderAllPages() {
@@ -11,9 +11,9 @@ function HeaderAllPages() {
                 id="LogoChat"
             />
                 
-            <div className="header-icons">
-
-                <Avataricon
+        <div className="avatar-header">
+            <AccountBoxIcon 
+                    fontSize="large"
                     className="header-avatar"
                     alt={''}
                     src="/static/images/avatar/1.jpg"
