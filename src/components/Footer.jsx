@@ -45,6 +45,7 @@ function Footer() {
                 </div>
             </Link>    
             </Link>
+
                 
             {/* <Link to="/profile">
                 <div className="footer-icons">
@@ -55,6 +56,7 @@ function Footer() {
             />
             </div>
             </Link> */}
+
         </div>
     )
 }
