@@ -2,7 +2,7 @@
   background: rgb(6, 73, 73);
   position: fixed; 
   width: 100%;
-  height: 56px;
+  height: 40px;
   left: 0px;
   bottom: 0px;
   display: flex;
@@ -11,5 +11,5 @@
 
 .footer-icons {
   display: flex;
-  margin: 15px;
+  margin: 10px;
 }
