@@ -78,8 +78,16 @@ const Photos = () => {
                     <LastPosted 
                     className="posted"
                     date={photo.posted} />
+                
                 </div>
-                <div className="ProfileButton"><Link to={`/uploads/${photo["author"]}`}>Show profile</Link></div>
+                <div className="ProfileButton"><Link to={`/uploads/${photo["author"]}`}>Show profile</Link>
+             
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <hr/>
+           
              
             </div>)}
         </div>

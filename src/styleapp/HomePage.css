@@ -97,4 +97,18 @@ body{
     right: 15px; 
     
   }
-
+.ProfileButton a{
+    background-color: rgba(11, 224, 224, 0.25);
+    color: #0BDFDF;
+    text-decoration: none ;
+    font-size: 18px;
+    border-radius: 10px;
+    height: 30px;
+    width: 50%;
+    margin-left: 50px;
+    border: none;
+    position: absolute;
+    padding-top: 10px;
+    text-align: center;
+    line-height: 1em;
+}
