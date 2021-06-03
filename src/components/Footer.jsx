@@ -34,7 +34,7 @@ function Footer() {
 
                 />
             </div>
-
+            </Link> 
             <Link to="/upload"> 
                 <div className="footer-icons">
                     <CropOriginalIcon
@@ -44,7 +44,7 @@ function Footer() {
                     />
                 </div>
             </Link>    
-            </Link>
+
                 
             {/* <Link to="/profile">
                 <div className="footer-icons">
@@ -55,6 +55,7 @@ function Footer() {
             />
             </div>
             </Link> */}
+
         </div>
     )
 }
