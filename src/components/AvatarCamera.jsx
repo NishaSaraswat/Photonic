@@ -23,8 +23,6 @@ const AvatarCamera = () => {
         const g = useNamedContext('global');
         const s = useStates({
           users: [],
-          chatMessage: '',
-          toWhom: '',
           imageData: '',
         });
         const capturedImg=useRef();

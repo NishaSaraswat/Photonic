@@ -71,7 +71,7 @@ const Photos = () => {
                     </div> 
                 </div>
 
-                <h4 className="post-text"><strong>{photo.authorName}</strong>{photo.description}</h4>
+                <h4 className="post-text"><strong>{photo.authorName} </strong>{photo.description}</h4>
                 <h4 className="post-tags">{photo.tags}</h4>
 
                 <div className="post-date">

@@ -1,3 +1,5 @@
+/*-------Avatar Camera----*/
+
 .profile-wrapper{
     color:rgb(190, 184, 184);
     width:100%
@@ -47,15 +49,8 @@
     justify-content: space-between;
 }
 
-.header-icon{
-    width:70px;
-    margin-top: -70px;
-    margin-left: -15px;
-}
+/*----upload and camera page-----*/
 
-.header-logo{
-    width:70px;
-}
 .upload-photo-wrapper{
     display:flex;
     flex-direction: column;
@@ -173,6 +168,25 @@
     margin-top: 5%;
 }
 
+/*-----Avatarupload----*/
+
+
+.avatar-upload-form{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.avatar-placeholder,
+.avatar-photo{
+    width:80px;
+    height:80px;
+    border-radius: 50%;
+}
+
+
 @media only screen and (min-width: 1200px) {
     
     .upload-placeholder{
@@ -214,3 +228,4 @@
         margin-top: 2%;
     }
 }
+
