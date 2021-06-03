@@ -52,7 +52,7 @@ const ProfilePage = () => {
       <h3>{profile.name}</h3>
       <img src={phot.url}/> 
       <span className="post-date">
-         <LastPosted
+         Posted: <LastPosted
          date={phot.posted}/></span>
       <br/>
       <span className="post-coment">Coment: {phot.description}</span> 
