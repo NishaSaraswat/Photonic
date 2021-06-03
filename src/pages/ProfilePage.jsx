@@ -44,7 +44,7 @@ const ProfilePage = () => {
    <HeaderAllPages  />
    {/* <AvatarCamera/> */}
    <div className="button-back">
-      <Link to={'/photos'}><button>&larr; Back</button></Link>
+      <Link to={'/homepage'}><button>&larr; Back</button></Link>
       </div>
       {profile && photos && photos.map((phot) =>(
 
