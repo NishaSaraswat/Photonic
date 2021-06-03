@@ -58,6 +58,7 @@
     width:90%;
     padding-top: 1%;
     margin-left: 5%;
+    margin-bottom: 5%;
 }
 
 .upload-placeholder{
@@ -165,7 +166,10 @@
 }
 .camera-description-input{
     height:80px;
-    margin-top: 5%;
+    margin-top: 10%;
+}
+.camera-tags-input{
+    margin-top: 0%;
 }
 
 /*-----Avatarupload----*/
