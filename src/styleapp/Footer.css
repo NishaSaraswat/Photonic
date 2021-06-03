@@ -1,6 +1,6 @@
 .footer {
   background: rgb(6, 73, 73);
-  position: sticky; 
+  position: fixed; 
   width: 100%;
   height: 56px;
   left: 0px;
