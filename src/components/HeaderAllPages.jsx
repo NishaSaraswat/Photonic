@@ -11,14 +11,14 @@ function HeaderAllPages() {
                 id="LogoChat"
             />
                 
-        <div className="avatar-header">
+       {/* <div className="avatar-header">
             <AccountBoxIcon 
                     fontSize="large"
                     className="header-avatar"
                     alt={''}
                     src="/static/images/avatar/1.jpg"
                 />
-            </div>
+            </div>*/}
         </div>
     )
 }
