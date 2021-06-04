@@ -74,23 +74,23 @@ const Camera = ({userName}) => {
           videoConstraints={videoConstraints}
           className="camera"
           />)
-        : (<img src={src} ref={capturedImg}/>)}
-
+        : (<img src={src} ref={capturedImg} className="captured-photo"/>)}
+        <div className="captured-photo-information-wrapper">
           <div>
-            <input 
-            name="description" 
-            placeholder="what's in your mind..." 
-            onChange={handleDescriptionChange}
-            className="camera-description-input"
+            <textarea
+              name="description" 
+              placeholder="what's in your mind..." 
+              onChange={handleDescriptionChange}
+              className="camera-description-input"
             />
           </div>
           <div>
-              <input 
-              type="text"
-              name="tags"
-              placeholder="Tags"
-              onChange={handleTags}
-              className="camera-tags-input"
+              <textarea 
+                type="text"
+                name="tags"
+                placeholder="Tags"
+                onChange={handleTags}
+                className="camera-tags-input"
               />
           </div>
 
@@ -101,8 +101,8 @@ const Camera = ({userName}) => {
             e.preventDefault();
             setSrc('')
             }}
-            className="webcam-btn">
-            Retake Image</button>)
+            className="webcam-btn-retake">
+            Retake</button>)
             :
             (<button onClick={(e)=>{
             e.preventDefault();
@@ -113,9 +113,10 @@ const Camera = ({userName}) => {
         <form name="photoUpload" onSubmit={uploadPhoto}>
           {s.imageData && <img src={src} width="300" className="captured-photo"/>}
           
-          <button type="submit" className="camera-upload-button">Publish</button>
+          <button type="submit" className="camera-publish-button">Publish</button>
         </form>
      
+      </div>
     </div>
     <Footer/>
     </>)

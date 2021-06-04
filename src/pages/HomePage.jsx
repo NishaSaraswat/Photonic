@@ -12,8 +12,16 @@ const HomePage = () => {
     return (
         <div className="Homepage-feed">
             <LogoHeader/>
+            
             <div className="Main">
+
                 <AllPhotos name={name}/>    
+
+                <br />
+                <br />
+                <br />
+                <AllPhotos />    
+
             </div>
             <Footer/>
         </div>
