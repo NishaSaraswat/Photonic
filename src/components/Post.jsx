@@ -11,6 +11,7 @@ import LastPosted from '../components/LastPosted'
 import '../styleapp/Post.css'
 import PhotosPage from './PhotosPage';
 
+
 const Post = ({userName, photos}) => {
 
     return (
