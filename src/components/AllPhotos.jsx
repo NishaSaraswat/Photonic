@@ -10,7 +10,7 @@ import '../styleapp/HomePage.css'
 import {Link} from "react-router-dom"
 import Like from '../components/Like'
 
-const Photos = () => {
+const Photos = ({name}) => {
     const [allPhotos, setAllPhotos]=useState([]);
     let [count, setCount]=useState(0)
 
@@ -35,17 +35,24 @@ const Photos = () => {
     //     console.log(`icon is clicked ${count} times`)
     // }
 
+  
+
     return (
         <div className="feed">
             <div className="post">
              {allPhotos.map(photo => <div key={photo.url}>
 
                 <div className="post-header">
+                <Link to={`/uploads/${photo["author"]}`}>
                     <Avataricon
-                        className="post-avatar"
-                        alt={photo.authorName}
-                        src="/static/images/avatar/1.jpg"
-                        />
+                    className="post-avatar"
+                    alt={photo.authorName}
+                    src="/static/images/avatar/1.jpg"
+                    />
+                </Link>
+               
+             
+
                     <h3 className="post-text-user">{photo.authorName}</h3>
                 </div>
 
@@ -72,8 +79,12 @@ const Photos = () => {
                         <span className="post-likes">{count} likes</span>
                     </div>  */}
                 </div>
+                <Link to={`/comments/${photo._id}/${photo.authorName}/${photo.url}/${name}`}>Comment</Link>
 
                 <h4 className="post-text"><strong>{photo.authorName} </strong>{photo.description}</h4>
+                
+               <h4 className="post-text"><strong className="post-strong-text">{photo.authorName} </strong>{photo.description}</h4>
+
                 <h4 className="post-tags">{photo.tags}</h4>
 
                 <div className="post-date">
@@ -82,14 +93,12 @@ const Photos = () => {
                     date={photo.posted} />
                 
                 </div>
-                <div className="ProfileButton"><Link to={`/uploads/${photo["author"]}`}>Show profile</Link>
-             
-                </div>
-                <br/>
-                <br/>
-                <br/>
+
                 <hr/>
-           
+
+
+             
+ 
              
             </div>)}
         </div>

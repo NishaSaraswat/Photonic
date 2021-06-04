@@ -22,9 +22,10 @@ export default function LoginPage({ loginCheck }) {
     e.preventDefault();
     let { email, password } = s;
     let result = await Login.login({ email, password });
+    console.log(result && result.name)
     if (result.js.error) { s.error = 'Login failed'; return; }
     loginCheck();
-    history.push('/homepage');
+    history.push(`/homepage/${result && result.name}`);
   };
 
   // TEMPLATE

@@ -43,7 +43,8 @@ const ProfilePage = () => {
    <>  
 
    <HeaderAllPages  />
-
+   <div className="title"><title>My Posts</title></div>
+   
    <div className="button-back">
       <Link to={'/homepage'}><button>&larr; Back</button></Link>
       </div>
@@ -52,11 +53,9 @@ const ProfilePage = () => {
    <div className="profile">
       <h3>{profile.name}</h3>
       <img src={phot.url}/> 
-      <span className="post-date">
-         Posted: <LastPosted
-         date={phot.posted}/></span>
-      <br/>
-      <span className="post-coment">Coment: {phot.description}</span> 
+      <span className="postdate"><LastPosted date={phot.posted}/></span>
+
+      <span className="postcoment">{phot.description}</span> 
       <br/>
       <div className="likeIcon">
          {/* <ThumbUpIcon/> <span className="likes">{phot.likes}</span>  */}
@@ -64,9 +63,6 @@ const ProfilePage = () => {
          
       </div>
              
-           
-        
-           
     </div>
 ))}
 

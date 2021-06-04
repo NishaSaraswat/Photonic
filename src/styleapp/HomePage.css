@@ -12,11 +12,12 @@ body{
 
 .post{
     
-    margin-bottom: 0px 0px 0px 0px; 
+    /* margin-bottom: 0px 0px 0px 0px;  */
+    margin-bottom: 40px;
 }
 
 .post-header{
-    /* border-top: 1px solid rgba(255, 255, 255, 0.103) ; */
+    border-top: 1px solid rgba(255, 255, 255, 0.103) ;
     display: flex;
     align-items: center;
     padding-left: 15px;
@@ -26,18 +27,20 @@ body{
 }
 .post-avatar{
     margin-right: 10px;
-    margin-top: 70px; 
-    margin-bottom: 10px;
+    margin-top: 0px; 
+    margin-bottom: 0px;
+    /* background-color: black; */
 }
 
 .post-text-user{
-    font-weight: bold;
+    /* font-weight: bold; */
     font-size: 18px;
-    padding-left: 5px; 
+    padding-left: 0px; 
     padding-top: 5px; 
     padding-top: 15px;
     padding-bottom: 15px;
-    margin-top: 70px; 
+     
+    cursor: pointer;
 
   }
 
@@ -46,23 +49,33 @@ body{
     object-fit: contain;
 }
 
+.post-strong-text{
+    font-weight: normal;
+    font-size: 20px;
+    padding-left: 0px;
+    font-weight: bold;
+    padding-top: 5px; 
+  }
 .post-text{
     font-weight: normal;
-    font-size: 18px;
+    font-size: 14px;
     padding-left: 12px; 
-    padding-top: 5px; 
+     
   }
 
 .post-tags{
+    margin-top: 3px;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 12px;
     padding-left: 12px; 
-    padding-top: 5px; 
+    padding-top: 8px; 
+    margin-bottom: 2px;
   }
 
 .post-likes {
-    padding-left: 12px; 
-    margin-bottom: 20px;
+    padding-left: 10px; 
+    margin-bottom: 0px;
+    font-size: 12px;
   }
 
 .post-icons{
@@ -70,20 +83,22 @@ body{
     align-items: center;
     padding-left: 10px;
     padding-bottom: 10px;
-    padding-top: 10px; 
+    padding-top: 8px; 
 }
 
 .post-commentIcon {
     padding-left: 2px; 
-    padding-right: 20px;
+    padding-right: 8px;
+    margin-top: 6px;
+
 }
 .post-thumpUp{
-    padding-left: 2px; 
+    padding-left: 0px; 
 }
 
 .post-date{
     font-weight: normal;
-    font-size: 16px;
+    font-size: 10px;
     padding-left: 12px; 
     padding-top: 3px; 
     margin-bottom: 20px;
@@ -99,7 +114,7 @@ body{
   }
 .ProfileButton a{
     background-color: rgba(11, 224, 224, 0.25);
-    color: #0BDFDF;
+    color: white;
     text-decoration: none ;
     font-size: 18px;
     border-radius: 10px;
@@ -111,4 +126,5 @@ body{
     padding-top: 10px;
     text-align: center;
     line-height: 1em;
+   
 }
