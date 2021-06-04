@@ -18,6 +18,7 @@ import Header from './components/Header';
 import TimeAgo from 'javascript-time-ago';
 import en from 'javascript-time-ago/locale/en';
 import ru from 'javascript-time-ago/locale/ru';
+import Comments from './components/Comment';
 
 TimeAgo.addDefaultLocale(en)
 TimeAgo.addLocale(ru)
@@ -130,7 +131,10 @@ export default withContext('global', {
           <PhotosPage />
         
         </Route>
-        <Route path="/homepage">
+        <Route path="/comments/:id/:user/:url/:name">
+          <Comments/>
+        </Route>
+        <Route path="/homepage/:name">
           <HomePage/>
 
         </Route>
