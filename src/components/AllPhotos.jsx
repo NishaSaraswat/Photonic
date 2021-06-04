@@ -44,11 +44,14 @@ const Photos = () => {
                 <div className="post-header">
                 <Link to={`/uploads/${photo["author"]}`}>
                     <Avataricon
-                        className="post-avatar"
-                        alt={photo.authorName}
-                        src="/static/images/avatar/1.jpg"
-                        />
+                    className="post-avatar"
+                    alt={photo.authorName}
+                    src="/static/images/avatar/1.jpg"
+                    />
                 </Link>
+               
+             
+
                     <h3 className="post-text-user">{photo.authorName}</h3>
                 </div>
 
@@ -74,8 +77,9 @@ const Photos = () => {
                         <span className="post-likes">{count} likes</span>
                     </div> 
                 </div>
-
-                <h4 className="post-text"><strong>{photo.authorName} </strong>{photo.description}</h4>
+                
+               <h4 className="post-text"><strong className="post-strong-text">{photo.authorName} </strong>{photo.description}</h4>
+                <h4 className="post-text"><strong className="post-strong-text">{photo.authorName} </strong>{photo.description}</h4> 
                 <h4 className="post-tags">{photo.tags}</h4>
 
                 <div className="post-date">
@@ -84,8 +88,12 @@ const Photos = () => {
                     date={photo.posted} />
                 
                 </div>
+
                 <hr/>
-           
+
+
+             
+ 
              
             </div>)}
         </div>

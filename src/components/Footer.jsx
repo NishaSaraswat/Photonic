@@ -13,6 +13,7 @@ import AccountBoxIcon from '@material-ui/icons/AccountBox';
 function Footer() {
     return (
         <div className="footer">
+        
 
             <Link to="/homepage"> 
                 <div className="footer-icons">
@@ -46,7 +47,7 @@ function Footer() {
             </Link>    
 
                 
-            {/* <Link to="/profile">
+            <Link to={`/uploads/`}>
                 <div className="footer-icons">
             <AccountBoxIcon
                 className="footer-profile"
@@ -54,7 +55,7 @@ function Footer() {
                 src=""
             />
             </div>
-            </Link> */}
+            </Link>
 
         </div>
     )
