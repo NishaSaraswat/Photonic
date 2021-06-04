@@ -4,6 +4,7 @@ import React,{ useEffect, useState } from 'react';
 import { useHistory, useParams, Link } from 'react-router-dom';
 import mongoosy from 'mongoosy/frontend';
 import '../styleapp/comments.css';
+const { Photo, User } = mongoosy;
 
 
 const {
@@ -11,13 +12,12 @@ const {
 } = mongoosy;
 
 //OLD CODE
-const Comments = () => {
+const Comments = ({author, imageUrl, photoId}) => {
 
     const history = useHistory();
     const { id, user, url, name } = useParams();
     const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState("");
-
     useEffect( () => {
         const interval = setInterval(() => {
             
@@ -31,8 +31,8 @@ const Comments = () => {
         { return; }
         comments.push({
                 id: comments.length,
-                id_Post: id,
-                user: user,
+                id_Post: photoId,
+                user: name,
                 comment: newComment
             });
             let loginuser = await Login.check();
