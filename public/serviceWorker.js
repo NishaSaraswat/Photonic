@@ -55,7 +55,7 @@ async function cacher(request) {
   }
 
   // Otherwise cache the response, if it is a GET request
-  else if (request.method === 'GET' ) {
+  else if (request.method === 'GET'&& !request.url.includes('chrome-extension') ) {
     cache.put(request, response.clone()); // no await needed!
   }
 

@@ -131,12 +131,11 @@ export default withContext('global', {
           <PhotosPage />
         
         </Route>
-        <Route path="/comments/:id/:user/:url/:name">
+        <Route path="/comments/:id">
           <Comments/>
         </Route>
-        <Route path="/homepage/:name">
+        <Route path="/homepage">
           <HomePage/>
-
         </Route>
       </Switch>
       
