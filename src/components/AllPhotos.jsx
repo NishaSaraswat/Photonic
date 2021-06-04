@@ -34,17 +34,21 @@ const Photos = () => {
         console.log(`icon is clicked ${count} times`)
     }
 
+  
+
     return (
         <div className="feed">
             <div className="post">
              {allPhotos.map(photo => <div key={photo.url}>
 
                 <div className="post-header">
+                <Link to={`/uploads/${photo["author"]}`}>
                     <Avataricon
                         className="post-avatar"
                         alt={photo.authorName}
                         src="/static/images/avatar/1.jpg"
                         />
+                </Link>
                     <h3 className="post-text-user">{photo.authorName}</h3>
                 </div>
 
@@ -80,12 +84,6 @@ const Photos = () => {
                     date={photo.posted} />
                 
                 </div>
-                <div className="ProfileButton"><Link to={`/uploads/${photo["author"]}`}>Show profile</Link>
-             
-                </div>
-                <br/>
-                <br/>
-                <br/>
                 <hr/>
            
              
