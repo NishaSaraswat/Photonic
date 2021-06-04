@@ -34,6 +34,8 @@ const Photos = () => {
         console.log(`icon is clicked ${count} times`)
     }
 
+  
+
     return (
         <div className="feed">
             <div className="post">
@@ -47,11 +49,9 @@ const Photos = () => {
                     src="/static/images/avatar/1.jpg"
                     />
                 </Link>
-                    {/* <Avataricon
-                        className="post-avatar"
-                        alt={photo.authorName}
-                        src="/static/images/avatar/1.jpg"
-                        /> */}
+               
+             
+
                     <h3 className="post-text-user">{photo.authorName}</h3>
                 </div>
 
@@ -78,9 +78,9 @@ const Photos = () => {
                     </div> 
                 </div>
                 
-                <Link to={`/uploads/${photo["author"]}`}><h4 className="post-text"><strong className="post-strong-text">{photo.authorName} </strong>{photo.description}</h4></Link>
-                {/* <h4 className="post-text"><strong className="post-strong-text">{photo.authorName} </strong>{photo.description}</h4> */}
-                <h4 className="post-tags">#{photo.tags}</h4>
+               <h4 className="post-text"><strong className="post-strong-text">{photo.authorName} </strong>{photo.description}</h4>
+                <h4 className="post-text"><strong className="post-strong-text">{photo.authorName} </strong>{photo.description}</h4> 
+                <h4 className="post-tags">{photo.tags}</h4>
 
                 <div className="post-date">
                     <LastPosted 
@@ -88,14 +88,12 @@ const Photos = () => {
                     date={photo.posted} />
                 
                 </div>
-                {/* <div className="ProfileButton"><Link to={`/uploads/${photo["author"]}`}>Show profile</Link>
+
+                <hr/>
+
+
              
-                </div> */}
-                {/* <br/>
-                <br/>
-                <br/> */}
-                {/* <hr/> */}
-           
+ 
              
             </div>)}
         </div>
