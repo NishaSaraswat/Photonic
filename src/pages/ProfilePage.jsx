@@ -12,6 +12,7 @@ import { useState, useEffect } from "react";
 import {useParams} from "react-router-dom";
 import {Link} from 'react-router-dom';
 import LastPosted  from '../components/LastPosted'
+import Like from '../components/Like'
 
 const ProfilePage = () => {
   const [photos, setPhotos] = useState()
@@ -57,7 +58,8 @@ const ProfilePage = () => {
       <span className="postcoment">{phot.description}</span> 
       <br/>
       <div className="likeIcon">
-         <ThumbUpIcon/> <span className="likes">{phot.likes}</span> 
+         {/* <ThumbUpIcon/> <span className="likes">{phot.likes}</span>  */}
+         <Like/>
          
       </div>
              
