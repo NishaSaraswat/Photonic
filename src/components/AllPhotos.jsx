@@ -8,6 +8,7 @@ import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import Avataricon from "@material-ui/core/Avatar";
 import '../styleapp/HomePage.css'
 import {Link} from "react-router-dom"
+import Like from '../components/Like'
 
 const Photos = () => {
     const [allPhotos, setAllPhotos]=useState([]);
@@ -28,11 +29,11 @@ const Photos = () => {
     }, [])
 
     
-    const handleLikes=()=> {
-        count++;
-        setCount(count);
-        console.log(`icon is clicked ${count} times`)
-    }
+    // const handleLikes=()=> {
+    //     count++;
+    //     setCount(count);
+    //     console.log(`icon is clicked ${count} times`)
+    // }
 
     return (
         <div className="feed">
@@ -62,13 +63,14 @@ const Photos = () => {
                             onClick={""}
                         />
                     </div>
-
-                    <div className="post-thumpUp">
+                    <Like/>
+                        {/* <Like likes = {photo.likes}/> */}
+                    {/* <div className="post-thumpUp">
                         <ThumbUpIcon 
                             onClick={handleLikes}
                         />
                         <span className="post-likes">{count} likes</span>
-                    </div> 
+                    </div>  */}
                 </div>
 
                 <h4 className="post-text"><strong>{photo.authorName} </strong>{photo.description}</h4>
