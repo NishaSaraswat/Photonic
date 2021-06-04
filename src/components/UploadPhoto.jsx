@@ -74,36 +74,35 @@ return (
       <HeaderAllPages/>
         <div className='upload-photo-wrapper'>
             <form name="photoUpload" onSubmit={uploadPhoto} className="upload-form">
+              {s.imageData && <img src={s.imageData} width="300" ref={chosenImg} className="upload-image"/>}
+              {!s.imageData && <img src={placeholder} alt="placeholder" ref={placeholderPhoto} className="upload-placeholder"/>}
               <div className="upload-field">
-                  <label htmlFor="files" className="upload-field-label">Upload +</label>
-                  <input name="file" type="file" id="files"
-                    accept="image/*" onChange={photoChosen} style={{display:'none'}} className="upload-input"/>
-          
+                        <label htmlFor="files" className="upload-photo-label">Upload +</label>
+                        <input name="file" type="file" id="files"
+                          accept="image/*" onChange={photoChosen} style={{display:'none'}} className="upload-input"/>
               </div>
-        {s.imageData && <img src={s.imageData} width="300" ref={chosenImg} className="upload-image"/>}
-        {!s.imageData && <img src={placeholder} alt="placeholder" ref={placeholderPhoto} className="upload-placeholder"/>}
-        <div className="description-field">
-          <input 
-          name="description" 
-          placeholder="what's in your mind..."
-          onChange={handleDescriptionChange}
-          className="description-input"
-          />
-        </div>
-        <div>
-          <input 
-          type="text"
-          name="tags"
-          placeholder="tags"
-          onChange={handleTags}
-          className="tags-input"
-          />
-        </div>
-        <button type="submit" className="upload-button">Publish</button>
-      </form>
-  </div>
-    <Footer/>
-  </div>
+              <div className="description-field">
+                <textarea 
+                name="description" 
+                placeholder="what's in your mind..."
+                onChange={handleDescriptionChange}
+                className="description-input"
+                />
+              </div>
+              <div>
+                <textarea
+                  type="text"
+                  name="tags"
+                  placeholder="tags"
+                  onChange={handleTags}
+                  className="tags-input"
+                />
+              </div>
+              <button type="submit" className="upload-publish-button">Publish</button>
+            </form>
+      </div>
+        <Footer/>
+      </div>
  )
 }
 

@@ -49,128 +49,124 @@
     justify-content: space-between;
 }
 
-/*----upload and camera page-----*/
-
-.upload-photo-wrapper{
-    display:flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width:90%;
-    padding-top: 25%;
-    margin-left: 5%;
-    margin-bottom: 5%;
-}
-
-.upload-placeholder{
-    width:100%;
-    object-fit: contain;
-    margin-left: 0%;
-}
-
-.upload-field{
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width:80%;
-    margin-left: 10%;
-}
-.upload-form{
-    padding-left: 1%;
-
-}
-.upload-image{
-    width:100%;
-    object-fit: contain;
-}
-.upload-field-label,
-.upload-button,
-.webcam-btn,
-.camera-upload-button{
-    background-color:rgb(25, 26, 25) ;
-    margin-left: 8%;
-    margin-top: 0%;
-    color: rgb(206, 249, 249);
-    border-radius: 15px;
-    width:88%;
-    height:40px;
-    text-align: center;
-    font-size: 0.9em;
-    padding-top: 5px;
-    margin-bottom: 15px;
-    border:none;
-}
-.upload-field-label{
-    margin-top: 60px;
-    padding-top:5%;
-    height: 35px;
-    text-align: center;
-    justify-content: center;
-}
-.camera-upload-button,
-.webcam-btn{ 
-    height: 40px;
-    background-color: none;
-    border: none;
-    padding-top: 2px;  
-    margin-left: 20%;
-    width:70%;
-}
-
-.description-field,
-.tags-field{
-    display:flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width:100%;
-    justify-content: center;
-    margin-left: 8%;
-}
-
-
-.description-input,
-.tags-input{
-    width:100%;
-    margin-left: 7%;
-    height:40px;
-    background-color:rgb(25, 26, 25) ;
-}
-
-.description-input{
-    margin-top: 8%;
-    margin-left:-1%;
-    height:80px;
-}
-.tags-input{
-    margin-top: 0px;
-}
-
-.camera-container{
-    margin-bottom: 200px;
-}
-.camera-wrapper{
-    margin-left: 5%;
-}
+/*----camera page-----*/
 
 .camera{
-    margin-top:50px
+    width:100%;
+    margin-top: 58px;
+    margin-bottom:5%
 }
-.captured-photo{
-   width:100%;
-   
+.captured-photo-information-wrapper{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    width:100%;
+}
+.webcam-btn,
+.webcam-btn-retake,
+.camera-publish-button{
+    width:80%;
+    margin-left: 10%;
+    border-radius: 20px;
+    height:40px;
+    font-size: 0.9em;
+    background-color: rgb(28, 29, 29);
+    border: none;
+    color:rgb(79, 167, 158)
+
+}
+.camera-publish-button{
+    width:80%;
+    margin-top: -7px;
 }
 .camera-description-input,
 .camera-tags-input{
-    margin-left: 20%;
-    height: 40px;
-    width:100%;
-    background-color:rgb(25, 26, 25) ;
-}
-.camera-description-input{
-    height:80px;
-    margin-top: 10%;
+    width:80%;
+    background-color: rgb(28, 29, 29);
+    height:60px;
+    padding-top: 30px;
+    margin-left: 10%;
+    border-radius: 20px;
+    margin-bottom: 5px;
+    border: none;
+    text-align: center;
 }
 .camera-tags-input{
-    margin-top: 0%;
+    margin-top: 0px;
+    height: 30px;
+    padding-top: 10px;
+    font-size: 0.9em;
+}
+.camera-description-input{
+    margin-top: 20px;
+}
+.captured-photo{
+    margin-top: 100px;
+}
+
+/*----upload page-----*/
+.upload-photo-wrapper{
+    width:80%;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.upload-photo-label{
+    margin-left: 50%;
+    font-size: 1em;
+    color: rgb(31, 173, 159);
+}
+
+textarea:focus{
+    outline: none;
+}
+.description-input,
+.tags-input{
+    width:80%;
+    background-color: rgb(28, 29, 29);
+    height:30px;
+    padding-top: 15px;
+    margin-left: 22%;
+    border-radius: 20px;
+    margin-bottom: 5px;
+    border: none;
+    text-align: center;
+    font-size: 0.8em;
+}
+.upload-publish-button{
+    width:80%;
+    margin-left: 22%;
+    border-radius: 20px;
+    height:40px;
+    font-size: 0.9em;
+    background-color: rgb(28, 29, 29);
+    border: none;
+    color:rgb(79, 167, 158)
+}
+
+.tags-input{
+    margin-top: 0px;
+    height: 30px;
+    padding-top: 10px;
+    font-size: 0.9em;
+}
+.description-input{
+    margin-top: 20px;
+}
+.upload-placeholder{
+    width:80%;
+    margin-left: 23%;
+    margin-top:50%;
+    margin-bottom: 10px;
+}
+.upload-image{
+    width:100%;
+    margin-left: 13%;
+    margin-top:28%;
+    margin-bottom: 10px;
 }
 
 /*-----Avatarupload----*/
@@ -191,46 +187,50 @@
     border-radius: 50%;
 }
 
-
-@media only screen and (min-width: 1200px) {
-    
+@media only screen and (min-width: 500px) {
     .upload-placeholder{
-        width:50%;
-        margin-left: 25%;
+        margin-left: 22%;
+        margin-top:18%;
+        margin-bottom: 10px;
     }
-    .description-input,
-    .tags-input{
-        margin-left: 16%;
+    .upload-photo-label{
+        margin-left: 54%;
         font-size: 1em;
     }
-    .tags-input{
-        margin-left: 24%;
+    .upload-image{
+        width:90%;
+        margin-top: 80px;
+        margin-left: 18%;   
     }
-    .upload-field-label,
-    .upload-button{
-        width:100px;
-        margin-left: 40%;
+    .camera{
+        margin-top: 80px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .upload-image{
+        width:50%;
+        margin-top: 5px;
+        margin-left: 27%;   
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .upload-image{
+        width:40%;
+        margin-top: 40px;
+        margin-left: 42%;    
+    }
+    .upload-photo-label{
+        margin-left: 58%;
+        font-size: 1em;
+        margin-bottom: -10px;
+    }
+    .camera{
+        width:100%;
+        margin-top: 100px;
+        margin-bottom:10%
     }
     
-    .camera-description-input,
-    .camera-tags-input,
-    .webcam-btn,
-    .camera-upload-button{
-        margin-left: 3%;
-    }
-    .webcam-btn,
-    .camera-upload-button{
-        margin-left: 10px;
-        width:95%;
-    }
-    .camera-description-input,
-    .camera-tags-input{
-        font-size:1em;
-        width:80%;
-        margin-top: 15%;
-    }
-    .camera-tags-input{
-        margin-top: 2%;
-    }
+    
 }
 
