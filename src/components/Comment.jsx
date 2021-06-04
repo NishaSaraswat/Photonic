@@ -5,8 +5,9 @@ import { useHistory, useParams, Link } from 'react-router-dom';
 import mongoosy from 'mongoosy/frontend';
 import '../styleapp/comments.css';
 
+
 const {
-    Message
+    Message, Login
 } = mongoosy;
 
 //OLD CODE
@@ -34,8 +35,10 @@ const Comments = () => {
                 user: user,
                 comment: newComment
             });
+            let loginuser = await Login.check();
+            console.log(loginuser);
             let newMessage = new Message ({
-                text: newComment, author: 'user'
+                text: newComment, author: loginuser._id
                 //Message.find({author.userId})...populate('author')
             }) 
             await newMessage.save();
