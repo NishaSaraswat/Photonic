@@ -12,7 +12,7 @@ const Photos = () => {
     const getAllPhotos=async ()=>{
         let photos=await Photo.find();
         photos.sort((a, b) => a.posted > b.posted ? -1 : 1);
-        console.log(photos);
+        console.log("getAllPhotos",photos);
         setAllPhotos(photos)
         
     }

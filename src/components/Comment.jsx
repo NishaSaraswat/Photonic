@@ -1,49 +1,91 @@
 import { Button } from '@material-ui/core';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import React,{ useEffect, useState } from 'react';
-import { useHistory, useParams, Link } from 'react-router-dom';
+import { useHistory, useParams, Link, useLocation } from 'react-router-dom';
 import mongoosy from 'mongoosy/frontend';
 import '../styleapp/comments.css';
 const { Photo, User } = mongoosy;
 
+const CommentRow =(props) => {
+    const {parentIdPost,name,idPost,sent,text}=props
+
+    
+
+if(idPost==parentIdPost){
+
+    return <div className="comments_list">        
+        <p>{name}</p>
+        <p>{text}</p>
+        <p>{sent}</p>
+    </div>
+}
+    
+    return <div/>
+    
+}
 
 const {
     Message, Login
 } = mongoosy;
 
 //OLD CODE
-const Comments = ({author, imageUrl, photoId}) => {
+const Comments = (props) => {
+    const {author, imageUrl, photoId} = props
+    console.log(props)
 
-    const history = useHistory();
-    const { id, user, url, name } = useParams();
+
+    let location = useLocation();
+    let imgSrc = location.state && location.state.photoUrl;
+    
+    
+
+    const { id, user, url, name,testvalue } = useParams();
+    
+    
     const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState("");
-    useEffect( () => {
+    
+
+    const getAllComments=async ()=>{
+        let messages = await Message.find( );                
+        //console.log("messages",messages)
+        setComments(messages)
+        
+    }
+
+    
+    useEffect( () => {       
+        getAllComments()        
+    },[]);
+
+    useEffect( () => {       
         const interval = setInterval(() => {
-            
-          }, 1000);
+            getAllComments()
+          },  1000  );         
           return () => clearInterval(interval);
-    },[comments]);
+    },[]);
+    
+
+    
 
     const addComment = async () => {
 
         if( newComment === '' )
         { return; }
-        comments.push({
-                id: comments.length,
-                id_Post: photoId,
-                user: name,
-                comment: newComment
-            });
-            let loginuser = await Login.check();
-            console.log(loginuser);
-            let newMessage = new Message ({
-                text: newComment, author: loginuser._id
-                //Message.find({author.userId})...populate('author')
-            }) 
-            await newMessage.save();
-            console.log(newMessage);
-        setNewComment('');
+     
+            
+        let loginuser = await Login.check();
+        //console.log("loginuser.name",loginuser.name);
+
+        let newMessage = new Message ({
+            text: newComment,
+            author: loginuser._id,
+            name: loginuser.name,
+            idPost: id
+            //Message.find({author.userId})...populate('author')
+        }) 
+        await newMessage.save();
+        setNewComment("")
     }
 
     return(
@@ -52,22 +94,18 @@ const Comments = ({author, imageUrl, photoId}) => {
                 <div className="div_image_com">
                     <img 
                         className="imagen_com"
-                        src={'/uploads/' + url}                    
+                        src={'/uploads/' + imgSrc}                    
                         alt="picture"
                     />
                 </div> 
+                
                 <div className="comments">
-                    {
-                        comments.length===0?
-                        <p style={{color:'white'}}>Comments</p>
-                        :
-                        comments.map( item => 
-                            <div className="comments_list" key={item.id}> 
-                                <h4 className="userName">{name}</h4> 
-                                <p>{item.comment}</p>                        
-                            </div>
-                        )            
-                    } 
+                    {comments.map((c,idx)=>{
+
+                        return <><CommentRow parentIdPost={id} {...c} /></>
+                    }
+                    )}
+                  
                     <div className="comments_input">
                         <input
                             className="input_com"
