@@ -15,9 +15,8 @@ const Photos = ({name}) => {
     const [allPhotos, setAllPhotos]=useState([]);
     let [count, setCount]=useState(0)
     const getAllPhotos=async ()=>{
-        let photos=await Photo.find();
-        photos.sort((a, b) => a.posted > b.posted ? -1 : 1);
-        //console.log(photos);
+        let photos=await Photo.find();        
+        photos.sort((a, b) => a.posted > b.posted ? -1 : 1);        
         setAllPhotos(photos)   
     }
     useEffect(() => {
@@ -31,6 +30,8 @@ const Photos = ({name}) => {
     //     console.log(`icon is clicked ${count} times`)
     // }
     const renderUpdate=(authorName, url, id)=> {
+        //alert(JSON.stringify({authorName, url, id},null,2))
+        console.log(authorName, url, id)
         const someCondition = true;
     
         if (someCondition) {
@@ -43,6 +44,7 @@ const Photos = ({name}) => {
     return (
         <div className="feed">
             <div className="post">
+                
              {allPhotos.map(photo => <div key={photo.url}>
 
                 <div className="post-header">
@@ -63,11 +65,21 @@ const Photos = ({name}) => {
 
                 <div className="post-icons">
                     <div className="post-commentIcon">  
-                    <a href={`/comments/${photo._id}`}><ChatBubbleOutlineIcon
+                    
+                    <Link  
+                     to={{
+                        pathname:`/comments/${photo._id}`,
+                        // This is the trick! This link sets
+                        // the `background` in location state.
+                        state: { photoUrl:photo.url }
+                      }}
+                    >
+                        
+                        <ChatBubbleOutlineIcon
                             alt={''}
                             src=""
-                            onClick={renderUpdate(photo.authorName,photo.url,photo._id)}
-                        /></a>
+                        />
+                    </Link>
                     </div>
                     <Like/>
                         {/* <Like likes = {photo.likes}/> */}
